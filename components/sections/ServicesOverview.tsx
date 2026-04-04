@@ -7,55 +7,82 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const services: Service[] = [
   {
-    id: 'saas',
-    title: 'SaaS Platform Development',
-    description: 'End-to-end SaaS products with multi-tenancy, subscription billing, role-based access, and real-time dashboards. Production-ready architecture from day one.',
-    category: 'saas',
-    features: ['Multi-tenant architecture', 'Stripe + Razorpay billing', 'RBAC + SSO', 'Admin dashboard', 'Usage analytics', 'Webhooks + API'],
-    timeline: '10–16 weeks',
-    startingPrice: 'From ₹25L',
-    icon: 'Layers',
+    id: 'platform-website',
+    title: 'Platform Website (Shopify / Wix Studio)',
+    description: 'Already on Shopify just to showcase your brand — not to sell? You could be paying ₹2,000/month when ₹450/month does the same job beautifully. I migrate your Shopify site to Wix Studio with identical design and save you ₹18,000+ every year. Best for manufacturers, exporters, and local businesses that need trust-building online presence — not an online store.',
+    category: 'web-app',
+    features: [
+      'Shopify → Wix Studio migration',
+      'Identical design & layout preserved',
+      'Save ₹18,000+/year on platform cost',
+      'Editable by your team after delivery',
+      'New platform websites from scratch',
+      'Webflow / Framer builds available'
+    ],
+    timeline: '1–3 weeks',
+    startingPrice: 'From ₹15,000',
+    icon: 'Layout',
     isHighlighted: true
   },
   {
-    id: 'web-app',
-    title: 'Custom Web Applications',
-    description: 'Bespoke Next.js apps for order management, buyer portals, inventory systems, and B2B workflows.',
+    id: 'custom-website',
+    title: 'Custom Coded Website',
+    description: 'For businesses that need speed, SEO performance, and custom functionality — built from scratch with Next.js or plain HTML/CSS. No templates, no page builders. Deployed on Vercel for near-zero hosting cost.',
     category: 'web-app',
-    features: ['Next.js App Router', 'PostgreSQL + Prisma', 'REST & tRPC APIs', 'Real-time updates'],
-    timeline: '6–10 weeks',
-    startingPrice: 'From ₹12L',
-    icon: 'Monitor'
+    features: [
+      'Next.js / HTML + CSS builds',
+      'Mobile-first & SEO optimised',
+      'Deployed free on Vercel',
+      'Contact forms & booking flows'
+    ],
+    timeline: '2–5 weeks',
+    startingPrice: 'From ₹20,000',
+    icon: 'Code'
   },
   {
-    id: 'ai-integration',
-    title: 'AI Integration',
-    description: 'Embed LLMs into your existing products — smart search, document analysis, auto-reporting, and intelligent workflows.',
+    id: 'ai-image-generation',
+    title: 'AI Image Generation',
+    description: 'Need product photos, website banners, or marketing creatives but don\'t have a photography budget? I generate studio-quality images from your raw product photos — fast, affordable, and brand-consistent. Specialised in home furnishing, fabric, and lifestyle brands.',
     category: 'ai-integration',
-    features: ['RAG pipelines', 'pgvector embeddings', 'OpenRouter multi-model', 'Streaming responses'],
-    timeline: '4–8 weeks',
-    startingPrice: 'From ₹8L',
-    icon: 'Brain'
+    features: [
+      'Website banners from fabric photos',
+      'Product photography alternative',
+      'Brand-consistent style across images',
+      'Bulk generation available'
+    ],
+    timeline: '2–5 days per batch',
+    startingPrice: 'From ₹5,000/batch',
+    icon: 'Image'
   },
   {
-    id: 'ecommerce',
-    title: 'B2B E-commerce',
-    description: 'Wholesale storefronts with custom pricing tiers, bulk ordering, GST invoicing, and ERP integrations.',
-    category: 'ecommerce',
-    features: ['Custom pricing logic', 'GST-compliant invoicing', 'Inventory sync', 'Buyer portal'],
-    timeline: '8–12 weeks',
-    startingPrice: 'From ₹18L',
-    icon: 'ShoppingBag'
-  },
-  {
-    id: 'chatbot',
-    title: 'AI Chatbot & Automation',
-    description: 'Intelligent assistants trained on your catalog, FAQs, and order data — with CRM integration and human handoff.',
+    id: 'ai-chatbot',
+    title: 'AI Chatbot for Your Website',
+    description: 'An intelligent chatbot trained on your business — products, pricing, FAQs, contact details. Handles visitor queries 24/7 in Hindi, Hinglish, or English. Captures leads even when you\'re offline.',
     category: 'chatbot',
-    features: ['RAG over your data', 'WhatsApp + Web widget', 'CRM integration', 'Human handoff'],
-    timeline: '3–5 weeks',
-    startingPrice: 'From ₹5L',
+    features: [
+      'Hindi, Hinglish & English support',
+      'Trained on your business data',
+      'Lead capture & qualification',
+      'Website widget — easy to embed'
+    ],
+    timeline: '1–3 weeks',
+    startingPrice: 'From ₹12,000',
     icon: 'MessageSquare'
+  },
+  {
+    id: 'automation',
+    title: 'Automation & API Integrations',
+    description: 'Connect your website with WhatsApp, CRM, Google Sheets, payment gateways, or booking calendars. Automate lead notifications, form responses, and appointment confirmations. Available as add-on to any project.',
+    category: 'ai-integration',
+    features: [
+      'WhatsApp + email notifications',
+      'Calendar & booking integrations',
+      'CRM / Google Sheets sync',
+      'Payment gateway setup'
+    ],
+    timeline: 'Add-on: 3–7 days',
+    startingPrice: 'From ₹8,000',
+    icon: 'Zap'
   }
 ];
 
@@ -169,13 +196,13 @@ export default function ServicesOverview() {
         {/* Section Header */}
         <div className="mb-12">
           <span className="block text-[#b5ff3e] text-[length:var(--text-xs)] uppercase tracking-widest mb-3">
-            What We Build
+            What I Build
           </span>
           <h2 className="font-[family-name:var(--font-display)] font-bold text-[#e8e8f0] text-[length:var(--text-xl)]">
-            Full-Stack Services for Textile Brands
+            Services for Indian B2B Brands
           </h2>
           <p className="font-[family-name:var(--font-body)] text-[#8888a0] mt-3 max-w-2xl">
-            From idea to production in weeks — not months.
+            Website. Chatbot. Images. Automation. One person. Transparent pricing.
           </p>
         </div>
 

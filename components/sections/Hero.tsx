@@ -6,17 +6,17 @@ import * as THREE from 'three';
 import { HeroProps } from '@/types';
 
 const defaultProps: HeroProps = {
-  badge: "B2B Digital Agency · Textile Industry Specialists",
-  headline: "We Engineer Digital Products That Scale With Your Business",
-  highlightWord: "Scale",
-  subheadline: "Full-stack web apps, SaaS platforms, and AI-powered tools — built production-ready for textile manufacturers, exporters, and retail brands. No templates. No shortcuts.",
+  badge: "Website · AI Chatbot · Image Generation · Automation",
+  headline: "We Build Websites & AI Tools That Grow Your Business",
+  highlightWord: "Grow",
+  subheadline: "Custom websites, platform migrations, AI chatbots, and image generation — built for Indian B2B brands that want a professional online presence without paying agency prices.",
   ctaPrimary: { label: "See Our Work →", href: "#case-studies" },
-  ctaSecondary: { label: "Book a Discovery Call", href: "#contact" },
+  ctaSecondary: { label: "Get a Free Quote", href: "#contact" },
   stats: [
-    { value: "48+", label: "Products Shipped" },
-    { value: "₹120Cr+", label: "Revenue Enabled" },
-    { value: "6 Wks", label: "Avg. First Deploy" },
-    { value: "94%", label: "Client Retention" }
+    { value: "10+", label: "Projects Delivered" },
+    { value: "3 Wks", label: "Avg. First Delivery" },
+    { value: "100%", label: "IP Ownership Yours" },
+    { value: "₹0", label: "Hidden Charges" }
   ]
 };
 

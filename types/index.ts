@@ -48,25 +48,6 @@ export interface ProcessStep {
   icon: string;
 }
 
-// ─── Before / After ──────────────────────────────────────
-export interface BeforeAfterItem {
-  id: string;
-  category: string;
-  problem: string;
-  solution: string;
-  beforeState: {
-    title: string;
-    points: string[];
-    pain: string;
-  };
-  afterState: {
-    title: string;
-    points: string[];
-    result: string;
-  };
-  metric: { value: string; label: string };
-}
-
 // ─── Case Studies ────────────────────────────────────────
 export interface CaseStudy {
   id: string;

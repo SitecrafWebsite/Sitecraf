@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,11 +33,13 @@ export default function Chatbot() {
         aria-label="Open Chat"
       >
         {/* Avatar Icon */}
-        <div className="w-12 h-12 rounded-full overflow-hidden bg-[#1a1a1a] flex items-center justify-center flex-shrink-0">
-          <img 
+        <div className="w-12 h-12 rounded-full overflow-hidden bg-[#1a1a1a] flex items-center justify-center flex-shrink-0 relative">
+          <Image 
             src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&backgroundColor=1a1a1a" 
             alt="Support Agent" 
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
+            referrerPolicy="no-referrer"
           />
         </div>
         

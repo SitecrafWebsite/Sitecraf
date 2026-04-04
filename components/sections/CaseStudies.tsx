@@ -7,51 +7,51 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const caseStudies: CaseStudy[] = [
   {
-    id: 'vardhman-b2b-portal',
-    client: 'Vardhman Textiles',
-    industry: 'Yarn & Fabric Manufacturing',
-    title: 'Global B2B Wholesale Portal & Order Management',
-    description: 'Replaced a legacy email and spreadsheet-based ordering system with a modern Next.js portal. Enabled self-serve ordering, real-time inventory checks, and automated GST invoicing for 2,000+ global buyers, completely transforming their sales operations.',
-    challenge: 'Managing 500+ daily orders manually via WhatsApp and Excel.',
-    solution: 'Custom B2B buyer portal with real-time order tracking.',
+    id: 'security-services-website',
+    client: 'Security Services Brand',
+    industry: 'Security & Surveillance',
+    title: 'Custom Website Deployed Free — Zero Monthly Hosting Cost',
+    description: 'Built a professional custom-coded website for a security services business that needed an online presence on a tight budget. Deployed on Vercel at ₹0/month hosting cost, eliminating ongoing platform fees while delivering a fast, mobile-optimised website.',
+    challenge: 'Business needed a professional website but couldn\'t justify recurring hosting costs.',
+    solution: 'Custom HTML/CSS/JS website deployed on Vercel — free forever.',
     results: [
-      { metric: 'Order Processing Time', value: '–85%', trend: 'down' },
-      { metric: 'B2B Sales Volume', value: '+32%', trend: 'up' },
-      { metric: 'Support Tickets', value: '–60%', trend: 'down' }
+      { metric: 'Monthly Hosting Cost', value: '₹0', trend: 'down' },
+      { metric: 'Page Load Speed', value: '<1.5s', trend: 'up' },
+      { metric: 'Delivery Time', value: '2 weeks', trend: 'up' }
     ],
-    tags: ['Next.js', 'PostgreSQL', 'ERP Integration', 'Stripe'],
-    duration: '12 weeks',
+    tags: ['Custom Code', 'Vercel', 'Mobile-First', 'SEO'],
+    duration: '2 weeks',
     isFeatured: true
   },
   {
-    id: 'arvind-inventory',
-    client: 'Arvind Ltd',
-    industry: 'Denim & Retail',
-    title: 'Real-time Inventory & Logistics Dashboard',
-    description: 'Unified fragmented inventory data from 4 regional warehouses into a single real-time dashboard, significantly reducing stockouts and optimizing logistics routing for their B2B distribution network.',
-    challenge: 'No real-time inventory visibility across multiple warehouses.',
-    solution: 'Live inventory dashboard integrated with existing ERP.',
+    id: 'home-furnishing-website',
+    client: 'Home Furnishing Brand (Name withheld)',
+    industry: 'Fabric · Sofa & Curtain',
+    title: 'Showcase Website for Fabric Exporter on Wix Studio',
+    description: 'Built a multi-collection showcase website for a home furnishing brand dealing in sofa and curtain fabrics. Designed with Velo code for dynamic collection filtering. Client also received AI-generated banner images for 100+ fabric collections.',
+    challenge: 'Brand needed professional online presence to support B2B sales conversations.',
+    solution: 'Wix Studio website with custom Velo logic + AI banner images per collection.',
     results: [
-      { metric: 'Stockout Rate', value: '–94%', trend: 'down' },
-      { metric: 'Logistics Costs', value: '–18%', trend: 'down' }
+      { metric: 'Collections Showcased', value: '100+', trend: 'up' },
+      { metric: 'Banner Images Generated', value: '400+', trend: 'up' }
     ],
-    tags: ['React', 'Node.js', 'Redis', 'WebSockets'],
-    duration: '8 weeks'
+    tags: ['Wix Studio', 'Velo Code', 'AI Images', 'B2B'],
+    duration: '3 weeks'
   },
   {
-    id: 'welspun-qa',
-    client: 'Welspun India',
-    industry: 'Home Textiles',
-    title: 'Automated QA & Production Analytics',
-    description: 'Developed a custom analytics platform that integrates directly with their production line sensors to track defect rates in real-time, replacing manual end-of-line reporting.',
-    challenge: 'Manual QA reporting causing delays and missed defects.',
-    solution: 'Automated QA platform with real-time sensor integration.',
+    id: 'dental-clinic-demo',
+    client: 'SmileCare Dental — Demo Project',
+    industry: 'Healthcare · Dental Clinic',
+    title: 'Booking System + Multilingual AI Chatbot for Dental Clinic',
+    description: 'Demo project showcasing a dental clinic website with a step-by-step appointment booking flow integrated with Google Calendar API, and an AI chatbot responding in Hindi, Hinglish, and English. Built to demonstrate capability for clinic and healthcare clients.',
+    challenge: 'Clinics lose leads when no one answers calls or WhatsApp at night.',
+    solution: 'Chatbot + calendar booking that captures appointments 24/7 automatically.',
     results: [
-      { metric: 'Defect Detection Speed', value: '+400%', trend: 'up' },
-      { metric: 'Manual QA Time', value: '–70%', trend: 'down' }
+      { metric: 'Languages Supported', value: '3', trend: 'up' },
+      { metric: 'Booking Automation', value: '100%', trend: 'up' }
     ],
-    tags: ['Python', 'FastAPI', 'React', 'TimescaleDB'],
-    duration: '10 weeks'
+    tags: ['Next.js', 'AI Chatbot', 'Calendar API', 'Hindi NLP'],
+    duration: 'Demo — 3 weeks'
   }
 ];
 
@@ -207,20 +207,20 @@ export default function CaseStudies() {
         <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-2xl">
             <span className="block text-[#b5ff3e] text-[length:var(--text-xs)] uppercase tracking-widest mb-3">
-              Case Studies
+              Projects
             </span>
             <h2 className="font-[family-name:var(--font-display)] font-bold text-[#e8e8f0] text-[length:var(--text-xl)]">
-              Proven Results in the Textile Industry
+              Real Work. Real Results.
             </h2>
             <p className="font-[family-name:var(--font-body)] text-[#8888a0] mt-3 leading-relaxed">
-              See how we&apos;ve helped leading manufacturers and exporters scale their operations with custom software.
+              A mix of live client projects and capability demos — honest about which is which.
             </p>
           </div>
           <Link 
             href="#contact" 
             className="inline-flex items-center justify-center min-h-[48px] px-6 py-2 border border-white/[0.08] text-[#e8e8f0] rounded-full hover:border-white/[0.16] hover:text-[#b5ff3e] transition-all duration-300 text-[length:var(--text-sm)] font-medium whitespace-nowrap"
           >
-            View All Work →
+            Discuss Your Project →
           </Link>
         </div>
 
@@ -242,9 +242,9 @@ export default function CaseStudies() {
         <div className="mt-16 flex justify-center">
           <Link 
             href="#contact" 
-            className="flex items-center justify-center min-h-[48px] px-8 py-4 bg-[#b5ff3e] text-[#000000] rounded-full hover:bg-[#00e5e5] hover:shadow-[var(--glow-sm)] active:scale-95 transition-all duration-300 text-[length:var(--text-sm)] font-semibold"
+            className="flex items-center justify-center min-h-[48px] px-8 py-4 bg-[#b5ff3e] text-[#000000] rounded-full hover:bg-[#c4ff66] hover:shadow-[var(--glow-sm)] active:scale-95 transition-all duration-300 text-[length:var(--text-sm)] font-semibold"
           >
-            Book a Call →
+            Discuss Your Project →
           </Link>
         </div>
 
