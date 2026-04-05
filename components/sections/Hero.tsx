@@ -46,16 +46,29 @@ export default function Hero(props: Partial<HeroProps>) {
     let renderer: THREE.WebGLRenderer | null = null;
     let animationFrameId: number;
 
+    const isWebGLAvailable = () => {
+      try {
+        const testCanvas = document.createElement('canvas');
+        return !!(window.WebGLRenderingContext && (testCanvas.getContext('webgl') || testCanvas.getContext('experimental-webgl')));
+      } catch (e) {
+        return false;
+      }
+    };
+
+    if (!isWebGLAvailable()) {
+      console.warn('WebGL is not available. 3D background disabled.');
+      return;
+    }
+
     try {
       renderer = new THREE.WebGLRenderer({ 
         canvas, 
         alpha: true, 
         antialias: true,
-        powerPreference: 'high-performance',
-        failIfMajorPerformanceCaveat: true
+        powerPreference: 'high-performance'
       });
     } catch (e) {
-      console.error('WebGL initialization failed:', e);
+      console.warn('WebGL initialization failed. 3D background disabled.', e);
       return;
     }
 
