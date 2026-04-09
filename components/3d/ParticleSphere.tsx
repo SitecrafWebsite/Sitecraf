@@ -18,7 +18,7 @@ export default function ParticleSphere() {
       const parent = canvas.parentElement;
       const w = parent?.offsetWidth || 600;
       const h = parent?.offsetHeight || 600;
-      const size = Math.min(w, h, 700);
+      const size = Math.min(w, h, 700) * 1.3;
 
       // Guard: if size is still 0 somehow, retry
       if (size < 10) {
@@ -95,14 +95,14 @@ export default function ParticleSphere() {
   }
 
   return (
-    <div className="absolute right-0 top-0 w-full h-full lg:w-[45%] md:w-[40%] z-0 pointer-events-none flex items-center justify-center opacity-40 md:opacity-100">
+    <div className="absolute right-0 top-0 w-full h-full lg:w-[45%] md:w-[40%] z-0 pointer-events-none flex items-center justify-center opacity-40 md:opacity-100 overflow-hidden">
       <canvas
         ref={canvasRef}
         style={{
-          width: '100%',
-          height: '100%',
-          maxWidth: '700px',
-          maxHeight: '700px',
+          width: '130%',
+          height: '130%',
+          maxWidth: '910px',
+          maxHeight: '910px',
           aspectRatio: '1 / 1',
         }}
       />

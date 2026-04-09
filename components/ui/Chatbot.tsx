@@ -34,14 +34,12 @@ export default function Chatbot() {
       >
         {/* Avatar Icon */}
         <div className="w-12 h-12 rounded-full overflow-hidden bg-[#1a1a1a] flex items-center justify-center flex-shrink-0 relative text-[#e8e8f0]">
-          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-            <circle cx="9" cy="7" r="4" />
-            <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-            <path d="M9 11v10" />
-            <path d="m9 11 3 4-3 6" />
-          </svg>
+          <Image 
+            src="/chatbot-avatar.webp" 
+            alt="Chatbot Avatar" 
+            fill 
+            className="object-cover"
+          />
         </div>
         
         {/* Up Chevron Icon */}
@@ -58,15 +56,13 @@ export default function Chatbot() {
           {/* Header */}
           <div className="bg-[#0a0a0a] border-b border-white/[0.08] p-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-[#b5ff3e]/[0.1] rounded-full flex items-center justify-center text-[#b5ff3e]">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 8V4H8"></path>
-                  <rect x="4" y="8" width="16" height="12" rx="2"></rect>
-                  <path d="M2 14h2"></path>
-                  <path d="M20 14h2"></path>
-                  <path d="M15 13v2"></path>
-                  <path d="M9 13v2"></path>
-                </svg>
+              <div className="w-8 h-8 rounded-full overflow-hidden relative flex items-center justify-center bg-[#1a1a1a]">
+                <Image 
+                  src="/chatbot-avatar.webp" 
+                  alt="Chatbot Avatar" 
+                  fill 
+                  className="object-cover"
+                />
               </div>
               <div>
                 <h3 className="text-[#e8e8f0] text-sm font-semibold">Sitecraf Assistant</h3>
