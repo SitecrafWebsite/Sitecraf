@@ -49,21 +49,6 @@ const services: Service[] = [
     icon: 'Code'
   },
   {
-    id: 'ai-image-generation',
-    title: 'AI Image Generation',
-    description: "Need product photos, website banners, or marketing creatives without a photography budget? We generate studio-quality visuals from your existing photos — brand-consistent, fast, and scalable. Suitable for any product-based business: fashion, furniture, electronics, food, lifestyle, and more.",
-    category: 'ai-integration',
-    features: [
-      'Product visuals for any industry',
-      'Website banners & marketing creatives',
-      'Brand-consistent style across images',
-      'Bulk generation available'
-    ],
-    timeline: '2–5 days per batch',
-    startingPrice: 'From ₹5,000/batch',
-    icon: 'Image'
-  },
-  {
     id: 'ai-chatbot',
     title: 'AI Chatbot for Your Website',
     description: "An intelligent chatbot trained on your business — products, pricing, FAQs, and contact details. Handles visitor queries 24/7 in Hindi, Hinglish, or English. Captures and qualifies leads automatically, even when you are offline.",

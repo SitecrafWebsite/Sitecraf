@@ -45,7 +45,7 @@ export default function ServicesPage() {
           <div className="mt-12 border-t border-b border-white/[0.06] py-8 anim-reveal is-visible" style={{ animationDelay: '300ms' }}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="flex flex-col">
-                <span className="text-[#b5ff3e] font-bold text-2xl font-[family-name:var(--font-display)]">5 Services</span>
+                <span className="text-[#b5ff3e] font-bold text-2xl font-[family-name:var(--font-display)]">4 Services</span>
                 <span className="text-[#8888a0] text-xs uppercase tracking-widest mt-1">Available</span>
               </div>
               <div className="flex flex-col">
@@ -133,73 +133,46 @@ export default function ServicesPage() {
               </div>
             </div>
 
-            {/* Row 2 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* SERVICE 2 */}
-              <div className="bg-[#0a0a0a] border border-white/[0.08] rounded-2xl p-6 md:p-8 flex flex-col anim-reveal is-visible" style={{ animationDelay: '200ms' }}>
-                <div className="w-10 h-10 bg-[#b5ff3e]/[0.08] rounded-xl flex items-center justify-center mb-6">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b5ff3e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="16 18 22 12 16 6"></polyline>
-                    <polyline points="8 6 2 12 8 18"></polyline>
-                  </svg>
-                </div>
-                <h3 className="heading-sub font-[family-name:var(--font-display)] text-[#e8e8f0] mb-3">Custom Coded Website</h3>
-                <p className="text-[#8888a0] mb-6 flex-grow">Best for: Businesses needing SEO performance &amp; custom functionality. Next.js or plain HTML/CSS, deployed free on Vercel.</p>
-                <ul className="space-y-3 mb-8">
-                  {['Next.js / HTML + CSS builds, no templates', 'Mobile-first & SEO optimised', 'Deployed free on Vercel (near-zero hosting cost)', '100% code ownership transferred on delivery'].map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3 text-[#e8e8f0] text-sm">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#b5ff3e]/40 mt-1.5 shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="pt-6 border-t border-white/[0.05] flex flex-wrap items-center justify-between gap-4 mt-auto">
-                  <div className="flex items-center gap-4">
-                    <div>
-                      <span className="block text-[#8888a0] text-[10px] uppercase tracking-widest mb-1">Timeline</span>
-                      <span className="text-[#e8e8f0] text-sm font-medium">2–5 weeks</span>
-                    </div>
-                    <div>
-                      <span className="block text-[#8888a0] text-[10px] uppercase tracking-widest mb-1">Price</span>
-                      <span className="text-[#e8e8f0] text-sm font-medium">From ₹20,000</span>
-                    </div>
+            {/* Row 2: SERVICE 2 */}
+            <div className="bg-[#0a0a0a] border border-white/[0.08] rounded-2xl p-6 md:p-8 relative anim-reveal is-visible" style={{ animationDelay: '200ms' }}>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                  <div className="w-10 h-10 bg-[#b5ff3e]/[0.08] rounded-xl flex items-center justify-center mb-6">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b5ff3e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="16 18 22 12 16 6"></polyline>
+                      <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
                   </div>
-                  <a href="https://wa.me/919599143235" target="_blank" rel="noopener noreferrer" className="text-[#b5ff3e] text-sm font-medium hover:underline">Get a Quote →</a>
+                  <h3 className="heading-sub font-[family-name:var(--font-display)] text-[#e8e8f0] mb-3">Custom Coded Website</h3>
+                  <p className="text-[#8888a0] mb-6">Best for: Businesses needing extreme performance, total design control, and custom functionality. Built using Next.js or React.</p>
+                  <ul className="space-y-3 mb-8">
+                    {['Next.js / HTML + CSS builds, no templates used', 'Near-perfect Google PageSpeed scores', 'Deployed free on Vercel (lifetime zero hosting)', '100% code ownership — no platform lock-in'].map((feature, i) => (
+                      <li key={i} className="flex items-start gap-3 text-[#e8e8f0] text-sm">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#b5ff3e]/40 mt-1.5 shrink-0" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="flex flex-col justify-center gap-4">
+                  <div className="bg-[#b5ff3e]/[0.08] border border-[#b5ff3e]/[0.18] rounded-xl p-6 text-center">
+                    <span className="block text-[#8888a0] text-sm uppercase tracking-widest mb-2">Google PageSpeed</span>
+                    <span className="text-[#b5ff3e] font-bold text-5xl font-[family-name:var(--font-display)]">99/100</span>
+                  </div>
                 </div>
               </div>
-
-              {/* SERVICE 3 */}
-              <div className="bg-[#0a0a0a] border border-white/[0.08] rounded-2xl p-6 md:p-8 flex flex-col anim-reveal is-visible" style={{ animationDelay: '300ms' }}>
-                <div className="w-10 h-10 bg-[#b5ff3e]/[0.08] rounded-xl flex items-center justify-center mb-6">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b5ff3e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                    <polyline points="21 15 16 10 5 21"></polyline>
-                  </svg>
-                </div>
-                <h3 className="heading-sub font-[family-name:var(--font-display)] text-[#e8e8f0] mb-3">AI Image Generation</h3>
-                <p className="text-[#8888a0] mb-6 flex-grow">Best for: Home furnishing, fabric, lifestyle brands. Studio-quality images from raw product photos — no photography budget needed.</p>
-                <ul className="space-y-3 mb-8">
-                  {['Website banners from fabric/product photos', 'Product photography alternative', 'Brand-consistent style across all images', 'Bulk generation available'].map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3 text-[#e8e8f0] text-sm">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#b5ff3e]/40 mt-1.5 shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="pt-6 border-t border-white/[0.05] flex flex-wrap items-center justify-between gap-4 mt-auto">
-                  <div className="flex items-center gap-4">
-                    <div>
-                      <span className="block text-[#8888a0] text-[10px] uppercase tracking-widest mb-1">Timeline</span>
-                      <span className="text-[#e8e8f0] text-sm font-medium">2–5 days/batch</span>
-                    </div>
-                    <div>
-                      <span className="block text-[#8888a0] text-[10px] uppercase tracking-widest mb-1">Price</span>
-                      <span className="text-[#e8e8f0] text-sm font-medium">From ₹5K/batch</span>
-                    </div>
+              <div className="mt-8 pt-6 border-t border-white/[0.05] flex flex-wrap items-center justify-between gap-4">
+                <div className="flex items-center gap-6">
+                  <div>
+                    <span className="block text-[#8888a0] text-xs uppercase tracking-widest mb-1">Timeline</span>
+                    <span className="text-[#e8e8f0] font-medium">2–5 weeks</span>
                   </div>
-                  <a href="https://wa.me/919599143235" target="_blank" rel="noopener noreferrer" className="text-[#b5ff3e] text-sm font-medium hover:underline">Get a Quote →</a>
+                  <div>
+                    <span className="block text-[#8888a0] text-xs uppercase tracking-widest mb-1">Price</span>
+                    <span className="text-[#e8e8f0] font-medium">From ₹20,000</span>
+                  </div>
                 </div>
+                <a href="https://wa.me/919599143235" target="_blank" rel="noopener noreferrer" className="text-[#b5ff3e] font-medium hover:underline">Get a Quote →</a>
               </div>
             </div>
 
@@ -426,11 +399,6 @@ export default function ServicesPage() {
               <div className="text-[#e8e8f0] font-medium mb-2">Custom Website</div>
               <div className="text-[#b5ff3e] font-bold text-xl mb-1">From ₹20,000</div>
               <div className="text-[#8888a0] text-xs">2–5 weeks</div>
-            </div>
-            <div className="bg-[#111111] border border-white/[0.06] rounded-xl p-5 flex-1 min-w-[180px]">
-              <div className="text-[#e8e8f0] font-medium mb-2">AI Images</div>
-              <div className="text-[#b5ff3e] font-bold text-xl mb-1">From ₹5,000</div>
-              <div className="text-[#8888a0] text-xs">2–5 days/batch</div>
             </div>
             <div className="bg-[#111111] border border-white/[0.06] rounded-xl p-5 flex-1 min-w-[180px]">
               <div className="text-[#e8e8f0] font-medium mb-2">AI Chatbot</div>

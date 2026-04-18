@@ -168,21 +168,6 @@ const projects: Project[] = [
   }
 ];
 
-const galleryImages = [
-  { src: "https://picsum.photos/seed/fabric1/400/500", alt: "AI-generated sofa fabric banner", caption: "Sofa Fabric — Collection Banner" },
-  { src: "https://picsum.photos/seed/textile2/400/300", alt: "Curtain fabric lifestyle image", caption: "Curtain Fabric — Lifestyle" },
-  { src: "https://picsum.photos/seed/interior3/400/600", alt: "Home interior fabric display", caption: "Interior — Room Mock" },
-  { src: "https://picsum.photos/seed/fabric4/400/400", alt: "Product photography alternative", caption: "Product Shot — AI Generated" },
-  { src: "https://picsum.photos/seed/textile5/400/300", alt: "Fabric colour palette banner", caption: "Colour Palette — Collection" },
-  { src: "https://picsum.photos/seed/home6/400/500", alt: "Living room sofa fabric", caption: "Living Room — Mood Shot" },
-  { src: "https://picsum.photos/seed/curtain7/400/350", alt: "Curtain drape lifestyle shot", caption: "Drape Shot — AI Enhanced" },
-  { src: "https://picsum.photos/seed/weave8/400/450", alt: "Fabric weave texture closeup", caption: "Texture Closeup — AI" },
-  { src: "https://picsum.photos/seed/brand9/400/300", alt: "Brand banner — home furnishing", caption: "Brand Banner — Web Use" },
-  { src: "https://picsum.photos/seed/sofa10/400/500", alt: "Sofa collection hero image", caption: "Hero Image — Collection" },
-  { src: "https://picsum.photos/seed/export11/400/350", alt: "Export catalogue banner", caption: "Export Catalogue — AI" },
-  { src: "https://picsum.photos/seed/linen12/400/400", alt: "Linen fabric lifestyle banner", caption: "Linen — Lifestyle Banner" }
-];
-
 // COMPONENT_START
 export default function CaseStudiesClient() {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -354,61 +339,6 @@ export default function CaseStudiesClient() {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 3 — AI Image Gallery */}
-      <section aria-label="AI Image Gallery" className="w-full py-20 px-6 bg-[#0a0a0a]">
-        <div className="w-full md:w-[80%] max-w-none mx-auto">
-          <div className="mb-12 anim-reveal is-visible">
-            <span className="block text-[#b5ff3e] text-[length:var(--text-xs)] uppercase tracking-widest mb-3">AI Image Generation</span>
-            <h2 className="heading-section font-[family-name:var(--font-display)] text-[#e8e8f0] mb-4">Studio-quality visuals from raw product photos</h2>
-            <p className="font-[family-name:var(--font-body)] text-[#8888a0] text-lg max-w-2xl">
-              We generate lifestyle banners, product photos, and collection visuals using AI — at a fraction of traditional photography cost. Specialised in home furnishing, fabric, and lifestyle brands.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap gap-8 mb-12 border-y border-white/[0.06] py-8 anim-reveal is-visible" style={{ animationDelay: '100ms' }}>
-            <div className="flex flex-col">
-              <span className="text-[#b5ff3e] font-bold text-2xl font-[family-name:var(--font-display)]">400+</span>
-              <span className="text-[#8888a0] text-xs uppercase tracking-widest mt-1">Images Generated</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-[#b5ff3e] font-bold text-2xl font-[family-name:var(--font-display)]">100+</span>
-              <span className="text-[#8888a0] text-xs uppercase tracking-widest mt-1">Collections Covered</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-[#b5ff3e] font-bold text-2xl font-[family-name:var(--font-display)]">₹0</span>
-              <span className="text-[#8888a0] text-xs uppercase tracking-widest mt-1">Photography Budget</span>
-            </div>
-          </div>
-
-          <div className="columns-2 md:columns-3 lg:columns-4 gap-4 anim-reveal is-visible" style={{ animationDelay: '200ms' }}>
-            {galleryImages.map((image, i) => (
-              <div key={i} className="break-inside-avoid mb-4 rounded-xl overflow-hidden bg-[#111111] relative group cursor-pointer aspect-square sm:aspect-auto">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  data-placeholder="true"
-                  width={600}
-                  height={600}
-                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <span className="text-[#e8e8f0] text-sm font-medium">
-                    {image.caption}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-16 text-center anim-reveal is-visible" style={{ animationDelay: '300ms' }}>
-            <p className="text-[#e8e8f0] mb-6">Need AI images for your product catalogue?</p>
-            <a href="https://wa.me/919599143235" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-[#b5ff3e] text-[#000000] rounded-full px-8 py-4 font-semibold hover:bg-[#c4ff66] hover:shadow-[var(--glow-sm)] transition-all">
-              Get a Sample Batch →
-            </a>
           </div>
         </div>
       </section>

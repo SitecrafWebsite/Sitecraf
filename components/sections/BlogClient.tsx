@@ -99,7 +99,6 @@ const categories = [
   "Platforms",
   "Web Development",
   "AI Chatbots",
-  "AI Images",
   "Pricing",
   "Hiring"
 ];
