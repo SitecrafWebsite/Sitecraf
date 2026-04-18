@@ -1,6 +1,7 @@
 import Hero from '@/components/sections/Hero';
 import TrustBar from '@/components/sections/TrustBar';
 import ServicesOverview from '@/components/sections/ServicesOverview';
+import PlatformPicker from '@/components/sections/PlatformPicker';
 import WebDevDeepDive from '@/components/sections/WebDevDeepDive';
 import CaseStudies from '@/components/sections/CaseStudies';
 import BeforeAfter from '@/components/sections/BeforeAfter';
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <TrustBar />
       <ServicesOverview />
+      <PlatformPicker />
       <WebDevDeepDive />
       <CaseStudies />
       <BeforeAfter />

@@ -8,45 +8,60 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 const services: Service[] = [
   {
     id: 'platform-website',
-    title: 'Platform Website (Shopify / Wix Studio)',
-    description: 'Already on Shopify just to showcase your brand — not to sell? You could be paying ₹2,000/month when ₹450/month does the same job beautifully. I migrate your Shopify site to Wix Studio with identical design and save you ₹18,000+ every year. Best for manufacturers, exporters, and local businesses that need trust-building online presence — not an online store.',
+    title: 'Platform Website (WordPress / Shopify / Wix Studio / Webflow)',
+    description: 'The right platform for your business depends on your goals — not just your budget. We build on WordPress for content-rich and SEO-driven sites, Shopify for e-commerce, Wix Studio for fast-editable business websites, and Webflow for pixel-perfect design control. Every build is mobile-first, performance-optimised, and handed over with 100% ownership.',
     category: 'web-app',
     features: [
-      'Shopify → Wix Studio migration',
-      'Identical design & layout preserved',
-      'Save ₹18,000+/year on platform cost',
-      'Editable by your team after delivery',
-      'New platform websites from scratch',
-      'Webflow / Framer builds available'
+      'WordPress — SEO-ready, plugin-powered',
+      'Shopify — optimised store & checkout',
+      'Wix Studio — fast, editable, affordable',
+      'Webflow — design-driven, CMS-powered',
+      'Mobile-first on every platform',
+      'Platform migration with design preserved'
     ],
-    timeline: '1–3 weeks',
-    startingPrice: 'From ₹15,000',
+    timeline: '2–4 weeks',
+    startingPrice: 'From ₹12,000',
     icon: 'Layout',
     isHighlighted: true
   },
   {
     id: 'custom-website',
     title: 'Custom Coded Website',
-    description: 'For businesses that need speed, SEO performance, and custom functionality — built from scratch with Next.js or plain HTML/CSS. No templates, no page builders. Deployed on Vercel for near-zero hosting cost.',
+    description: 'For businesses that need maximum speed, SEO performance, and bespoke functionality — built from scratch with Next.js or HTML/CSS. No templates, no page builders. Fully mobile-optimised, AEO-ready, and deployed on Vercel for near-zero hosting cost.',
     category: 'web-app',
     features: [
       'Next.js / HTML + CSS builds',
-      'Mobile-first & SEO optimised',
+      'Mobile-first & SEO + AEO optimised',
       'Deployed free on Vercel',
-      'Contact forms & booking flows'
+      'Custom forms, flows & integrations'
     ],
     timeline: '2–5 weeks',
     startingPrice: 'From ₹20,000',
     icon: 'Code'
   },
   {
+    id: 'web-hosting',
+    title: 'Web Hosting & Managed Servers',
+    description: 'Reliable, secure, and high-performance web hosting — including managed dedicated servers. We ensure your website runs with fast load times, maximum uptime, and strong security. Available standalone or bundled with any website project.',
+    category: 'web-app',
+    features: [
+      'Managed dedicated server hosting',
+      'High uptime & fast load times',
+      'SSL, security & regular backups',
+      'Bundled with website builds'
+    ],
+    timeline: 'Setup in 1–3 days',
+    startingPrice: 'From ₹3,000/month',
+    icon: 'Server'
+  },
+  {
     id: 'ai-image-generation',
     title: 'AI Image Generation',
-    description: "Need product photos, website banners, or marketing creatives but don't have a photography budget? I generate studio-quality images from your raw product photos — fast, affordable, and brand-consistent. Specialised in home furnishing, fabric, and lifestyle brands.",
+    description: "Need product photos, website banners, or marketing creatives without a photography budget? We generate studio-quality visuals from your existing photos — brand-consistent, fast, and scalable. Suitable for any product-based business: fashion, furniture, electronics, food, lifestyle, and more.",
     category: 'ai-integration',
     features: [
-      'Website banners from fabric photos',
-      'Product photography alternative',
+      'Product visuals for any industry',
+      'Website banners & marketing creatives',
       'Brand-consistent style across images',
       'Bulk generation available'
     ],
@@ -57,7 +72,7 @@ const services: Service[] = [
   {
     id: 'ai-chatbot',
     title: 'AI Chatbot for Your Website',
-    description: "An intelligent chatbot trained on your business — products, pricing, FAQs, contact details. Handles visitor queries 24/7 in Hindi, Hinglish, or English. Captures leads even when you're offline.",
+    description: "An intelligent chatbot trained on your business — products, pricing, FAQs, and contact details. Handles visitor queries 24/7 in Hindi, Hinglish, or English. Captures and qualifies leads automatically, even when you are offline.",
     category: 'chatbot',
     features: [
       'Hindi, Hinglish & English support',
@@ -72,7 +87,7 @@ const services: Service[] = [
   {
     id: 'automation',
     title: 'Automation & API Integrations',
-    description: 'Connect your website with WhatsApp, CRM, Google Sheets, payment gateways, or booking calendars. Automate lead notifications, form responses, and appointment confirmations. Available as add-on to any project.',
+    description: 'Connect your website with WhatsApp, CRM, Google Sheets, payment gateways, or booking calendars. Automate lead notifications, form responses, and appointment confirmations. Available as an add-on to any project.',
     category: 'ai-integration',
     features: [
       'WhatsApp + email notifications',
@@ -183,10 +198,10 @@ export default function ServicesOverview() {
             What I Build
           </span>
           <h2 className="font-[family-name:var(--font-display)] font-bold text-[#e8e8f0] text-[length:var(--text-xl)]">
-            Services for Indian B2B Brands
+            What We Build
           </h2>
           <p className="font-[family-name:var(--font-body)] text-[#8888a0] mt-3 max-w-2xl">
-            Website. Chatbot. Images. Automation. One person. Transparent pricing.
+            WordPress, Shopify, Next.js, Wix Studio, and custom-coded — the right platform for every business goal. Mobile-first. SEO & AEO-optimised. Transparent pricing.
           </p>
         </div>
 
