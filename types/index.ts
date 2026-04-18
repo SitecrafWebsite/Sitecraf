@@ -36,6 +36,10 @@ export interface Service {
   icon: string;
   isHighlighted?: boolean;
   isFeatured?: boolean;
+  hostingNote?: {
+    label: string;
+    points: string[];
+  };
 }
 
 // ─── Process Steps ───────────────────────────────────────

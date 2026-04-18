@@ -40,22 +40,49 @@ export default function Hero(props: Partial<HeroProps>) {
   } = { ...defaultProps, ...props };
 
   const [isMounted, setIsMounted] = useState(false);
+  const [displayText, setDisplayText] = useState('');
 
   useEffect(() => {
     const timer = setTimeout(() => setIsMounted(true), 50);
     return () => clearTimeout(timer);
   }, []);
 
-  const renderHeadline = () => {
-    if (!highlightWord) return headline;
-    const index = headline.indexOf(highlightWord);
-    if (index === -1) return headline;
+  useEffect(() => {
+    if (!isMounted) return;
     
+    let i = 0;
+    const timer = setInterval(() => {
+      if (i <= headline.length) {
+        setDisplayText(headline.slice(0, i));
+        i++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 40);
+    
+    return () => clearInterval(timer);
+  }, [headline, isMounted]);
+
+  const renderHeadline = () => {
+    if (!highlightWord) return displayText;
+    const index = displayText.indexOf(highlightWord.substring(0, Math.min(highlightWord.length, Math.max(0, displayText.length - headline.indexOf(highlightWord)))));
+    
+    // Check if the highlightWord is starting to appear
+    const highlightStartIndex = headline.indexOf(highlightWord);
+    
+    if (displayText.length <= highlightStartIndex) {
+      return displayText;
+    }
+
+    const beforeHighlight = displayText.substring(0, highlightStartIndex);
+    const highlightedPart = displayText.substring(highlightStartIndex, highlightStartIndex + highlightWord.length);
+    const afterHighlight = displayText.substring(highlightStartIndex + highlightWord.length);
+
     return (
       <>
-        {headline.substring(0, index)}
-        <span className="text-[#b5ff3e]">{highlightWord}</span>
-        {headline.substring(index + highlightWord.length)}
+        {beforeHighlight}
+        <span className="text-[#b5ff3e]">{highlightedPart}</span>
+        {afterHighlight}
       </>
     );
   };
@@ -82,10 +109,11 @@ export default function Hero(props: Partial<HeroProps>) {
 
           {/* Headline */}
           <h1
-            className={`heading-section font-[family-name:var(--font-display)] text-[#e8e8f0] ${animClass} ${stateClass}`}
+            className={`heading-section font-[family-name:var(--font-display)] text-[#e8e8f0] text-[length:calc(var(--heading-section)*1.2)] ${animClass} ${stateClass}`}
             style={{ transitionDelay: '100ms' }}
           >
             {renderHeadline()}
+            <span className="inline-block w-[3px] h-[0.8em] bg-[#b5ff3e] ml-1 animate-pulse" aria-hidden="true" />
           </h1>
 
           {/* Subheadline */}

@@ -62,7 +62,7 @@ export default function Navbar() {
       </a>
 
       <header
-        className={`fixed top-0 left-0 right-0 z-50 h-[72px] transition-all duration-300 ease-[var(--t-base)] ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-[var(--t-base)] ${
           isScrolled ? 'bg-[#000000]/80 backdrop-blur-md border-b border-white/[0.05]' : 'bg-transparent'
         } ${
           scrollDirection === 'down' && isScrolled 
@@ -70,7 +70,7 @@ export default function Navbar() {
             : 'translate-y-0'
         }`}
       >
-        <div className="w-full md:w-[80%] max-w-none mx-auto px-6 h-full flex items-center justify-between">
+        <div className="w-full md:w-[80%] max-w-none mx-auto px-6 py-4 flex items-center justify-between">
           
           {/* LEFT — SVG Logo + Brand Name */}
           <Link 

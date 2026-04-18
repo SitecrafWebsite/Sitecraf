@@ -281,67 +281,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* SECTION 3 — Shopify Savings Deep Dive */}
-      <section aria-label="Shopify Savings" className="w-full py-20 px-6 bg-[#0a0a0a]">
-        <div className="w-full md:w-[80%] max-w-none mx-auto">
-          <div className="mb-12 anim-reveal is-visible">
-            <span className="block text-[#b5ff3e] text-[length:var(--text-xs)] uppercase tracking-widest mb-3">Save ₹18,600 Every Year</span>
-            <h2 className="heading-section font-[family-name:var(--font-display)] text-[#e8e8f0] mb-4">Still paying Shopify rates just to show your catalogue?</h2>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="anim-reveal is-visible" style={{ animationDelay: '100ms' }}>
-              <p className="text-[#8888a0] mb-6 leading-relaxed">
-                If you&apos;re a manufacturer, exporter, or B2B brand using Shopify just to showcase products — not to sell online — you&apos;re paying ₹2,000+ every month for features you don&apos;t use.
-              </p>
-              <p className="text-[#8888a0] mb-8 leading-relaxed">
-                We migrate your Shopify website to Wix Studio: same design, same content, same URL — at just ₹450/month. The migration pays for itself in the first 2 months of savings.
-              </p>
-              
-              <div className="mb-8">
-                <h3 className="text-[#e8e8f0] font-semibold mb-4">Who qualifies:</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3 text-[#8888a0]">
-                    <span className="text-[#b5ff3e] font-bold">✓</span> Home furnishing &amp; fabric manufacturers
-                  </li>
-                  <li className="flex items-start gap-3 text-[#8888a0]">
-                    <span className="text-[#b5ff3e] font-bold">✓</span> Exporters who show catalogues but don&apos;t sell online
-                  </li>
-                  <li className="flex items-start gap-3 text-[#8888a0]">
-                    <span className="text-[#b5ff3e] font-bold">✓</span> Any brand wanting professional site without Shopify pricing
-                  </li>
-                  <li className="flex items-start gap-3 text-[#66667a]">
-                    <span className="text-red-400 font-bold">✗</span> NOT for businesses actively selling via Shopify store
-                  </li>
-                </ul>
-              </div>
-
-              <a href="https://wa.me/919599143235" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-[#b5ff3e] text-[#000000] rounded-full px-8 py-4 font-semibold hover:bg-[#c4ff66] hover:shadow-[var(--glow-sm)] transition-all">
-                Check If You Qualify →
-              </a>
-            </div>
-
-            <div className="flex flex-col gap-4 anim-reveal is-visible" style={{ animationDelay: '200ms' }}>
-              <div className="bg-red-500/10 border border-red-500/20 rounded-2xl p-6">
-                <div className="text-red-400 font-bold text-2xl mb-1">₹2,000/mo</div>
-                <div className="text-[#8888a0]">Typical Shopify plan</div>
-              </div>
-              <div className="bg-[#b5ff3e]/[0.08] border border-[#b5ff3e]/[0.18] rounded-2xl p-6 relative">
-                <div className="absolute top-6 right-6 bg-[#b5ff3e]/10 text-[#b5ff3e] text-[10px] uppercase tracking-widest px-2 py-1 rounded-full border border-[#b5ff3e]/20">
-                  Your new cost
-                </div>
-                <div className="text-[#b5ff3e] font-bold text-2xl mb-1">₹450/mo</div>
-                <div className="text-[#8888a0]">Wix Studio equivalent</div>
-              </div>
-              <div className="bg-[#00c8c8]/[0.08] border border-[#00c8c8]/20 rounded-2xl p-6">
-                <div className="text-[#00c8c8] font-bold text-2xl mb-1">₹18,600/yr</div>
-                <div className="text-[#8888a0]">Annual savings after migration</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* SECTION 4 — How It Works (5-Step Process) */}
       <section aria-label="How It Works" className="w-full py-20 px-6 bg-[#000000]">
         <div className="w-full md:w-[80%] max-w-none mx-auto">

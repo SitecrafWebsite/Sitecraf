@@ -36,6 +36,10 @@
   --color-error:            #ef4444;
   --color-warning:          #f59e0b;
   --color-info:             #38bdf8;
+  
+  /* ── Special Gradients ── */
+  --gradient-coral: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+  --gradient-glow-coral: radial-gradient(circle at 50% 50%, rgba(255, 107, 107, 0.15) 0%, transparent 70%);
 
   /* ── Glow Effects ── */
   --glow-xs:    0 0 8px  rgba(181, 255, 62, 0.15);
@@ -235,6 +239,54 @@
   transform: translateY(-4px);
   box-shadow: 0 8px 32px rgba(0,0,0,0.6), 0 0 0 1px rgba(181,255,62,0.15);
   border-color: rgba(181, 255, 62, 0.2);
+}
+
+/* Hosting sub-section inside Platform Website card */
+.hosting-divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: var(--space-4) 0 var(--space-3) 0;
+}
+
+.hosting-note {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.hosting-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.hosting-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.hosting-point {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.hosting-dot {
+  color: var(--color-primary);
+  font-size: 0.75em;
+  margin-top: 0.2em;
+  flex-shrink: 0;
+  user-select: none;
 }
 
 nav {

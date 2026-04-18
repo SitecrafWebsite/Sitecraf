@@ -21,7 +21,17 @@ const services: Service[] = [
     timeline: '2–4 weeks',
     startingPrice: 'From ₹12,000',
     icon: 'Layout',
-    isHighlighted: true
+    isHighlighted: true,
+    hostingNote: {
+      label: "Web Hosting & Managed Servers",
+      points: [
+        "Managed hosting on Hostinger, SiteGround, or AWS",
+        "99.9% uptime SLA with daily backups",
+        "SSL, CDN, and security hardening included",
+        "Server setup, migration, and ongoing management",
+        "Shared hosting from ₹3,000/yr to VPS and dedicated servers"
+      ]
+    }
   },
   {
     id: 'custom-website',
@@ -37,21 +47,6 @@ const services: Service[] = [
     timeline: '2–5 weeks',
     startingPrice: 'From ₹20,000',
     icon: 'Code'
-  },
-  {
-    id: 'web-hosting',
-    title: 'Web Hosting & Managed Servers',
-    description: 'Reliable, secure, and high-performance web hosting — including managed dedicated servers. We ensure your website runs with fast load times, maximum uptime, and strong security. Available standalone or bundled with any website project.',
-    category: 'web-app',
-    features: [
-      'Managed dedicated server hosting',
-      'High uptime & fast load times',
-      'SSL, security & regular backups',
-      'Bundled with website builds'
-    ],
-    timeline: 'Setup in 1–3 days',
-    startingPrice: 'From ₹3,000/month',
-    icon: 'Server'
   },
   {
     id: 'ai-image-generation',
@@ -127,6 +122,25 @@ function FeaturedServiceCard({ service }: { service: Service }) {
           ))}
         </div>
 
+        {service.hostingNote && (
+          <>
+            <hr className="hosting-divider" />
+            <div className="hosting-note">
+              <p className="hosting-label">
+                {service.hostingNote.label}
+              </p>
+              <ul className="hosting-points">
+                {service.hostingNote.points.map((point, idx) => (
+                  <li key={idx} className="hosting-point">
+                    <span className="hosting-dot" aria-hidden="true">•</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </>
+        )}
+
         <div className="mt-auto pt-6 flex items-center justify-between">
           <div className="flex flex-col gap-1">
             <span className="text-[#66667a] text-[length:var(--text-xs)]">Timeline: {service.timeline}</span>
@@ -175,6 +189,25 @@ function RegularServiceCard({ service }: { service: Service }) {
           </div>
         )}
       </div>
+
+      {service.hostingNote && (
+        <>
+          <hr className="hosting-divider" />
+          <div className="hosting-note">
+            <p className="hosting-label">
+              {service.hostingNote.label}
+            </p>
+            <ul className="hosting-points">
+              {service.hostingNote.points.map((point, idx) => (
+                <li key={idx} className="hosting-point">
+                  <span className="hosting-dot" aria-hidden="true">•</span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </>
+      )}
 
       <div className="flex justify-between mt-5 pt-4 border-t border-white/[0.05] text-[#66667a] text-[length:var(--text-xs)]">
         <span>{service.timeline}</span>
