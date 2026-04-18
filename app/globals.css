@@ -221,10 +221,7 @@
 nav {
   transition: background 300ms ease, backdrop-filter 300ms ease;
 }
-nav.nav-scrolled {
-  background: rgba(0,0,0,0.92) !important;
-  backdrop-filter: blur(20px);
-}
+
 
 @keyframes marquee {
   0% { transform: translateX(0); }

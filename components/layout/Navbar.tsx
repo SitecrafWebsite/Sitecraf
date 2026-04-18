@@ -62,11 +62,7 @@ export default function Navbar() {
       </a>
 
       <header
-        className={`fixed top-0 left-0 right-0 z-50 h-[72px] transition-all duration-300 ease-[var(--t-base)] ${
-          isScrolled 
-            ? 'bg-[#000000]/90 backdrop-blur-xl border-b border-white/[0.06]' 
-            : 'bg-transparent'
-        } ${
+        className={`fixed top-0 left-0 right-0 z-50 h-[72px] transition-all duration-300 ease-[var(--t-base)] bg-transparent ${
           scrollDirection === 'down' && isScrolled 
             ? '-translate-y-full' 
             : 'translate-y-0'
@@ -93,7 +89,7 @@ export default function Navbar() {
           </Link>
 
           {/* CENTER — Nav Links (Desktop) */}
-          <nav className={`hidden md:flex items-center gap-8 ${isScrolled ? 'nav-scrolled' : ''}`}>
+          <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (
