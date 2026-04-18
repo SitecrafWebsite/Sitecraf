@@ -36,10 +36,6 @@
   --color-error:            #ef4444;
   --color-warning:          #f59e0b;
   --color-info:             #38bdf8;
-  
-  /* ── Special Gradients ── */
-  --gradient-coral: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
-  --gradient-glow-coral: radial-gradient(circle at 50% 50%, rgba(255, 107, 107, 0.15) 0%, transparent 70%);
 
   /* ── Glow Effects ── */
   --glow-xs:    0 0 8px  rgba(181, 255, 62, 0.15);

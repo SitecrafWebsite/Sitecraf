@@ -25,7 +25,7 @@ const projects: Project[] = [
     description: 'We developed a comprehensive Learning Management System (LMS) designed to bridge the gap between skill acquisition and practical application. High-performance Next.js frontend with integrated video hosting and student tracking.',
     url: 'learningt.com',
     image: 'https://picsum.photos/seed/edu/1000/800',
-    accent: '#FF6B6B'
+    accent: '#b5ff3e'
   },
   {
     id: 'furnishing',
@@ -62,10 +62,10 @@ export default function OurWork() {
         
         {/* Header */}
         <div className="flex flex-col items-center mb-16 text-center">
-          <h2 className="text-[length:var(--text-2xl)] font-[family-name:var(--font-display)] font-bold tracking-tight bg-[linear-gradient(135deg,#FF6B6B_0%,#FF8E53_100%)] bg-clip-text text-transparent">
+          <h2 className="text-[length:var(--text-2xl)] font-[family-name:var(--font-display)] font-bold tracking-tight bg-[linear-gradient(135deg,#b5ff3e_0%,#4ade80_100%)] bg-clip-text text-transparent">
             Our Work
           </h2>
-          <div className="h-px w-24 bg-gradient-to-r from-transparent via-[#FF6B6B]/40 to-transparent mt-4" />
+          <div className="h-px w-24 bg-gradient-to-r from-transparent via-[#b5ff3e]/40 to-transparent mt-4" />
         </div>
 
         {/* Carousel Container */}
@@ -115,7 +115,7 @@ export default function OurWork() {
               {/* Right Visual Mockup */}
               <div className="relative group">
                 <div 
-                  className="absolute -inset-4 bg-gradient-to-br from-[#FF6B6B]/10 to-transparent blur-2xl opacity-50 transition-opacity group-hover:opacity-70" 
+                  className="absolute -inset-4 bg-gradient-to-br from-[#b5ff3e]/10 to-transparent blur-2xl opacity-50 transition-opacity group-hover:opacity-70" 
                   style={{ backgroundImage: `radial-gradient(circle at 50% 50%, ${activeProject.accent}20 0%, transparent 70%)` }}
                 />
                 
@@ -158,13 +158,13 @@ export default function OurWork() {
             <div className="flex gap-4">
               <button 
                 onClick={prev}
-                className="w-12 h-12 rounded-full border border-white/[0.08] flex items-center justify-center text-white/40 hover:text-white hover:border-white transition-all active:scale-95"
+                className="w-12 h-12 rounded-full border border-white/[0.08] flex items-center justify-center text-white/40 hover:text-white hover:border-[#b5ff3e] hover:text-[#b5ff3e] transition-all active:scale-95"
               >
                 ←
               </button>
               <button 
                 onClick={next}
-                className="w-12 h-12 rounded-full border border-white/[0.08] flex items-center justify-center text-white/40 hover:text-white hover:border-white transition-all active:scale-95"
+                className="w-12 h-12 rounded-full border border-white/[0.08] flex items-center justify-center text-white/40 hover:text-white hover:border-[#b5ff3e] hover:text-[#b5ff3e] transition-all active:scale-95"
               >
                 →
               </button>
@@ -177,7 +177,7 @@ export default function OurWork() {
                   key={i}
                   onClick={() => setActiveIndex(i)}
                   className={`transition-all duration-300 rounded-full h-1.5 ${
-                    i === activeIndex ? 'w-8 bg-[#FF6B6B]' : 'w-1.5 bg-white/10 hover:bg-white/20'
+                    i === activeIndex ? 'w-8 bg-[#b5ff3e]' : 'w-1.5 bg-white/10 hover:bg-white/20'
                   }`}
                 />
               ))}
@@ -187,7 +187,7 @@ export default function OurWork() {
       </div>
 
       {/* Background Decor */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl aspect-square bg-[radial-gradient(circle,rgba(255,107,107,0.03)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl aspect-square bg-[radial-gradient(circle,rgba(181,255,62,0.03)_0%,transparent_70%)] pointer-events-none" />
     </section>
   );
 }
