@@ -72,15 +72,6 @@ export interface ComparisonRow {
   largeAgency: string | boolean;
 }
 
-// ─── Benefits ────────────────────────────────────────────
-export interface Benefit {
-  id: string;
-  icon: string;
-  title: string;
-  description: string;
-  stat?: { value: string; label: string };
-}
-
 // ─── Testimonials ────────────────────────────────────────
 export interface Testimonial {
   id: string;

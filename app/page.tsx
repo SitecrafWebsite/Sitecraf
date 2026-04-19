@@ -2,8 +2,7 @@ import Hero from '@/components/sections/Hero';
 import TrustBar from '@/components/sections/TrustBar';
 import ServicesOverview from '@/components/sections/ServicesOverview';
 import PlatformPicker from '@/components/sections/PlatformPicker';
-import OurWork from '@/components/sections/OurWork';
-import Benefits from '@/components/sections/Benefits';
+import OurPortfolio from '@/components/sections/OurPortfolio';
 import HowWeBuild from '@/components/sections/HowWeBuild';
 import ComparisonTable from '@/components/sections/ComparisonTable';
 import Testimonials from '@/components/sections/Testimonials';
@@ -17,8 +16,7 @@ export default function Home() {
       <TrustBar />
       <ServicesOverview />
       <PlatformPicker />
-      <OurWork />
-      <Benefits />
+      <OurPortfolio />
       <HowWeBuild />
       <ComparisonTable />
       <Testimonials />
