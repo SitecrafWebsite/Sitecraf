@@ -122,14 +122,14 @@ export default function ComparisonTable() {
       <div className="max-w-[1000px] mx-auto">
         
         {/* Header */}
-        <div className="mb-12">
+        <div className="mb-12 text-center flex flex-col items-center">
           <span className="block text-[#b5ff3e] text-[length:var(--text-xs)] uppercase tracking-widest mb-3">
             Why Sitecraf
           </span>
           <h2 className="heading-section font-[family-name:var(--font-display)] text-[#e8e8f0]">
             Sitecraf vs Freelancer vs In-House vs Agency
           </h2>
-          <p className="font-[family-name:var(--font-body)] text-[#8888a0] mt-3 max-w-2xl leading-relaxed">
+          <p className="font-[family-name:var(--font-body)] text-[#8888a0] mt-3 max-w-2xl leading-relaxed mx-auto">
             Every option has trade-offs. Here is an honest comparison — so you can choose what actually fits your business, budget, and timeline.
           </p>
         </div>

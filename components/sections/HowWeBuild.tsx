@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function HowWeBuild() {
   return (
     <section id="how-we-build" className="why-work-section">
-      <div className="why-work-inner">
+      <div className="w-full md:w-[80%] max-w-none mx-auto px-6">
         {/* Header */}
         <header className="why-work-header">
           <p className="why-work-eyebrow">DESIGN + ENGINEERING</p>

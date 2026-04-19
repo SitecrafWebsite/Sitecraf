@@ -16,7 +16,7 @@ const technologies = [
 export default function TrustBar() {
   return (
     <section className="w-full bg-[#0a0a0a] border-y border-white/[0.05] py-6">
-      <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 max-w-[1200px] mx-auto px-6">
+      <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 w-full md:w-[80%] max-w-none mx-auto px-6">
         <span className="flex-shrink-0 text-[#66667a] text-[length:var(--text-xs)] uppercase tracking-[0.12em] whitespace-nowrap">
           Platforms & Technologies
         </span>

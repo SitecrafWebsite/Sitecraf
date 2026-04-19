@@ -451,12 +451,6 @@ nav {
   overflow: hidden;
 }
 
-.why-work-inner {
-  max-width: var(--content-wide);
-  margin: 0 auto;
-  padding: 0 var(--space-6);
-}
-
 .why-work-header {
   margin-bottom: var(--space-16);
 }
@@ -485,8 +479,7 @@ nav {
 .why-work-subheading {
   font-size: var(--text-base);
   color: var(--color-text-muted);
-  width: 1152px;
-  max-width: 100%;
+  max-width: 56ch;
   margin-left: 0px;
   margin-right: 0px;
   padding-left: 0px;

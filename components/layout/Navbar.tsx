@@ -70,7 +70,7 @@ export default function Navbar() {
             : 'translate-y-0'
         }`}
       >
-        <div className="w-full md:w-[80%] max-w-none mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="w-full md:w-[80%] max-w-none mx-auto px-6 py-4 md:py-[18.4px] flex items-center justify-between">
           
           {/* LEFT — SVG Logo + Brand Name */}
           <Link 
@@ -91,7 +91,7 @@ export default function Navbar() {
           </Link>
 
           {/* CENTER — Nav Links (Desktop) */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-[36.8px]">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -111,7 +111,7 @@ export default function Navbar() {
           </nav>
 
           {/* RIGHT — Action cluster (Desktop) */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-[18.4px]">
             <Link 
               href="/quote" 
               className="border border-[#b5ff3e]/[0.18] text-[#b5ff3e] text-sm font-medium px-5 py-2 rounded-full hover:bg-[#b5ff3e]/[0.08] hover:shadow-[var(--glow-sm)] transition-all duration-300"
@@ -151,7 +151,7 @@ export default function Navbar() {
             isMobileMenuOpen ? 'max-h-[100dvh] opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="bg-[#0a0a0a] border-b border-white/[0.08] flex flex-col px-6 py-4 shadow-2xl">
+          <div className="bg-[#000000]/80 backdrop-blur-xl border-b border-white/[0.08] flex flex-col px-6 py-4 shadow-2xl">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (

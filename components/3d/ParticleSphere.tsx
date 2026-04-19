@@ -18,7 +18,10 @@ export default function ParticleSphere() {
       const parent = canvas.parentElement;
       const w = parent?.offsetWidth || 600;
       const h = parent?.offsetHeight || 600;
-      const size = Math.min(w, h, 700) * 1.3;
+      
+      const isMobile = window.innerWidth < 768;
+      const sizeMult = isMobile ? 0.91 : 1.3; // 1.3 * 0.7 = 0.91 (30% reduction)
+      const size = Math.min(w, h, 700) * sizeMult;
 
       // Guard: if size is still 0 somehow, retry
       if (size < 10) {
