@@ -20,7 +20,7 @@ export default function ParticleSphere() {
       const h = parent?.offsetHeight || 600;
       
       const isMobile = window.innerWidth < 768;
-      const sizeMult = isMobile ? 0.91 : 1.3; // 1.3 * 0.7 = 0.91 (30% reduction)
+      const sizeMult = isMobile ? 0.65 : 1.3; // 50% reduction on mobile
       const size = Math.min(w, h, 700) * sizeMult;
 
       // Guard: if size is still 0 somehow, retry

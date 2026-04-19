@@ -32,7 +32,8 @@ export default function Navbar() {
       }
       
       // Handle scrolled state for background
-      setIsScrolled(currentScrollY > 20);
+      const threshold = window.innerWidth < 768 ? 100 : 20;
+      setIsScrolled(currentScrollY > threshold);
       
       lastScrollY.current = currentScrollY;
     };
