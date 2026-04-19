@@ -80,7 +80,7 @@ export default function OurPortfolio() {
   return (
     <section id="our-portfolio" className="our-portfolio-section">
       <div 
-        className="our-portfolio-inner overflow-hidden" 
+        className="our-portfolio-inner" 
         style={{ 
           maxWidth: '1200px', 
           margin: '0 auto', 
@@ -243,14 +243,14 @@ export default function OurPortfolio() {
 
                   {/* RIGHT SIDE: Mockups (~70% on desktop) */}
                   <div 
-                    className="our-portfolio-right mt-12 lg:mt-0" 
+                    className="our-portfolio-right" 
                     style={{ 
-                      flex: '2 1 400px', 
+                      flex: '2 1 500px', 
                       position: 'relative',
                       display: 'flex',
                       alignItems: 'center',
-                      justifyContent: 'center',
-                      paddingBottom: '3rem'
+                      justifyContent: 'flex-start',
+                      paddingRight: '10%' // Padding to make room for mobile frame overlap
                     }}
                   >
                     {/* Placeholder Laptop Frame */}
@@ -258,7 +258,6 @@ export default function OurPortfolio() {
                       className="mockup-laptop"
                       style={{
                         width: '100%',
-                        maxWidth: '650px',
                         aspectRatio: '16/10',
                         backgroundColor: 'var(--color-surface-2)',
                         border: '8px solid var(--color-bg)',
@@ -268,12 +267,11 @@ export default function OurPortfolio() {
                         alignItems: 'center',
                         justifyContent: 'center',
                         overflow: 'hidden',
-                        boxShadow: 'var(--shadow-md)',
-                        marginLeft: '-10%'
+                        boxShadow: 'var(--shadow-md)'
                       }}
                     >
-                      <div style={{ position: 'absolute', inset: 0, background: project.accentColor, opacity: 0.1 }} />
-                      <span style={{ position: 'relative', color: '#8888a0', fontWeight: 700, letterSpacing: '0.05em', fontSize: '13px', textTransform: 'uppercase' }}>
+                      <div style={{ position: 'absolute', inset: 0, background: project.accentColor, opacity: 0.05 }} />
+                      <span style={{ position: 'relative', color: 'var(--color-text-faint)', fontWeight: 600, letterSpacing: '0.05em' }}>
                         Desktop View
                       </span>
                     </div>
@@ -283,25 +281,24 @@ export default function OurPortfolio() {
                       className="mockup-phone"
                       style={{
                         position: 'absolute',
-                        bottom: '0%',
-                        left: '60%',
-                        width: '32%',
-                        maxWidth: '160px',
-                        minWidth: '110px',
+                        bottom: '-10%',
+                        right: '0%',
+                        width: '26%',
+                        minWidth: '120px',
                         aspectRatio: '9/19',
                         backgroundColor: 'var(--color-surface)',
                         border: '6px solid var(--color-bg)',
-                        borderRadius: '24px',
+                        borderRadius: '20px',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         overflow: 'hidden',
-                        boxShadow: 'var(--shadow-xl)',
+                        boxShadow: 'var(--shadow-lg)',
                         zIndex: 10
                       }}
                     >
-                      <div style={{ position: 'absolute', inset: 0, background: project.accentColor, opacity: 0.15 }} />
-                      <span style={{ position: 'relative', color: '#b5ff3e', fontSize: '10px', fontWeight: 800, textAlign: 'center', padding: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                      <div style={{ position: 'absolute', inset: 0, background: project.accentColor, opacity: 0.1 }} />
+                      <span style={{ position: 'relative', color: 'var(--color-text-faint)', fontSize: '0.75rem', fontWeight: 600, textAlign: 'center', padding: '0.5rem' }}>
                         Mobile View
                       </span>
                     </div>

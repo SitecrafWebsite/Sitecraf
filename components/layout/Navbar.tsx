@@ -32,8 +32,7 @@ export default function Navbar() {
       }
       
       // Handle scrolled state for background
-      const threshold = window.innerWidth < 768 ? 100 : 20;
-      setIsScrolled(currentScrollY > threshold);
+      setIsScrolled(currentScrollY > 20);
       
       lastScrollY.current = currentScrollY;
     };
@@ -64,7 +63,7 @@ export default function Navbar() {
 
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-[var(--t-base)] ${
-          isScrolled ? 'bg-[#000000]/80 backdrop-blur-md border-b border-white/[0.05]' : 'bg-transparent'
+          isScrolled ? 'md:bg-[#000000]/80 md:backdrop-blur-md md:border-b md:border-white/[0.05] bg-transparent' : 'bg-transparent'
         } ${
           scrollDirection === 'down' && isScrolled 
             ? '-translate-y-full' 

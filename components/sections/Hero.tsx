@@ -91,7 +91,7 @@ export default function Hero(props: Partial<HeroProps>) {
   const stateClass = isMounted ? "is-visible" : "";
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center pt-[calc(72px+1rem)] md:pt-[calc(72px+2rem)] pb-16 px-6 overflow-hidden bg-[#000000]">
+    <section className="relative min-h-screen flex flex-col justify-center pt-[calc(72px+2rem)] pb-16 px-6 overflow-hidden bg-[#000000]">
       <ParticleSphere />
 
       <div className="relative z-10 flex flex-col items-center md:items-start text-center md:text-left w-full md:w-[80%] max-w-none mx-auto">
