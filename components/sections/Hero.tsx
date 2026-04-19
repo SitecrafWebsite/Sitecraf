@@ -2,16 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import { HeroProps } from '@/types';
-
-const ParticleSphere = dynamic(
-  () => import('@/components/3d/ParticleSphere'),
-  { 
-    ssr: false,
-    loading: () => null
-  }
-);
 
 const defaultProps: HeroProps = {
   badge: "Website · AI Chatbot · Image Generation · Automation",
@@ -41,9 +32,9 @@ export default function Hero(props: Partial<HeroProps>) {
 
   const renderHeadline = () => {
     if (!highlightWord) return <>{headline}</>;
-    
+
     const highlightStartIndex = headline.indexOf(highlightWord);
-    
+
     if (highlightStartIndex === -1) {
       return <>{headline}</>;
     }
@@ -142,9 +133,19 @@ export default function Hero(props: Partial<HeroProps>) {
           )}
         </div>
 
-        {/* Globe visual — purely decorative */}
-        <div className="hero-visual" aria-hidden="true">
-          <ParticleSphere />
+        {/* Robot video visual */}
+        <div className="hero-visual">
+          <div className="hero-video-frame">
+            <video
+              className="hero-video"
+              src="/hero_section_robot.webm"
+              autoPlay
+              loop
+              muted
+              playsInline
+              aria-hidden="true"
+            />
+          </div>
         </div>
       </div>
     </section>
