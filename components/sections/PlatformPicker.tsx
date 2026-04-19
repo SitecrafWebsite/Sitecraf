@@ -2,14 +2,14 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { siWordpress, siShopify, siWix, siNextdotjs } from 'simple-icons';
 
 const platforms = [
   {
     id: 'wordpress',
     name: 'WordPress',
-    logo: 'https://cdn.simpleicons.org/wordpress/b5ff3e',
+    logo: siWordpress.path,
     tagline: 'Best for content, SEO & flexible business sites',
     description: 'The world\'s most widely used CMS. Ideal for service businesses, blogs, portfolios, and any site that needs strong SEO control, a large plugin ecosystem, and easy long-term content management.',
     bestFor: [
@@ -26,7 +26,7 @@ const platforms = [
   {
     id: 'shopify',
     name: 'Shopify',
-    logo: 'https://cdn.simpleicons.org/shopify/b5ff3e',
+    logo: siShopify.path,
     tagline: 'Best for online stores & D2C e-commerce',
     description: 'The leading e-commerce platform. Built for selling products online — from single-product stores to large catalogues with inventory, payment, and shipping management built in.',
     bestFor: [
@@ -43,7 +43,7 @@ const platforms = [
   {
     id: 'wix-studio',
     name: 'Wix Studio',
-    logo: 'https://cdn.simpleicons.org/wix/b5ff3e',
+    logo: siWix.path,
     tagline: 'Best for fast, editable business websites',
     description: 'A modern visual builder with professional-grade design control. Great for businesses that want a polished, fast-loading website their own team can edit and update without any technical knowledge.',
     bestFor: [
@@ -60,7 +60,7 @@ const platforms = [
   {
     id: 'nextjs',
     name: 'Next.js (Custom)',
-    logo: 'https://cdn.simpleicons.org/nextdotjs/b5ff3e',
+    logo: siNextdotjs.path,
     tagline: 'Best for performance, SEO & custom functionality',
     description: 'Built from scratch with Next.js — no templates, no page builders. The highest performance option for businesses that need custom features, AEO-ready structure, bespoke integrations, or a website that doubles as a web application.',
     bestFor: [
@@ -110,6 +110,7 @@ export default function PlatformPicker() {
               <button
                 key={platform.id}
                 onClick={() => setActivePlatform(platform.id)}
+                suppressHydrationWarning
                 className={`relative flex items-center gap-4 px-5 py-4 rounded-xl text-left transition-all duration-200 ${
                   activePlatform === platform.id
                     ? 'bg-[#b5ff3e]/[0.06] border border-[#b5ff3e]/[0.25]'
@@ -121,13 +122,16 @@ export default function PlatformPicker() {
                   <div className="absolute left-0 top-3 bottom-3 w-0.5 bg-[#b5ff3e] rounded-full" />
                 )}
                 {/* Logo */}
-                <Image
-                  src={platform.logo}
-                  alt={platform.name}
-                  width={28}
-                  height={28}
-                  className="object-contain flex-shrink-0"
-                />
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="#b5ff3e"
+                  className="w-7 h-7 flex-shrink-0"
+                  aria-label={platform.name}
+                  role="img"
+                >
+                  <title>{platform.name}</title>
+                  <path d={platform.logo} />
+                </svg>
                 
                 {/* Middle */}
                 <div className="flex flex-col gap-0.5">
@@ -159,7 +163,16 @@ export default function PlatformPicker() {
               
               {/* BLOCK 1 — Platform identity row */}
               <div className="flex items-center gap-4">
-                <Image src={active.logo} alt={active.name} width={40} height={40} className="object-contain flex-shrink-0" />
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="#b5ff3e"
+                  className="w-10 h-10 flex-shrink-0"
+                  aria-label={active.name}
+                  role="img"
+                >
+                  <title>{active.name}</title>
+                  <path d={active.logo} />
+                </svg>
                 <h3 className="heading-sub font-[family-name:var(--font-display)] text-[#e8e8f0]">
                   {active.name}
                 </h3>

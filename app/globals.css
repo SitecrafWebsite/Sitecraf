@@ -763,7 +763,8 @@ nav {
 
 .what-we-build-card-image {
   border-radius: var(--radius-lg);
-  height: 160px;
+  aspect-ratio: 1 / 1;
+  width: 100%;
   position: relative;
   overflow: hidden;
   margin-top: auto;
@@ -819,10 +820,6 @@ nav {
   .what-we-build-card {
     padding: var(--space-6);
   }
-  
-  .what-we-build-card-image {
-    height: 140px;
-  }
 }
 
 /* Change 13 — Hero robot video */
@@ -841,12 +838,18 @@ nav {
 .hero-inner {
   position: relative;
   width: 100%;
-  max-width: var(--content-wide);
+  max-width: none;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: var(--space-8);
   align-items: center;
+}
+
+@media (min-width: 768px) {
+  .hero-inner {
+    width: 80%;
+  }
 }
 
 .hero-content {
@@ -871,7 +874,7 @@ nav {
 
 .hero-video-frame {
   position: relative;
-  width: min(320px, 80vw);
+  width: min(384px, 80vw);
   margin-inline: auto;
   aspect-ratio: 3 / 4;
   border-radius: var(--radius-2xl);
@@ -912,7 +915,7 @@ nav {
   }
 
   .hero-video-frame {
-    width: min(420px, 80vw);
+    width: min(504px, 80vw);
     margin-inline: 0;
   }
 }

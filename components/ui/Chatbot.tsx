@@ -29,6 +29,7 @@ export default function Chatbot() {
       {/* Chat Toggle Button */}
       <button
         onClick={() => setIsOpen(true)}
+        suppressHydrationWarning
         className={`fixed bottom-6 right-6 z-50 bg-[#111111] border border-dashed border-[#b5ff3e] p-1.5 rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-transform duration-300 items-center gap-2 ${isOpen ? 'hidden' : 'flex'}`}
         aria-label="Open Chat"
       >
@@ -71,7 +72,7 @@ export default function Chatbot() {
                 </p>
               </div>
             </div>
-            <button onClick={() => setIsOpen(false)} className="text-[#8888a0] hover:text-[#e8e8f0] transition-colors">
+            <button onClick={() => setIsOpen(false)} suppressHydrationWarning className="text-[#8888a0] hover:text-[#e8e8f0] transition-colors">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -101,11 +102,13 @@ export default function Chatbot() {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               placeholder="Type your message..."
+              suppressHydrationWarning
               className="flex-1 bg-[#111111] border border-white/[0.08] rounded-full px-4 py-2 text-[#e8e8f0] text-sm focus:border-[#b5ff3e]/40 focus:outline-none transition-colors"
             />
             <button 
               type="submit"
               disabled={!inputValue.trim()}
+              suppressHydrationWarning
               className="w-10 h-10 rounded-full bg-[#b5ff3e] text-[#000000] flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#00e5e5] transition-colors"
             >
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-0.5">

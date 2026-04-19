@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { Layout, Target, ShoppingBag, MessageSquare, Zap, Camera } from 'lucide-react';
 
 type ServiceCard = {
@@ -10,6 +11,7 @@ type ServiceCard = {
   points: string[];
   icon: React.ElementType;
   accent: 'portfolio' | 'landing' | 'ecommerce' | 'chatbots' | 'automation' | 'images';
+  image: string;
 };
 
 const serviceCards: ServiceCard[] = [
@@ -23,7 +25,8 @@ const serviceCards: ServiceCard[] = [
       'Easy content updates'
     ],
     icon: Layout,
-    accent: 'portfolio'
+    accent: 'portfolio',
+    image: '/portfolio_design.webp'
   },
   {
     id: 'landing',
@@ -35,7 +38,8 @@ const serviceCards: ServiceCard[] = [
       'Core Web Vitals optimized'
     ],
     icon: Target,
-    accent: 'landing'
+    accent: 'landing',
+    image: '/landing_pages.webp'
   },
   {
     id: 'ecommerce',
@@ -47,7 +51,8 @@ const serviceCards: ServiceCard[] = [
       'WhatsApp sales support'
     ],
     icon: ShoppingBag,
-    accent: 'ecommerce'
+    accent: 'ecommerce',
+    image: '/ecommerce_store.webp'
   },
   {
     id: 'chatbots',
@@ -59,7 +64,8 @@ const serviceCards: ServiceCard[] = [
       'CRM & Google Sheets sync'
     ],
     icon: MessageSquare,
-    accent: 'chatbots'
+    accent: 'chatbots',
+    image: '/AI Chatbots.webp'
   },
   {
     id: 'automation',
@@ -71,7 +77,8 @@ const serviceCards: ServiceCard[] = [
       'Operations dashboards'
     ],
     icon: Zap,
-    accent: 'automation'
+    accent: 'automation',
+    image: '/automation_api_integration.webp'
   },
   {
     id: 'images',
@@ -83,7 +90,8 @@ const serviceCards: ServiceCard[] = [
       'On-brand styling templates'
     ],
     icon: Camera,
-    accent: 'images'
+    accent: 'images',
+    image: '/ai_image_generation.webp'
   }
 ];
 
@@ -119,6 +127,13 @@ export default function ServicesOverview() {
               </ul>
 
               <div className={`what-we-build-card-image what-we-build-card-image--${card.accent}`}>
+                <Image 
+                  src={card.image} 
+                  alt={card.title} 
+                  fill 
+                  className="object-cover" 
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
                 <div className="what-we-build-card-image-overlay" />
               </div>
             </article>

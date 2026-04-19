@@ -68,6 +68,7 @@ function FaqAccordion({ item, isOpen, onToggle }: { item: FaqItem, isOpen: boole
         className="w-full py-6 flex items-center justify-between text-left focus:outline-none group"
         onClick={onToggle}
         aria-expanded={isOpen}
+        suppressHydrationWarning
       >
         <h3 className="heading-sub font-[family-name:var(--font-display)] transition-colors pr-8 group-hover:text-[#b5ff3e] active:text-[#b5ff3e] text-[#e8e8f0]">
           {item.question}
@@ -149,6 +150,7 @@ export default function FAQ() {
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id as any)}
+              suppressHydrationWarning
               className={`px-4 py-2 rounded-full text-[length:var(--text-xs)] font-medium transition-all duration-200 ${
                 activeCategory === cat.id 
                   ? 'bg-[#b5ff3e] text-[#000000]' 

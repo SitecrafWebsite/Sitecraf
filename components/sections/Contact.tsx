@@ -65,6 +65,7 @@ export default function Contact() {
                 <input 
                   type="text" 
                   required 
+                  suppressHydrationWarning
                   className="bg-[#000000] border border-white/[0.08] rounded-lg px-4 py-3 text-[#e8e8f0] focus:border-[#b5ff3e]/40 focus:outline-none transition-colors" 
                   placeholder="Your name"
                 />
@@ -73,6 +74,7 @@ export default function Contact() {
                 <label className="text-[#8888a0] text-sm font-medium">Business</label>
                 <input 
                   type="text" 
+                  suppressHydrationWarning
                   className="bg-[#000000] border border-white/[0.08] rounded-lg px-4 py-3 text-[#e8e8f0] focus:border-[#b5ff3e]/40 focus:outline-none transition-colors" 
                   placeholder="Business name (optional)"
                 />
@@ -85,6 +87,7 @@ export default function Contact() {
                 <select 
                   required
                   defaultValue=""
+                  suppressHydrationWarning
                   className="bg-[#000000] border border-white/[0.08] rounded-lg px-4 py-3 text-[#e8e8f0] focus:border-[#b5ff3e]/40 focus:outline-none transition-colors appearance-none cursor-pointer"
                 >
                   <option value="" disabled>Select a service</option>
@@ -101,6 +104,7 @@ export default function Contact() {
                 <select 
                   required
                   defaultValue=""
+                  suppressHydrationWarning
                   className="bg-[#000000] border border-white/[0.08] rounded-lg px-4 py-3 text-[#e8e8f0] focus:border-[#b5ff3e]/40 focus:outline-none transition-colors appearance-none cursor-pointer"
                 >
                   <option value="" disabled>Select budget range</option>
@@ -126,6 +130,7 @@ export default function Contact() {
               <button 
                 type="submit" 
                 disabled={status === 'loading' || status === 'success'} 
+                suppressHydrationWarning
                 className="w-full bg-[#b5ff3e] text-[#000000] font-semibold px-8 py-4 rounded-lg hover:bg-[#c4ff66] hover:shadow-[var(--glow-sm)] active:scale-[0.98] transition-all duration-300 disabled:opacity-70"
               >
                 {status === 'loading' ? 'Sending...' : status === 'success' ? 'Message Sent!' : 'Send Message →'}

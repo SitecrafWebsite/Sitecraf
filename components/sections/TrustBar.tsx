@@ -1,16 +1,26 @@
 import React from 'react';
-import Image from 'next/image';
+import {
+  siWordpress,
+  siWoocommerce,
+  siShopify,
+  siWix,
+  siNextdotjs,
+  siReact,
+  siTailwindcss,
+  siVercel,
+  siTypescript
+} from 'simple-icons';
 
 const technologies = [
-  { name: "WordPress",    icon: "https://cdn.simpleicons.org/wordpress/8888a0"     },
-  { name: "WooCommerce",  icon: "https://cdn.simpleicons.org/woocommerce/8888a0"   },
-  { name: "Shopify",      icon: "https://cdn.simpleicons.org/shopify/8888a0"       },
-  { name: "Wix Studio",   icon: "https://cdn.simpleicons.org/wix/8888a0"           },
-  { name: "Next.js",      icon: "https://cdn.simpleicons.org/nextdotjs/8888a0"     },
-  { name: "React",        icon: "https://cdn.simpleicons.org/react/8888a0"         },
-  { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/8888a0"   },
-  { name: "Vercel",       icon: "https://cdn.simpleicons.org/vercel/8888a0"        },
-  { name: "TypeScript",   icon: "https://cdn.simpleicons.org/typescript/8888a0"    }
+  { name: "WordPress",    iconPath: siWordpress.path     },
+  { name: "WooCommerce",  iconPath: siWoocommerce.path   },
+  { name: "Shopify",      iconPath: siShopify.path       },
+  { name: "Wix Studio",   iconPath: siWix.path           },
+  { name: "Next.js",      iconPath: siNextdotjs.path     },
+  { name: "React",        iconPath: siReact.path         },
+  { name: "Tailwind CSS", iconPath: siTailwindcss.path   },
+  { name: "Vercel",       iconPath: siVercel.path        },
+  { name: "TypeScript",   iconPath: siTypescript.path    }
 ];
 
 export default function TrustBar() {
@@ -31,14 +41,17 @@ export default function TrustBar() {
           <div className="marquee-track gap-12">
             {[...technologies, ...technologies].map((tech, index) => (
               <div key={index} className="flex items-center gap-2 opacity-60 hover:opacity-100 transition-opacity duration-300">
-                <div className="relative h-6 w-6">
-                  <Image 
-                    src={tech.icon} 
-                    alt={tech.name} 
-                    fill
-                    className="object-contain"
-                    referrerPolicy="no-referrer"
-                  />
+                <div className="relative h-6 w-6 flex items-center justify-center">
+                  <svg 
+                    viewBox="0 0 24 24" 
+                    fill="#8888a0" 
+                    className="w-full h-full"
+                    aria-label={tech.name}
+                    role="img"
+                  >
+                    <title>{tech.name}</title>
+                    <path d={tech.iconPath} />
+                  </svg>
                 </div>
                 <span className="font-[family-name:var(--font-body)] font-semibold text-[#8888a0] text-[length:var(--text-xs)] uppercase tracking-[0.1em] whitespace-nowrap">
                   {tech.name}
