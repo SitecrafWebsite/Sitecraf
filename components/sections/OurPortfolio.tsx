@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 type PortfolioProject = {
   id: string;
@@ -9,56 +10,102 @@ type PortfolioProject = {
   points: string[];
   techStack: string;
   accentColor: string;
+  desktopImage: string;
+  mobileImage: string;
 };
 
 const portfolioProjects: PortfolioProject[] = [
   {
-    id: 'creator-portfolio',
-    title: 'Creator Portfolio',
-    description: 'A high-conversion personal brand hub for a leading digital creator. Built to showcase case studies, capture email leads, and host premium digital products.',
+    id: 'smilecare',
+    title: 'SmileCare – Modern Dental Care Platform',
+    description: 'A modern dental clinic website built with Next.js, featuring seamless appointment booking, service showcase, and an AI-powered chatbot for real-time patient assistance.',
     points: [
-      'Ultra-fast page loads',
-      'Custom email capture flows',
-      'Mobile-optimized reading experience',
+      'Next.js for high performance and scalability',
+      'Integrated AI chatbot using ChatGPT API',
+      'Appointment booking & service exploration',
+      'Responsive design optimized for healthcare'
     ],
-    techStack: 'Next.js · Tailwind CSS · Vercel',
+    techStack: 'Next.js · Tailwind CSS · ChatGPT API',
     accentColor: 'var(--color-primary-highlight)',
+    desktopImage: '/our-portfolio-images/custom_dental_project_desktop_view.webp',
+    mobileImage: '/our-portfolio-images/custom_dental_project_mobile_view.webp',
   },
   {
-    id: 'd2c-launch',
-    title: 'D2C Launch Landing Page',
-    description: 'An aggressive, conversion-led landing page designed for targeted performance marketing campaigns. Optimized for incoming Instagram and Facebook ad traffic.',
+    id: 'nutriguideai',
+    title: 'NutriGuideAI – AI-Powered Nutrition Assistant',
+    description: 'An AI-driven nutrition platform that delivers personalized diet guidance, meal planning, and health insights through an intelligent chatbot interface.',
     points: [
-      'A/B tested hero layouts',
-      'Frictionless single-step form',
-      'Sub-second mobile rendering',
+      'Built with modern web technologies for fast and scalable performance',
+      'AI-powered chatbot providing personalized nutrition recommendations',
+      'Smart meal planning and dietary guidance based on user input',
+      'Real-time interaction for queries related to diet and wellness'
     ],
-    techStack: 'WordPress · Elementor',
+    techStack: 'Next.js · AI Integration · Fast Performance',
     accentColor: 'var(--color-surface)',
+    desktopImage: '/our-portfolio-images/custom_healthcare_project_desktop_view.webp',
+    mobileImage: '/our-portfolio-images/custom_healthcare_project_mobile_view.webp',
   },
   {
-    id: 'urban-goods',
-    title: 'Urban Goods Store',
-    description: 'A modern, high-volume e-commerce storefront crafted for an emerging lifestyle brand. Focused on smooth product discovery and a seamless checkout experience.',
+    id: 'prowebservices',
+    title: 'ProWebServices – Personal Portfolio & Web Services Platform',
+    description: 'A modern personal portfolio and web services website showcasing professional expertise, services, and projects with a clean UI and strong personal branding.',
     points: [
-      'Custom catalog architecture',
-      'Frictionless Razorpay checkout',
-      'Integrated WhatsApp sales support',
+      'Built using Next.js for fast performance and SEO optimization',
+      'Clean and professional portfolio layout to showcase services and projects',
+      'Strong personal branding with clear service positioning',
+      'Structured sections for projects, skills, and contact engagement'
     ],
-    techStack: 'Shopify · Custom Theme · Razorpay',
+    techStack: 'Next.js · Tailwind CSS · React',
     accentColor: 'var(--color-border)',
+    desktopImage: '/our-portfolio-images/custom_portfolio_project_desktop_view.webp',
+    mobileImage: '/our-portfolio-images/custom_portfolio_project_mobile_view.webp',
   },
   {
-    id: 'exportco-catalogue',
-    title: 'ExportCo Catalogue',
-    description: 'A professional B2B digital catalog for a Delhi-based global exporter. Designed to attract international buyers, surface key certifications, and drive bulk inquiries.',
+    id: 'nexforge',
+    title: 'NexForge – Digital Services Agency Platform',
+    description: 'A modern digital services agency website built on WordPress, showcasing scalable solutions like web development, SEO, marketing, and AI-powered services with a strong business-focused design.',
     points: [
-      'AEO & multilingual SEO ready',
-      'Secure wholesale inquiry portal',
-      'Dynamic product filtering',
+      'Built on WordPress for flexibility and easy content management',
+      'Service-focused structure covering digital marketing, SEO, and web design',
+      'Clean, dark-themed modern UI aligned with tech agency positioning',
+      'Clear service segmentation for better user navigation'
     ],
-    techStack: 'Wix Studio · Custom Sections',
+    techStack: 'WordPress · SEO Ready · UI/UX',
     accentColor: 'var(--color-text-faint)',
+    desktopImage: '/our-portfolio-images/agency_project_desktop_view.webp',
+    mobileImage: '/our-portfolio-images/agency_project_mobile_view.webp',
+  },
+  {
+    id: 'luxeweave',
+    title: 'LuxeWeave – Home Furnishing Fabric Platform',
+    description: 'A premium home furnishing website built on Wix, showcasing fabric collections and enabling a strong wholesale network with over 800+ distributors and partners.',
+    points: [
+      'Built on Wix for easy management and scalable catalogue updates',
+      'Designed for a large wholesale and distributor network (800+ partners)',
+      'Premium, luxury-focused UI to reflect high-quality fabric collections',
+      'Structured product categorization for better browsing experience'
+    ],
+    techStack: 'Wix Studio · Custom Sections · Wholesale Network',
+    accentColor: 'var(--color-primary-dim)',
+    desktopImage: '/our-portfolio-images/wix_fabric_catalogue_project_desktop_view.webp',
+    mobileImage: '/our-portfolio-images/wix_fabric_catalogue_project_mobile_view.webp',
+  },
+  {
+    id: 'nordlight',
+    title: 'NordLight – Fashion Ecommerce Store',
+    description: 'A modern Shopify-based fashion ecommerce store showcasing apparel like dresses, blazers, and jackets with a clean, premium UI focused on seamless shopping experience.',
+    points: [
+      'Built on Shopify for scalable and secure ecommerce operations',
+      'Clean, minimal UI aligned with modern fashion brand aesthetics',
+      'Structured product categories (dresses, blazers, jackets, accessories)',
+      'High-quality product presentation with grid-based layout',
+      'Optimized user journey for browsing and purchasing',
+      'Fully responsive design ensuring smooth experience across devices'
+    ],
+    techStack: 'Shopify · UI/UX · Ecommerce Store',
+    accentColor: 'var(--color-primary-hover)',
+    desktopImage: '/our-portfolio-images/shopify_clothing_project_desktop_view.webp',
+    mobileImage: '/our-portfolio-images/shopify_clothing_project_mobile_view.png',
   },
 ];
 
@@ -242,7 +289,7 @@ export default function OurPortfolio() {
 
                   {/* RIGHT SIDE: Mockups (~70% on desktop) */}
                   <div
-                    className="our-portfolio-right w-full lg:w-[65%] mt-4 md:mt-20 lg:mt-0"
+                    className="our-portfolio-right w-full lg:w-[65%] mt-16 md:mt-20 lg:mt-0"
                     style={{
                       position: 'relative',
                       display: 'flex',
@@ -270,10 +317,21 @@ export default function OurPortfolio() {
                         zIndex: 5
                       }}
                     >
-                      <div style={{ position: 'absolute', inset: 0, background: project.accentColor, opacity: 0.05 }} />
-                      <span style={{ position: 'relative', color: 'var(--color-text-faint)', fontWeight: 600, letterSpacing: '0.05em', fontSize: 'var(--text-xs)' }}>
-                        Desktop View
-                      </span>
+                      {project.desktopImage ? (
+                        <Image
+                          src={project.desktopImage}
+                          alt={`${project.title} Desktop`}
+                          fill
+                          className="object-cover object-top"
+                        />
+                      ) : (
+                        <>
+                          <div style={{ position: 'absolute', inset: 0, background: project.accentColor, opacity: 0.05 }} />
+                          <span style={{ position: 'relative', color: 'var(--color-text-faint)', fontWeight: 600, letterSpacing: '0.05em', fontSize: 'var(--text-xs)' }}>
+                            Desktop View
+                          </span>
+                        </>
+                      )}
                     </div>
 
                     {/* Placeholder Mobile Frame */}
@@ -298,10 +356,21 @@ export default function OurPortfolio() {
                         zIndex: 10
                       }}
                     >
-                      <div style={{ position: 'absolute', inset: 0, background: project.accentColor, opacity: 0.1 }} />
-                      <span style={{ position: 'relative', color: 'var(--color-text-faint)', fontSize: '0.65rem', fontWeight: 600, textAlign: 'center', padding: '0.5rem' }}>
-                        Mobile View
-                      </span>
+                      {project.mobileImage ? (
+                        <Image
+                          src={project.mobileImage}
+                          alt={`${project.title} Mobile`}
+                          fill
+                          className="object-cover"
+                        />
+                      ) : (
+                        <>
+                          <div style={{ position: 'absolute', inset: 0, background: project.accentColor, opacity: 0.1 }} />
+                          <span style={{ position: 'relative', color: 'var(--color-text-faint)', fontSize: '0.65rem', fontWeight: 600, textAlign: 'center', padding: '0.5rem' }}>
+                            Mobile View
+                          </span>
+                        </>
+                      )}
                     </div>
                   </div>
 
