@@ -18,7 +18,7 @@ const platforms = [
       'Portfolio & brochure sites',
       'SEO-driven content strategies'
     ],
-    notIdealFor: 'Businesses that want a fully hosted, zero-maintenance platform or a complex product store out of the box',
+    notIdealFor: 'Teams that want a fully managed, no-maintenance solution — though managed WordPress hosting can solve this for most businesses.',
     startingAt: '₹6,000',
     timeline: '2–3 weeks',
     badge: 'Most Popular'
@@ -52,7 +52,7 @@ const platforms = [
       'Teams who want to self-manage content',
       'Fast turnaround projects'
     ],
-    notIdealFor: 'High-traffic sites, complex custom functionality, or businesses that need deep SEO control',
+    notIdealFor: 'Businesses needing complex custom functionality, deep API integrations, or very advanced SEO control beyond standard settings.',
     startingAt: '₹10,000',
     timeline: '2-3 weeks',
     badge: 'Fastest Launch'
@@ -70,7 +70,7 @@ const platforms = [
       'Complex integrations & APIs'
     ],
     notIdealFor: 'Businesses with very simple requirements or those needing a very fast, low-budget turnaround',
-    startingAt: '₹10,000',
+    startingAt: '₹15,000',
     timeline: '3–5 weeks',
     badge: 'Max Performance'
   }
@@ -88,13 +88,14 @@ export default function PlatformPicker() {
         {/* Section Header */}
         <div className="mb-12">
           <span className="text-[#b5ff3e] text-[length:var(--text-xs)] uppercase tracking-widest mb-3 block anim-reveal is-visible">
-            Platform Guidance
+            CHOOSE YOUR PLATFORM
           </span>
           <h2 className="heading-section font-[family-name:var(--font-display)] text-[#e8e8f0] anim-reveal is-visible">
-            Which Platform Is Right for Your Business?
+            Which Platform Does Your Business Actually Need?
           </h2>
           <p className="font-[family-name:var(--font-body)] text-[#8888a0] mt-3 max-w-2xl anim-reveal is-visible">
-            Every platform has a purpose. We recommend the right one based on your goals — not ours.
+            Every platform has a purpose — and the wrong choice costs time and money. 
+            We match you to the right one based on your goals, not what's trendy.
           </p>
         </div>
 
