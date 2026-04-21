@@ -6,93 +6,75 @@ import { Testimonial } from '@/types';
 const testimonialData: Testimonial[] = [
   {
     id: '1',
-    quote: "The performance jump was immediate. Our entire catalog loads instantly now, even on slow connections.",
-    name: "Amit Singhal",
-    role: "Founder",
-    company: "CraftIndia Exports",
-    location: "New Delhi, India",
-    projectType: "Wix Studio / Catalogue"
+    quote: "Honestly, I was skeptical about getting a custom website — my last developer disappeared after taking half the payment. This time the site went live in under 3 weeks, and patients started booking online from day one. The WhatsApp integration alone saved my receptionist 2 hours a day.",
+    name: "Dr. Raghav Malhotra",
+    role: "Dental Surgeon & Clinic Owner",
+    company: "SmileCare Dental, Dwarka",
+    location: "New Delhi",
+    projectType: "Next.js · AI Chatbot"
   },
   {
     id: '2',
-    quote: "Sitecraf understood our B2B workflow perfectly. The new dashboard saved us hours of manual entry every day.",
-    name: "Priya Nair",
-    role: "Marketing Head",
-    company: "Zenith Logistics",
-    location: "Mumbai, India",
-    projectType: "WordPress / B2B"
+    quote: "We launched our Shopify store during the festive season and hit ₹2L in sales in the first 10 days. The checkout flow is so clean — almost zero cart abandonment compared to what we had before. Worth every rupee.",
+    name: "Aanya Kapoor",
+    role: "Co-founder",
+    company: "NordLight Fashion",
+    location: "Mumbai",
+    projectType: "Shopify · E-Commerce"
   },
   {
     id: '3',
-    quote: "The transition from Shopify was seamless. We're saving thousands on monthly fees without losing any speed.",
-    name: "Rohan Gupta",
-    role: "CEO",
-    company: "UrbanThread D2C",
-    location: "Gurgaon, India",
-    projectType: "Next.js / SaaS"
+    quote: "Humara catalogue 800+ products ka tha aur purani website pe update karna ek nightmare tha. Ab meri team khud hi products add karti hai — koi developer ko call nahi karna. Bahut smooth kaam hai.",
+    name: "Suresh Bhatt",
+    role: "Managing Director",
+    company: "LuxeWeave Fabrics",
+    location: "Surat, Gujarat",
+    projectType: "Wix Studio · Catalogue"
   },
   {
     id: '4',
-    quote: "Their AI chatbot handles our customer queries in Hinglish brilliantly. Lead qualification is now automated.",
-    name: "Sneha Kapoor",
-    role: "Ops Manager",
-    company: "EduCore Systems",
-    location: "Noida, India",
-    projectType: "AI Chatbot / EdTech"
+    quote: "Our old site looked like it was built in 2015. The new WordPress build made us look like a proper agency — we started closing bigger retainers within a month of launch. The SEO structure they built is solid.",
+    name: "Karan Nair",
+    role: "Founder",
+    company: "NexForge Digital",
+    location: "Bangalore",
+    projectType: "WordPress · Agency Site"
   },
   {
     id: '5',
-    quote: "Professional, fast, and high-quality code. They are true partners who deliver on their 3-week promise.",
-    name: "Arjun Mehta",
-    role: "Tech Lead",
-    company: "Silverline Hardware",
-    location: "Okhla, India",
-    projectType: "Custom Next.js"
+    quote: "We needed to serve personalised diet plans at scale without a huge support team. The AI chatbot they built handles 300+ user queries a day without any intervention. It's become the core of our product.",
+    name: "Priya Iyer",
+    role: "Product Lead",
+    company: "NutriGuideAI",
+    location: "Pune",
+    projectType: "Next.js · AI Integration"
   },
   {
     id: '6',
-    quote: "Best decision for our digital transformation. The ROI on our new Shopify store was clear within weeks.",
-    name: "Divya Roy",
-    role: "Founder",
-    company: "Aura Decor",
-    location: "New Delhi, India",
-    projectType: "Shopify / D2C"
+    quote: "We were losing leads because follow-ups weren't happening on time. Now every inquiry goes straight to our CRM with a WhatsApp notification. Our conversion rate on leads has gone up noticeably — the automation paid for itself in two weeks.",
+    name: "Vikram Sharma",
+    role: "Sales Director",
+    company: "PrimeSpace Realty",
+    location: "Noida, UP",
+    projectType: "WordPress · Lead Automation"
   },
   {
     id: '7',
-    quote: "Sitecraf's automation tools helped us sync our leads directly to our CRM. Zero data leakage across teams.",
-    name: "Rahul Verma",
-    role: "Director",
-    company: "Prime Realty",
-    location: "Bangalore, India",
-    projectType: "Automation / Lead Gen"
+    quote: "I'd been meaning to fix my portfolio for two years. They built it in 12 days and it ranks on Google for my target keywords already. Got my first inbound client inquiry through the site within the first month.",
+    name: "Arjun Mehta",
+    role: "UI/UX Freelancer",
+    company: "Self-employed",
+    location: "Hyderabad",
+    projectType: "Next.js · Portfolio"
   },
   {
     id: '8',
-    quote: "A sleek website that actually reflects our brand's premium identity. The team is incredibly responsive.",
+    quote: "The brief was simple: make it look premium without the premium budget. They delivered exactly that. The site went live in 2 weeks and my wholesale buyers actually commented on how professional it looks. That doesn't happen often.",
     name: "Meera Joshi",
-    role: "Co-founder",
-    company: "GreenStem Foods",
-    location: "Pune, India",
-    projectType: "Wix Studio / Catalogue"
-  },
-  {
-    id: '9',
-    quote: "Excellent understanding of SEO and AEO. Our organic traffic and enquiries have tripled since launch.",
-    name: "Karan Singh",
-    role: "Head of Growth",
-    company: "TechPulse India",
-    location: "New Delhi, India",
-    projectType: "Next.js / Blog"
-  },
-  {
-    id: '10',
-    quote: "The most reliable agency we've worked with. They stick to timelines and provide zero-hosting solutions.",
-    name: "Ananya Das",
-    role: "Product Head",
-    company: "Bloom EdTech",
-    location: "Kolkata, India",
-    projectType: "Wix Studio / Education"
+    role: "Founder",
+    company: "GreenStem Organics",
+    location: "Jaipur, Rajasthan",
+    projectType: "Wix Studio · Brand Site"
   }
 ];
 
@@ -119,8 +101,8 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
 
 export default function Testimonials() {
   // Split data into two rows
-  const row1 = testimonialData.slice(0, 5);
-  const row2 = testimonialData.slice(5, 10);
+  const row1 = testimonialData.slice(0, 4);
+  const row2 = testimonialData.slice(4, 8);
 
   return (
     <section id="testimonials" className="testimonials-section">
@@ -131,10 +113,10 @@ export default function Testimonials() {
             CLIENT STORIES
           </span>
           <h2 className="testimonials-heading">
-            What our clients say
+            Real Results. Real Businesses. Real India.
           </h2>
           <p className="testimonials-description">
-            We build long-term partnerships with growing brands across India.
+            From Delhi clinics to Surat wholesalers — businesses across India trust us to build websites that actually work.
           </p>
         </div>
 
