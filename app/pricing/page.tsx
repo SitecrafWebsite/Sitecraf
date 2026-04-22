@@ -51,22 +51,22 @@ export default function PricingPage() {
 
           {/* Stats Bar */}
           <div className="mt-12 border-t border-b border-[var(--color-border)] py-8 anim-reveal is-visible" style={{ animationDelay: '300ms' }}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-4 md:gap-8">
               <div className="flex flex-col items-center">
-                <span className="text-[var(--color-primary)] font-bold text-2xl font-[family-name:var(--font-display)]">From ₹3,000</span>
-                <span className="text-[var(--color-text-muted)] text-xs uppercase tracking-widest mt-1">Starting Price</span>
+                <span className="text-[var(--color-primary)] font-bold text-[length:var(--text-lg)] md:text-[length:var(--text-xl)] font-[family-name:var(--font-display)]">From ₹3,000</span>
+                <span className="text-[var(--color-text-muted)] text-[10px] md:text-xs uppercase tracking-widest mt-1">Starting Price</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="text-[var(--color-primary)] font-bold text-2xl font-[family-name:var(--font-display)]">₹0</span>
-                <span className="text-[var(--color-text-muted)] text-xs uppercase tracking-widest mt-1">Hidden Fees</span>
+                <span className="text-[var(--color-primary)] font-bold text-[length:var(--text-lg)] md:text-[length:var(--text-xl)] font-[family-name:var(--font-display)]">₹0</span>
+                <span className="text-[var(--color-text-muted)] text-[10px] md:text-xs uppercase tracking-widest mt-1">Hidden Fees</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="text-[var(--color-primary)] font-bold text-2xl font-[family-name:var(--font-display)]">50% After</span>
-                <span className="text-[var(--color-text-muted)] text-xs uppercase tracking-widest mt-1">You Approve</span>
+                <span className="text-[var(--color-primary)] font-bold text-[length:var(--text-lg)] md:text-[length:var(--text-xl)] font-[family-name:var(--font-display)]">50% After</span>
+                <span className="text-[var(--color-text-muted)] text-[10px] md:text-xs uppercase tracking-widest mt-1">You Approve</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="text-[var(--color-primary)] font-bold text-2xl font-[family-name:var(--font-display)]">₹0 GST</span>
-                <span className="text-[var(--color-text-muted)] text-xs uppercase tracking-widest mt-1">Ever Charged</span>
+                <span className="text-[var(--color-primary)] font-bold text-[length:var(--text-lg)] md:text-[length:var(--text-xl)] font-[family-name:var(--font-display)]">₹0 GST</span>
+                <span className="text-[var(--color-text-muted)] text-[10px] md:text-xs uppercase tracking-widest mt-1">Ever Charged</span>
               </div>
             </div>
           </div>

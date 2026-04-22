@@ -280,7 +280,6 @@ const CrossIcon = () => (
 
 export default function PricingClient() {
   const [billingTab, setBillingTab] = useState('one-time');
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const websitePackages = oneTimePackages.slice(0, 4);
   const aiPackages = oneTimePackages.slice(4, 7);
@@ -289,7 +288,7 @@ export default function PricingClient() {
     <>
       {/* SECTION 2 — Billing Toggle + Pricing Cards */}
       <section aria-label="Pricing Packages" className="w-full py-16 px-6 bg-[var(--color-bg)]">
-        <div className="w-full md:w-[80%] max-w-none mx-auto">
+        <div className="w-full max-w-[var(--content-wide)] mx-auto">
 
           {/* TOGGLE */}
           <div className="flex justify-center mb-12 anim-reveal is-visible">
@@ -506,7 +505,7 @@ export default function PricingClient() {
 
       {/* SECTION 3 — What's Always Included */}
       <section aria-label="What's Always Included" className="w-full py-16 px-6 bg-[var(--color-surface)]">
-        <div className="w-full md:w-[80%] max-w-none mx-auto">
+        <div className="w-full max-w-[var(--content-wide)] mx-auto">
 
           {/* Header */}
           <div className="mb-10 anim-reveal is-visible">
@@ -593,7 +592,7 @@ export default function PricingClient() {
 
       {/* SECTION 4 — Comparison Table */}
       <section aria-label="Comparison Table" className="w-full py-16 px-6 bg-[var(--color-bg)]">
-        <div className="w-full md:w-[80%] max-w-none mx-auto">
+        <div className="w-full max-w-[var(--content-wide)] mx-auto">
 
           {/* Header */}
           <div className="mb-10 anim-reveal is-visible">
@@ -711,7 +710,7 @@ export default function PricingClient() {
 
       {/* SECTION 5 — Pricing FAQ */}
       <section aria-label="Pricing FAQ" className="w-full py-16 px-6 bg-[var(--color-surface)]">
-        <div className="w-full md:w-[80%] max-w-none mx-auto">
+        <div className="w-full max-w-[var(--content-wide)] mx-auto">
 
           {/* Header — left aligned */}
           <div className="mb-10 anim-reveal is-visible">
@@ -727,49 +726,24 @@ export default function PricingClient() {
           </div>
 
           {/* FAQ Accordions */}
-          <div className="max-w-3xl flex flex-col divide-y divide-[var(--color-border)] anim-reveal is-visible" style={{ animationDelay: '100ms' }}>
+          <div className="flex flex-col anim-reveal is-visible" style={{ animationDelay: '100ms' }}>
             {faqs.map((faq, idx) => (
-              <div key={idx}>
-                <button
-                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                  className="w-full flex items-start justify-between gap-6 py-5 text-left"
-                  aria-expanded={openFaq === idx}
-                >
-                  <span className={`font-[family-name:var(--font-body)] font-semibold text-[length:var(--text-base)] leading-snug transition-colors duration-200 ${
-                    openFaq === idx ? 'text-[var(--color-primary)]' : 'text-[var(--color-text)]'
-                  }`}>
-                    {faq.q}
-                  </span>
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className={`flex-shrink-0 mt-0.5 text-[var(--color-primary)] transition-transform duration-300 ${
-                      openFaq === idx ? 'rotate-180' : 'rotate-0'
-                    }`}
-                  >
-                    <polyline points="6 9 12 15 18 9" />
+              <details key={idx} className="group border-b border-[var(--color-border)] py-5">
+                <summary className="text-[var(--color-text)] font-semibold cursor-pointer list-none flex justify-between items-center hover:text-[var(--color-primary)] transition-colors">
+                  {faq.q}
+                  <svg className="w-5 h-5 flex-shrink-0 ml-4 text-[var(--color-text-muted)] group-hover:text-[var(--color-primary)] transition-transform duration-300 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
-                </button>
-
-                {openFaq === idx && (
-                  <div className="pb-5">
-                    <p className="font-[family-name:var(--font-body)] text-[var(--color-text-muted)] text-[length:var(--text-sm)] leading-relaxed max-w-2xl">
-                      {faq.a}
-                    </p>
-                  </div>
-                )}
-              </div>
+                </summary>
+                <p className="text-[var(--color-text-muted)] mt-3 leading-relaxed pt-2">
+                  {faq.a}
+                </p>
+              </details>
             ))}
           </div>
 
           {/* Inline nudge */}
-          <div className="mt-10 pt-8 border-t border-[var(--color-border)] flex flex-col sm:flex-row items-start sm:items-center gap-4 anim-reveal is-visible" style={{ animationDelay: '200ms' }}>
+          <div className="pt-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 anim-reveal is-visible" style={{ animationDelay: '200ms' }}>
             <p className="text-[var(--color-text-muted)] text-[length:var(--text-sm)]">
               Still have a question not answered above?
             </p>
@@ -786,28 +760,79 @@ export default function PricingClient() {
         </div>
       </section>
 
-      {/* SECTION 6 — "Not Sure Which Plan?" CTA Banner */}
-      <section aria-label="Not Sure Which Plan" className="w-full py-16 bg-[#b5ff3e]">
-        <div className="max-w-[var(--content-wide)] mx-auto px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 anim-reveal is-visible">
-          <div className="flex-1">
-            <h2 className="heading-section font-[family-name:var(--font-display)] text-[#000000]">
-              Still not sure? Let&apos;s figure it out together.
-            </h2>
-            <p className="text-[#000000]/70 mt-3 max-w-md">
-              Tell us what you need on WhatsApp. We&apos;ll recommend the right package — honestly. Even if it means telling you a cheaper option works fine.
-            </p>
+      {/* SECTION 6 — Final CTA */}
+      <section aria-label="Get in Touch" className="w-full py-20 px-6 bg-[var(--color-bg)]">
+        <div className="w-full max-w-[var(--content-wide)] mx-auto">
+
+          <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-10 md:p-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-10 anim-reveal is-visible">
+
+            {/* Left — Copy */}
+            <div className="max-w-xl">
+              <span className="block text-[var(--color-primary)] text-[length:var(--text-xs)] uppercase tracking-widest mb-3">
+                Ready to Start?
+              </span>
+              <h2 className="heading-section font-[family-name:var(--font-display)] text-[var(--color-text)] mb-4">
+                Most clients hear back<br />
+                <span className="text-[var(--color-primary)]">within 2 hours.</span>
+              </h2>
+              <p className="font-[family-name:var(--font-body)] text-[var(--color-text-muted)] text-[length:var(--text-base)] leading-relaxed mb-6">
+                Tell us what you need on WhatsApp — we&apos;ll send a fixed quote, no obligation.
+                No discovery calls, no lengthy forms. Just a clear price and a start date.
+              </p>
+
+              {/* Trust strip */}
+              <div className="flex flex-wrap gap-x-6 gap-y-2">
+                {[
+                  "Fixed quote in writing",
+                  "No GST",
+                  "50% only after approval",
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-2">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-primary)]">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    <span className="text-[var(--color-text-muted)] text-[length:var(--text-xs)]">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right — CTAs + social proof */}
+            <div className="flex flex-col items-start md:items-end gap-6 flex-shrink-0">
+
+              {/* Primary CTA */}
+              <a
+                href="https://wa.me/919599143235"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[var(--color-primary)] text-[#000000] rounded-full px-7 py-3.5 font-semibold text-[length:var(--text-sm)] hover:bg-[var(--color-primary-hover)] transition-colors duration-200"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="flex-shrink-0">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                  <path d="M11.5 2C6.253 2 2 6.253 2 11.5c0 1.938.573 3.745 1.557 5.254L2 22l5.412-1.538A9.451 9.451 0 0011.5 21C16.747 21 21 16.747 21 11.5S16.747 2 11.5 2z"/>
+                </svg>
+                Chat on WhatsApp
+              </a>
+
+              {/* Secondary CTA */}
+              <a
+                href="mailto:hello@sitecraf.com"
+                className="inline-flex items-center gap-2 text-[var(--color-primary)] border border-[var(--color-primary-border)] rounded-full px-7 py-3.5 font-semibold text-[length:var(--text-sm)] hover:bg-[var(--color-primary)]/[0.08] transition-colors duration-200"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                </svg>
+                Email Us Instead
+              </a>
+
+              {/* Social proof */}
+              <p className="text-[var(--color-text-faint)] text-[length:var(--text-xs)] text-right max-w-[220px]">
+                Typically reply within 2 hours<br />Mon–Sat, 9 AM – 9 PM IST
+              </p>
+
+            </div>
           </div>
-          <div className="flex flex-col gap-4 items-start md:items-end w-full md:w-auto">
-            <a href="https://wa.me/919599143235" target="_blank" rel="noopener noreferrer" className="bg-[#000000] text-[#b5ff3e] rounded-full px-8 py-4 font-semibold hover:bg-[#111111] transition-colors w-full md:w-auto text-center flex items-center justify-center gap-2">
-              💬 Chat on WhatsApp
-            </a>
-            <a href="mailto:support@sitecraf.com" className="border border-[#000000]/20 text-[#000000] rounded-full px-8 py-4 font-semibold hover:bg-[#000000]/[0.08] transition-colors w-full md:w-auto text-center flex items-center justify-center gap-2">
-              📧 Email Us Instead
-            </a>
-            <span className="text-[#000000]/50 text-xs w-full text-center md:text-right">
-              Free 30-min consultation. No commitment.
-            </span>
-          </div>
+
         </div>
       </section>
     </>
