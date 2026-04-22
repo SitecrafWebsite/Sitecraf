@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Services — Website Development, AI Chatbot & Automation | Sitecraf Delhi',
-  description: 'Sitecraf offers custom website development, Shopify to Wix Studio migration, AI chatbots in Hindi & English, AI image generation, and business automation. Based in New Delhi. Flat pricing, 3-week delivery.',
+  title: 'Services — WordPress, Shopify, Wix Studio & Next.js Websites | Sitecraf Delhi',
+  description: 'Sitecraf builds WordPress, Shopify, Wix Studio, and custom Next.js websites for Indian businesses. AI chatbots in Hindi & English. AI image generation. Fixed pricing from ₹6,000. New Delhi.',
   keywords: [
     'website development services New Delhi',
     'Shopify to Wix Studio migration India',
@@ -29,39 +29,187 @@ export default function ServicesPage() {
       {/* SECTION 1 — Page Hero */}
       <section aria-label="Services Hero" className="w-full pt-32 pb-20 px-6 bg-[var(--color-bg)]">
         <div className="w-full md:w-[80%] max-w-none mx-auto text-center">
+
+          {/* Badge */}
           <div className="inline-flex items-center gap-2 border border-[var(--color-primary-border)] bg-[var(--color-primary)]/[0.08] text-[var(--color-primary)] text-[length:var(--text-xs)] uppercase tracking-[0.12em] px-4 py-1.5 rounded-full mb-8 anim-reveal is-visible">
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] animate-pulse" />
-            What We Build
+            6 Services · Fixed Pricing · New Delhi
           </div>
-          
-          <h1 className="heading-section font-[family-name:var(--font-display)] text-[var(--color-text)] mb-6 anim-reveal is-visible text-[length:calc(var(--heading-section)*1.44)] md:text-[length:calc(var(--heading-section)*1.2)]" style={{ animationDelay: '100ms' }}>
-            Everything Your Business Needs to <span className="text-[var(--color-primary)]">Win</span> Online
+
+          {/* H1 */}
+          <h1 className="heading-section font-[family-name:var(--font-display)] text-[var(--color-text)] mb-6 anim-reveal is-visible" style={{ animationDelay: '100ms' }}>
+            Websites, AI Chatbots &amp; Automation<br />
+            <span className="text-[var(--color-primary)]">Built for Indian Businesses.</span>
           </h1>
-          
-          <p className="font-[family-name:var(--font-body)] text-[var(--color-text-muted)] text-[length:calc(var(--text-base)*0.9)] max-w-2xl mx-auto mt-4 leading-relaxed anim-reveal is-visible" style={{ animationDelay: '200ms' }}>
-            Custom websites. AI chatbots in Hindi &amp; English. Product image generation. Business automation. One studio. Flat pricing. New Delhi.
+
+          {/* Subheading */}
+          <p className="font-[family-name:var(--font-body)] text-[var(--color-text-muted)] text-[length:var(--text-base)] max-w-2xl mx-auto mt-4 leading-relaxed anim-reveal is-visible" style={{ animationDelay: '200ms' }}>
+            WordPress, Shopify, Wix Studio, or custom Next.js — we build the right website for your budget and your business. Flat pricing. 2–3 week delivery. No hidden fees.
           </p>
 
+          {/* Stats Bar */}
           <div className="mt-12 border-t border-b border-[var(--color-border)] py-8 anim-reveal is-visible" style={{ animationDelay: '300ms' }}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="flex flex-col">
-                <span className="text-[var(--color-primary)] font-bold text-2xl font-[family-name:var(--font-display)]">4 Services</span>
+              <div className="flex flex-col items-center">
+                <span className="text-[var(--color-primary)] font-bold text-2xl font-[family-name:var(--font-display)]">6 Services</span>
                 <span className="text-[var(--color-text-muted)] text-xs uppercase tracking-widest mt-1">Available</span>
               </div>
-              <div className="flex flex-col">
-                <span className="text-[var(--color-primary)] font-bold text-2xl font-[family-name:var(--font-display)]">₹5K–₹20K</span>
-                <span className="text-[var(--color-text-muted)] text-xs uppercase tracking-widest mt-1">Starting</span>
+              <div className="flex flex-col items-center">
+                <span className="text-[var(--color-primary)] font-bold text-2xl font-[family-name:var(--font-display)]">From ₹6,000</span>
+                <span className="text-[var(--color-text-muted)] text-xs uppercase tracking-widest mt-1">Starting Price</span>
               </div>
-              <div className="flex flex-col">
-                <span className="text-[var(--color-primary)] font-bold text-2xl font-[family-name:var(--font-display)]">3 Wk</span>
-                <span className="text-[var(--color-text-muted)] text-xs uppercase tracking-widest mt-1">Delivery</span>
+              <div className="flex flex-col items-center">
+                <span className="text-[var(--color-primary)] font-bold text-2xl font-[family-name:var(--font-display)]">2–3 Weeks</span>
+                <span className="text-[var(--color-text-muted)] text-xs uppercase tracking-widest mt-1">Avg. Delivery</span>
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col items-center">
                 <span className="text-[var(--color-primary)] font-bold text-2xl font-[family-name:var(--font-display)]">₹0</span>
                 <span className="text-[var(--color-text-muted)] text-xs uppercase tracking-widest mt-1">Hidden Fees</span>
               </div>
             </div>
           </div>
+
+          {/* Service Jump Links */}
+          <div className="mt-8 flex flex-wrap justify-center gap-2 anim-reveal is-visible" style={{ animationDelay: '400ms' }}>
+            {[
+              { label: 'WordPress', href: '#service-wordpress' },
+              { label: 'Shopify', href: '#service-shopify' },
+              { label: 'Wix Studio', href: '#service-wix' },
+              { label: 'Next.js', href: '#service-nextjs' },
+              { label: 'AI Chatbot', href: '#service-chatbot' },
+              { label: 'AI Images', href: '#service-ai-images' },
+            ].map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="px-4 py-2 rounded-full text-[length:var(--text-xs)] font-medium border border-[var(--color-border)] text-[var(--color-text-muted)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-all duration-200"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* SECTION 2 — Service Finder / Intent Selector */}
+      <section aria-label="Find Your Service" className="w-full py-16 px-6 bg-[var(--color-surface)]">
+        <div className="w-full md:w-[80%] max-w-none mx-auto">
+
+          {/* Header */}
+          <div className="mb-10 text-center anim-reveal is-visible">
+            <span className="block text-[var(--color-primary)] text-[length:var(--text-xs)] uppercase tracking-widest mb-3">
+              Find Your Fit
+            </span>
+            <h2 className="heading-section font-[family-name:var(--font-display)] text-[var(--color-text)] mb-3">
+              Not sure where to start?
+            </h2>
+            <p className="font-[family-name:var(--font-body)] text-[var(--color-text-muted)] text-[length:var(--text-base)] max-w-xl mx-auto">
+              Pick what describes your situation — we&apos;ll point you to the right service.
+            </p>
+          </div>
+
+          {/* Intent Tiles */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 anim-reveal is-visible" style={{ animationDelay: '100ms' }}>
+
+            {/* Tile 1 — Website */}
+            <a href="#service-wordpress" className="group bg-[var(--color-surface-2)] border border-[var(--color-border)] hover:border-[var(--color-primary-border)] hover:bg-[var(--color-primary)]/[0.04] rounded-2xl p-6 flex flex-col gap-4 transition-all duration-200 cursor-pointer">
+              <div className="w-10 h-10 bg-[var(--color-primary)]/[0.08] rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-primary)]">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <line x1="3" y1="9" x2="21" y2="9"/>
+                  <line x1="9" y1="21" x2="9" y2="9"/>
+                </svg>
+              </div>
+              <div className="flex-grow">
+                <p className="font-[family-name:var(--font-body)] text-[var(--color-text-muted)] text-[length:var(--text-sm)] leading-relaxed mb-3 italic">
+                  &ldquo;My business doesn&apos;t have a proper website — or my current one is embarrassing.&rdquo;
+                </p>
+                <p className="font-[family-name:var(--font-display)] font-bold text-[var(--color-text)] text-[length:var(--text-base)] mb-1">
+                  You need a website.
+                </p>
+                <p className="text-[var(--color-text-muted)] text-[length:var(--text-xs)]">
+                  WordPress, Shopify, Wix Studio, or Next.js — depending on your goals.
+                </p>
+              </div>
+              <div className="flex items-center gap-1 text-[var(--color-primary)] text-[length:var(--text-xs)] font-semibold uppercase tracking-widest group-hover:gap-2 transition-all duration-200">
+                See Website Services
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </a>
+
+            {/* Tile 2 — AI Tools */}
+            <a href="#service-chatbot" className="group bg-[var(--color-surface-2)] border border-[var(--color-border)] hover:border-[var(--color-primary-border)] hover:bg-[var(--color-primary)]/[0.04] rounded-2xl p-6 flex flex-col gap-4 transition-all duration-200 cursor-pointer">
+              <div className="w-10 h-10 bg-[var(--color-primary)]/[0.08] rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-primary)]">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                  <path d="M8 10h.01M12 10h.01M16 10h.01"/>
+                </svg>
+              </div>
+              <div className="flex-grow">
+                <p className="font-[family-name:var(--font-body)] text-[var(--color-text-muted)] text-[length:var(--text-sm)] leading-relaxed mb-3 italic">
+                  &ldquo;I&apos;m spending too much time answering the same customer questions — or my product images look bad.&rdquo;
+                </p>
+                <p className="font-[family-name:var(--font-display)] font-bold text-[var(--color-text)] text-[length:var(--text-base)] mb-1">
+                  You need AI tools.
+                </p>
+                <p className="text-[var(--color-text-muted)] text-[length:var(--text-xs)]">
+                  An AI Chatbot handles queries 24/7. AI Image Generation fixes your product visuals.
+                </p>
+              </div>
+              <div className="flex items-center gap-1 text-[var(--color-primary)] text-[length:var(--text-xs)] font-semibold uppercase tracking-widest group-hover:gap-2 transition-all duration-200">
+                See AI Services
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </a>
+
+            {/* Tile 3 — Automation */}
+            <a href="#service-automation" className="group bg-[var(--color-surface-2)] border border-[var(--color-border)] hover:border-[var(--color-primary-border)] hover:bg-[var(--color-primary)]/[0.04] rounded-2xl p-6 flex flex-col gap-4 transition-all duration-200 cursor-pointer">
+              <div className="w-10 h-10 bg-[var(--color-primary)]/[0.08] rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-primary)]">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+              </div>
+              <div className="flex-grow">
+                <p className="font-[family-name:var(--font-body)] text-[var(--color-text-muted)] text-[length:var(--text-sm)] leading-relaxed mb-3 italic">
+                  &ldquo;My website exists — but leads don&apos;t reach me, or my tools don&apos;t talk to each other.&rdquo;
+                </p>
+                <p className="font-[family-name:var(--font-display)] font-bold text-[var(--color-text)] text-[length:var(--text-base)] mb-1">
+                  You need automation.
+                </p>
+                <p className="text-[var(--color-text-muted)] text-[length:var(--text-xs)]">
+                  We connect WhatsApp, CRM, Google Sheets, booking calendars, and payment gateways to your site.
+                </p>
+              </div>
+              <div className="flex items-center gap-1 text-[var(--color-primary)] text-[length:var(--text-xs)] font-semibold uppercase tracking-widest group-hover:gap-2 transition-all duration-200">
+                See Automation
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </a>
+
+          </div>
+
+          {/* Bottom nudge */}
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 text-center anim-reveal is-visible" style={{ animationDelay: '200ms' }}>
+            <p className="text-[var(--color-text-muted)] text-[length:var(--text-sm)]">
+              Still not sure? Book a free 30-minute call — we&apos;ll tell you exactly what you need (and what you don&apos;t).
+            </p>
+            <a
+              href="https://wa.me/919599143235"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 inline-flex items-center gap-2 bg-[var(--color-primary)] text-[#000000] rounded-full px-5 py-2.5 text-[length:var(--text-xs)] font-semibold hover:bg-[var(--color-primary-hover)] transition-colors duration-200"
+            >
+              Book a Free Call →
+            </a>
+          </div>
+
         </div>
       </section>
 
