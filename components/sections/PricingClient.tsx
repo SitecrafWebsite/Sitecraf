@@ -592,72 +592,120 @@ export default function PricingClient() {
       </section>
 
       {/* SECTION 4 — Comparison Table */}
-      <section aria-label="Comparison Table" className="w-full py-20 bg-[#000000]">
-        <div className="max-w-[var(--content-wide)] mx-auto px-6 anim-reveal is-visible">
-          <span className="block text-[#b5ff3e] text-xs uppercase tracking-widest mb-2">How We Compare</span>
-          <h2 className="heading-section font-[family-name:var(--font-display)] text-[#e8e8f0] mb-3">
-            Why Sitecraf beats the alternatives
-          </h2>
-          <p className="text-[#8888a0] text-lg max-w-2xl">
-            An honest breakdown — so you can choose with full information.
+      <section aria-label="Comparison Table" className="w-full py-16 px-6 bg-[var(--color-bg)]">
+        <div className="w-full md:w-[80%] max-w-none mx-auto">
+
+          {/* Header */}
+          <div className="mb-10 anim-reveal is-visible">
+            <span className="block text-[var(--color-primary)] text-[length:var(--text-xs)] uppercase tracking-widest mb-3">
+              How We Compare
+            </span>
+            <h2 className="heading-section font-[family-name:var(--font-display)] text-[var(--color-text)] mb-3">
+              Pick what&apos;s right for your business
+            </h2>
+            <p className="font-[family-name:var(--font-body)] text-[var(--color-text-muted)] text-[length:var(--text-base)] max-w-2xl">
+              An honest look at how Sitecraf compares to the alternatives — so you can make the right call.
+            </p>
+          </div>
+
+          {/* Table — horizontal scroll on mobile */}
+          <div className="overflow-x-auto rounded-2xl border border-[var(--color-border)] anim-reveal is-visible" style={{ animationDelay: '100ms' }}>
+            <table className="w-full min-w-[640px] text-left border-collapse">
+              <thead>
+                <tr className="border-b border-[var(--color-border)]">
+                  <th className="py-4 px-6 text-[var(--color-text-muted)] text-[length:var(--text-xs)] uppercase tracking-widest font-medium w-[32%] bg-[var(--color-surface)]">
+                    Feature
+                  </th>
+                  <th className="py-4 px-6 text-[length:var(--text-xs)] uppercase tracking-widest font-semibold w-[17%] bg-[var(--color-primary)]/[0.06] text-[var(--color-primary)] border-x border-[var(--color-primary-border)]">
+                    Sitecraf
+                  </th>
+                  <th className="py-4 px-6 text-[var(--color-text-muted)] text-[length:var(--text-xs)] uppercase tracking-widest font-medium w-[17%] bg-[var(--color-surface)]">
+                    Freelancer
+                  </th>
+                  <th className="py-4 px-6 text-[var(--color-text-muted)] text-[length:var(--text-xs)] uppercase tracking-widest font-medium w-[17%] bg-[var(--color-surface)]">
+                    DIY Builder
+                  </th>
+                  <th className="py-4 px-6 text-[var(--color-text-muted)] text-[length:var(--text-xs)] uppercase tracking-widest font-medium w-[17%] bg-[var(--color-surface)]">
+                    Agency
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonData.map((row, idx) => (
+                  <tr
+                    key={idx}
+                    className={`border-b border-[var(--color-border)] last:border-0 ${idx % 2 === 0 ? 'bg-[var(--color-bg)]' : 'bg-[var(--color-surface)]'}`}
+                  >
+                    <td className="py-4 px-6 text-[var(--color-text)] text-[length:var(--text-sm)]">
+                      {row.feature}
+                    </td>
+                    {/* Sitecraf — highlighted column */}
+                    <td className="py-4 px-6 bg-[var(--color-primary)]/[0.06] border-x border-[var(--color-primary-border)]">
+                      {row.sitecraf === true ? (
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-success)]">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      ) : row.sitecraf === false ? (
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-text-faint)]">
+                          <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
+                      ) : (
+                        <span className="text-[var(--color-primary)] font-semibold text-[length:var(--text-xs)]">{row.sitecraf}</span>
+                      )}
+                    </td>
+                    {/* Freelancer */}
+                    <td className="py-4 px-6">
+                      {row.freelancer === true ? (
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-success)]">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      ) : row.freelancer === false ? (
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-text-faint)]">
+                          <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
+                      ) : (
+                        <span className="text-[var(--color-text-muted)] text-[length:var(--text-xs)]">{row.freelancer}</span>
+                      )}
+                    </td>
+                    {/* DIY */}
+                    <td className="py-4 px-6">
+                      {row.diy === true ? (
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-success)]">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      ) : row.diy === false ? (
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-text-faint)]">
+                          <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
+                      ) : (
+                        <span className="text-[var(--color-text-muted)] text-[length:var(--text-xs)]">{row.diy}</span>
+                      )}
+                    </td>
+                    {/* Agency */}
+                    <td className="py-4 px-6">
+                      {row.agency === true ? (
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-success)]">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      ) : row.agency === false ? (
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-text-faint)]">
+                          <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
+                      ) : (
+                        <span className="text-[var(--color-text-muted)] text-[length:var(--text-xs)]">{row.agency}</span>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Footnote */}
+          <p className="text-[var(--color-text-faint)] text-[length:var(--text-xs)] mt-4 anim-reveal is-visible" style={{ animationDelay: '200ms' }}>
+            Based on market research. Freelancer and agency costs vary widely. Last updated 2026.
           </p>
 
-          <div className="overflow-x-auto mt-10 pb-4 [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-track]:bg-[#111111] [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[#b5ff3e] [&::-webkit-scrollbar-thumb]:rounded-full">
-            <div className="rounded-2xl overflow-hidden border border-white/[0.08] min-w-[680px]">
-              <table className="w-full border-collapse">
-                <thead>
-                  <tr className="bg-[#111111]">
-                    <th className="text-[#66667a] text-xs uppercase tracking-widest px-6 py-4 text-left font-normal w-[35%]">
-                      Feature
-                    </th>
-                    <th className="text-[#b5ff3e] text-xs uppercase tracking-widest px-6 py-4 text-center font-normal bg-[#b5ff3e]/[0.04] border-x border-[#b5ff3e]/[0.12]">
-                      Sitecraf ★
-                    </th>
-                    <th className="text-[#66667a] text-xs uppercase tracking-widest px-6 py-4 text-center font-normal">
-                      Cheap Freelancer
-                    </th>
-                    <th className="text-[#66667a] text-xs uppercase tracking-widest px-6 py-4 text-center font-normal">
-                      DIY Builder
-                    </th>
-                    <th className="text-[#66667a] text-xs uppercase tracking-widest px-6 py-4 text-center font-normal">
-                      Web Agency
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonData.map((row, idx) => (
-                    <tr key={idx} className={`${idx % 2 === 0 ? 'bg-[#0a0a0a]' : 'bg-[#111111]'} hover:bg-[#1c1c28] transition-colors duration-200`}>
-                      <td className="px-6 py-4 text-[#e8e8f0] text-sm border-t border-white/[0.04]">{row.feature}</td>
-                      <td className="px-6 py-4 text-center bg-[#b5ff3e]/[0.04] border-x border-[#b5ff3e]/[0.12] border-t border-white/[0.04]">
-                        {typeof row.sitecraf === 'boolean' 
-                          ? (row.sitecraf ? <span className="text-[#22c55e] font-bold">✓</span> : <span className="text-[#ef4444] font-bold">✗</span>)
-                          : <span className="text-[#b5ff3e] font-semibold text-sm">{row.sitecraf}</span>}
-                      </td>
-                      <td className="px-6 py-4 text-center border-t border-white/[0.04]">
-                        {typeof row.freelancer === 'boolean' 
-                          ? (row.freelancer ? <span className="text-[#22c55e] font-bold">✓</span> : <span className="text-[#ef4444] font-bold">✗</span>)
-                          : <span className="text-[#8888a0] text-sm">{row.freelancer}</span>}
-                      </td>
-                      <td className="px-6 py-4 text-center border-t border-white/[0.04]">
-                        {typeof row.diy === 'boolean' 
-                          ? (row.diy ? <span className="text-[#22c55e] font-bold">✓</span> : <span className="text-[#ef4444] font-bold">✗</span>)
-                          : <span className="text-[#8888a0] text-sm">{row.diy}</span>}
-                      </td>
-                      <td className="px-6 py-4 text-center border-t border-white/[0.04]">
-                        {typeof row.agency === 'boolean' 
-                          ? (row.agency ? <span className="text-[#22c55e] font-bold">✓</span> : <span className="text-[#ef4444] font-bold">✗</span>)
-                          : <span className="text-[#8888a0] text-sm">{row.agency}</span>}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-          
-          <p className="text-[#66667a] text-xs text-center mt-4">
-            ★ Comparison based on typical India market rates, 2025. DIY = Wix free plan / Canva websites.
-          </p>
         </div>
       </section>
 
