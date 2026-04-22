@@ -4,57 +4,107 @@ import React, { useState } from 'react';
 
 const oneTimePackages = [
   {
-    id: "platform-site",
-    name: "Platform Website",
-    subtitle: "Shopify · Wix Studio",
-    price: "₹15,000",
-    priceNote: "One-time. No monthly fee.",
-    timeline: "1–3 weeks",
-    isPopular: false,
-    badge: null,
-    description: "For manufacturers, exporters, and B2B brands that need a professional showcase website — not an online store.",
+    id: "wordpress",
+    name: "WordPress Website",
+    subtitle: "Self-hosted · PHP · Your Domain",
+    price: "₹6,000",
+    priceNote: "One-time. You own it outright.",
+    timeline: "2–3 weeks",
+    isPopular: true,
+    badge: "Most Popular",
+    description: "For service businesses, agencies, blogs, and SEO-driven brands that need a professional website they can manage themselves.",
     includes: [
       "Up to 8 pages",
-      "Mobile-first responsive design",
-      "Platform-native CMS (edit yourself)",
+      "Mobile-first, SEO-ready build",
+      "Easy CMS — your team can update it",
       "Contact form + WhatsApp button",
-      "SEO metadata setup",
+      "1,000+ plugin ecosystem",
       "2 revision rounds",
       "2-week post-launch support",
       "All logins & IP handed over"
     ],
     notIncluded: [
-      "E-commerce / checkout functionality",
-      "Custom code logic (Velo / JS)"
+      "E-commerce / checkout (use Shopify instead)",
+      "Fully managed zero-maintenance solution"
     ],
-    cta: "Get Started →",
+    cta: "Get a Quote →",
     ctaHref: "https://wa.me/919599143235"
   },
   {
-    id: "custom-site",
-    name: "Custom Coded Website",
-    subtitle: "Next.js · HTML/CSS · Vercel",
-    price: "₹20,000",
-    priceNote: "One-time. ₹0 hosting on Vercel.",
-    timeline: "2–5 weeks",
-    isPopular: true,
-    badge: "Most Popular",
-    description: "For businesses that need speed, SEO performance, and custom functionality — built from scratch. No templates. No page builders.",
+    id: "shopify",
+    name: "Shopify Store",
+    subtitle: "D2C · Product Sellers · E-Commerce",
+    price: "₹15,000",
+    priceNote: "One-time setup. Shopify plan paid to Shopify.",
+    timeline: "2–4 weeks",
+    isPopular: false,
+    badge: "E-Commerce",
+    badgeColor: "default",
+    description: "For D2C brands and product sellers who need inventory, payments, and an optimised checkout flow.",
     includes: [
-      "Up to 10 pages",
-      "Next.js or HTML/CSS/JS build",
-      "Mobile-first & Core Web Vitals optimised",
-      "Contact form with email notifications",
-      "Booking / calendar flow (optional)",
-      "Deployed free on Vercel",
-      "SEO metadata + sitemap + robots.txt",
+      "Full product catalogue setup",
+      "Payment & shipping configured",
+      "Optimised checkout to reduce drop-offs",
+      "Multi-currency support",
       "2 revision rounds",
-      "2-week post-launch support",
-      "100% code ownership transferred"
+      "2-week post-launch support"
     ],
     notIncluded: [
-      "AI chatbot (available as add-on)",
-      "Payment gateway (available as add-on)"
+      "Non-e-commerce sites (use WordPress or Wix)",
+      "Monthly Shopify plan (₹2,000/mo, paid to Shopify)"
+    ],
+    cta: "Get a Quote →",
+    ctaHref: "https://wa.me/919599143235"
+  },
+  {
+    id: "wix",
+    name: "Wix Studio Website",
+    subtitle: "Local Businesses · Clinics · Restaurants",
+    price: "₹10,000",
+    priceNote: "One-time. Wix plan ₹450/mo paid to Wix.",
+    timeline: "2–3 weeks",
+    isPopular: false,
+    badge: "Fastest Launch",
+    badgeColor: "default",
+    description: "For local businesses, clinics, and restaurants that want a polished site they can fully self-manage without a developer.",
+    includes: [
+      "Visual builder — edit anything yourself",
+      "Fast delivery, professional design",
+      "Contact form + booking integration",
+      "Shopify migration available",
+      "2 revision rounds",
+      "2-week post-launch support"
+    ],
+    notIncluded: [
+      "Complex custom code or deep API integrations",
+      "Platform plan cost (₹450/mo paid to Wix)"
+    ],
+    cta: "Get a Quote →",
+    ctaHref: "https://wa.me/919599143235"
+  },
+  {
+    id: "nextjs",
+    name: "Custom Next.js Website",
+    subtitle: "Next.js · Vercel · Zero Hosting Cost",
+    price: "₹15,000",
+    priceNote: "One-time. ₹0 hosting on Vercel — forever.",
+    timeline: "3–5 weeks",
+    isPopular: false,
+    badge: "Max Performance",
+    badgeColor: "default",
+    description: "For performance-critical sites and custom web apps. Built from scratch — no templates, no page builders, no platform lock-in.",
+    includes: [
+      "Up to 10 pages, built from scratch",
+      "Near-perfect Google PageSpeed scores",
+      "Free hosting on Vercel",
+      "SEO metadata + sitemap + robots.txt",
+      "100% code ownership transferred",
+      "2 revision rounds",
+      "2-week post-launch support"
+    ],
+    notIncluded: [
+      "AI chatbot (available as add-on +₹12,000)",
+      "Not suited for very fast, low-budget turnarounds"
     ],
     cta: "Get a Quote →",
     ctaHref: "https://wa.me/919599143235"
@@ -90,16 +140,17 @@ const oneTimePackages = [
     id: "ai-images",
     name: "AI Image Generation",
     subtitle: "Product Photos · Banners · Lifestyle",
-    price: "₹5,000",
+    price: "₹3,000",
     priceNote: "Per batch of 30–50 images.",
-    timeline: "2–5 days",
+    timeline: "3–5 days",
     isPopular: false,
-    badge: null,
-    description: "Studio-quality product photos, website banners, and collection visuals generated from your raw product images. No photographer needed.",
+    badge: "Add-on",
+    badgeColor: "default",
+    description: "Studio-quality product photos, banners, and lifestyle visuals from your raw images. No photographer needed.",
     includes: [
       "30–50 images per batch",
       "Lifestyle backgrounds & room settings",
-      "Brand-consistent style across all images",
+      "Brand-consistent style throughout",
       "Web-optimised exports (WebP + JPG)",
       "2 style revisions per batch",
       "Bulk batches available (discount applied)"
@@ -174,10 +225,10 @@ const comparisonData = [
   { feature: "AI image generation", sitecraf: true, freelancer: false, diy: false, agency: false },
   { feature: "100% IP ownership to you", sitecraf: true, freelancer: true, diy: true, agency: false },
   { feature: "Hindi/Hinglish chatbot", sitecraf: true, freelancer: false, diy: false, agency: false },
-  { feature: "Post-launch support included", sitecraf: "2 wks", freelancer: false, diy: false, agency: "₹ extra" },
-  { feature: "Delivery time", sitecraf: "2–3 wks", freelancer: "4–10 wks", diy: "1–2 wks", agency: "6–12 wks" },
+  { feature: "Post-launch support included", sitecraf: "2 wks free", freelancer: false, diy: false, agency: "₹ extra" },
+  { feature: "Avg. delivery time", sitecraf: "2–3 wks", freelancer: "4–10 wks", diy: "1–2 wks", agency: "6–12 wks" },
   { feature: "No GST charged", sitecraf: true, freelancer: false, diy: false, agency: false },
-  { feature: "Typical project cost", sitecraf: "₹15K–₹60K", freelancer: "₹5K–₹20K", diy: "₹500–₹5K/mo", agency: "₹1L–₹5L+" }
+  { feature: "Typical project cost", sitecraf: "₹6K–₹60K", freelancer: "₹5K–₹20K", diy: "₹500–₹5K/mo", agency: "₹1L–₹5L+" }
 ];
 
 const faqs = [
@@ -207,7 +258,7 @@ const faqs = [
   },
   {
     q: "Do I need to pay for hosting separately?",
-    a: "For custom-coded websites deployed on Vercel — hosting is free, forever. For platform websites (Wix Studio), the platform subscription (₹450/mo) is paid directly to Wix by you. We don't add a markup on hosting costs."
+    a: "For custom Next.js websites deployed on Vercel — hosting is free, forever. For Wix Studio, the platform plan (₹450/mo) is paid directly to Wix by you. For WordPress, hosting is typically ₹200–₹500/mo paid to your host of choice. We don't mark up hosting costs."
   },
   {
     q: "Can I pay in USD or another currency?",
@@ -215,31 +266,47 @@ const faqs = [
   }
 ];
 
+const CheckIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-success)] mt-0.5 flex-shrink-0">
+    <polyline points="20 6 9 17 4 12" />
+  </svg>
+);
+
+const CrossIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-text-faint)] mt-0.5 flex-shrink-0">
+    <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+  </svg>
+);
+
 export default function PricingClient() {
   const [billingTab, setBillingTab] = useState('one-time');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
+  const websitePackages = oneTimePackages.slice(0, 4);
+  const aiPackages = oneTimePackages.slice(4, 7);
+
   return (
     <>
       {/* SECTION 2 — Billing Toggle + Pricing Cards */}
-      <section aria-label="Pricing Packages" className="w-full py-16 bg-[#000000]">
-        <div className="max-w-[var(--content-wide)] mx-auto px-6">
+      <section aria-label="Pricing Packages" className="w-full py-16 px-6 bg-[var(--color-bg)]">
+        <div className="w-full md:w-[80%] max-w-none mx-auto">
+
           {/* TOGGLE */}
           <div className="flex justify-center mb-12 anim-reveal is-visible">
-            <div className="inline-flex bg-[#0a0a0a] border border-white/[0.08] rounded-full p-1 gap-1">
+            <div className="inline-flex bg-[var(--color-surface)] border border-[var(--color-border)] rounded-full p-1 gap-1">
               <button
                 onClick={() => setBillingTab('one-time')}
                 className={billingTab === 'one-time'
-                  ? 'bg-[#b5ff3e] text-[#000000] rounded-full px-6 py-2 text-sm font-semibold transition-all duration-200'
-                  : 'text-[#8888a0] rounded-full px-6 py-2 text-sm hover:text-[#e8e8f0] transition-colors duration-200'}
+                  ? 'bg-[var(--color-primary)] text-[#000000] rounded-full px-6 py-2 text-sm font-semibold transition-all duration-200'
+                  : 'text-[var(--color-text-muted)] rounded-full px-6 py-2 text-sm hover:text-[var(--color-text)] transition-colors duration-200'}
               >
                 One-Time Projects
               </button>
               <button
                 onClick={() => setBillingTab('retainer')}
                 className={billingTab === 'retainer'
-                  ? 'bg-[#b5ff3e] text-[#000000] rounded-full px-6 py-2 text-sm font-semibold transition-all duration-200'
-                  : 'text-[#8888a0] rounded-full px-6 py-2 text-sm hover:text-[#e8e8f0] transition-colors duration-200'}
+                  ? 'bg-[var(--color-primary)] text-[#000000] rounded-full px-6 py-2 text-sm font-semibold transition-all duration-200'
+                  : 'text-[var(--color-text-muted)] rounded-full px-6 py-2 text-sm hover:text-[var(--color-text)] transition-colors duration-200'}
               >
                 Monthly Retainers
               </button>
@@ -247,181 +314,186 @@ export default function PricingClient() {
           </div>
 
           {billingTab === 'one-time' ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 anim-reveal is-visible">
-              {/* Row 1: Featured */}
-              <div className="md:col-span-3 bg-[#0a0a0a] border border-[#b5ff3e]/[0.18] rounded-2xl p-8 lg:p-12 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-[#b5ff3e]/[0.04] rounded-full blur-3xl pointer-events-none" />
-                
-                <div className="flex flex-col md:flex-row justify-between items-start gap-6 relative z-10">
-                  <div>
-                    <span className="bg-[#b5ff3e] text-[#000000] rounded-full px-3 py-1 text-xs font-semibold">
-                      {oneTimePackages[1].badge}
-                    </span>
-                    <h3 className="heading-sub font-[family-name:var(--font-display)] text-[#e8e8f0] mt-3">
-                      {oneTimePackages[1].name}
-                    </h3>
-                    <p className="text-[#8888a0] text-sm mt-1">{oneTimePackages[1].subtitle}</p>
+            <div className="flex flex-col gap-8 anim-reveal is-visible">
+
+              {/* Website Packages group label */}
+              <div>
+                <p className="text-[var(--color-primary)] text-[length:var(--text-xs)] uppercase tracking-widest mb-4">Website Packages</p>
+
+                {/* Featured card — WordPress */}
+                <div className="bg-[var(--color-surface)] border border-[var(--color-primary-border)] rounded-2xl p-8 lg:p-10 relative overflow-hidden mb-4">
+                  <div className="absolute top-6 right-6 bg-[var(--color-primary)]/10 text-[var(--color-primary)] text-xs uppercase tracking-widest px-3 py-1 rounded-full border border-[var(--color-primary-border)]">
+                    {oneTimePackages[0].badge}
                   </div>
-                  <div className="text-left md:text-right">
-                    <div className="text-[#b5ff3e] font-bold font-[family-name:var(--font-display)] text-4xl">
-                      {oneTimePackages[1].price}
+
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div>
+                      <h3 className="text-[length:var(--text-lg)] font-[family-name:var(--font-display)] font-bold text-[var(--color-text)] mt-1 mb-1">
+                        {oneTimePackages[0].name}
+                      </h3>
+                      <p className="text-[var(--color-text-muted)] text-[length:var(--text-xs)] uppercase tracking-widest mb-4">{oneTimePackages[0].subtitle}</p>
+                      <p className="text-[var(--color-text-muted)] text-[length:var(--text-sm)] leading-relaxed mb-6">{oneTimePackages[0].description}</p>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6">
+                        {oneTimePackages[0].includes.map((item, i) => (
+                          <div key={i} className="flex items-start gap-2">
+                            <CheckIcon />
+                            <span className="text-[var(--color-text)] text-[length:var(--text-sm)]">{item}</span>
+                          </div>
+                        ))}
+                        {oneTimePackages[0].notIncluded.map((item, i) => (
+                          <div key={i} className="flex items-start gap-2">
+                            <CrossIcon />
+                            <span className="text-[var(--color-text-faint)] text-[length:var(--text-sm)] line-through">{item}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                    <div className="text-[#66667a] text-xs mt-1">{oneTimePackages[1].priceNote}</div>
+                    <div className="flex flex-col justify-between gap-6">
+                      <div className="bg-[var(--color-surface-2)] border border-[var(--color-border)] rounded-2xl p-8 text-center">
+                        <span className="block text-[var(--color-text-muted)] text-xs uppercase tracking-widest mb-2">Starting From</span>
+                        <span className="text-[var(--color-primary)] font-bold font-[family-name:var(--font-display)] text-5xl">{oneTimePackages[0].price}</span>
+                        <span className="block text-[var(--color-text-muted)] text-xs mt-2">{oneTimePackages[0].priceNote}</span>
+                      </div>
+                      <div className="flex items-center justify-between pt-4 border-t border-[var(--color-border)]">
+                        <div>
+                          <span className="block text-[var(--color-text-muted)] text-xs uppercase tracking-widest mb-1">Timeline</span>
+                          <span className="text-[var(--color-text)] font-medium text-sm">{oneTimePackages[0].timeline}</span>
+                        </div>
+                        <a href={oneTimePackages[0].ctaHref} target="_blank" rel="noopener noreferrer"
+                          className="bg-[var(--color-primary)] text-[#000000] rounded-full px-6 py-3 font-semibold text-sm hover:bg-[var(--color-primary-hover)] transition-colors duration-200">
+                          {oneTimePackages[0].cta}
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <p className="text-[#8888a0] text-sm mt-4 max-w-lg relative z-10">
-                  {oneTimePackages[1].description}
-                </p>
+                {/* 3-col grid — Shopify, Wix, Next.js */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {websitePackages.slice(1).map((pkg) => (
+                    <div key={pkg.id} className="bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-primary-border)] rounded-2xl p-6 flex flex-col transition-colors duration-200">
+                      <div className="mb-4">
+                        <span className={`inline-block px-2.5 py-1 rounded-full text-[length:var(--text-xs)] border ${
+                          pkg.badgeColor === 'cyan'
+                            ? 'text-[var(--color-blue)] border-[var(--color-blue-highlight)] bg-[var(--color-blue)]/[0.08]'
+                            : 'text-[var(--color-primary)] border-[var(--color-primary-border)] bg-[var(--color-primary)]/[0.08]'
+                        }`}>
+                          {pkg.badge}
+                        </span>
+                        <h3 className="text-[length:var(--text-base)] font-[family-name:var(--font-display)] font-bold text-[var(--color-text)] mt-3 mb-1">{pkg.name}</h3>
+                        <p className="text-[var(--color-text-muted)] text-[10px] uppercase tracking-widest">{pkg.subtitle}</p>
+                      </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-8 mt-8 relative z-10">
-                  {oneTimePackages[1].includes.map((item, i) => (
-                    <div key={i} className="flex items-start gap-2">
-                      <span className="text-[#22c55e] mt-0.5 flex-shrink-0">✓</span>
-                      <span className="text-[#8888a0] text-sm">{item}</span>
+                      <div className="py-4 border-y border-[var(--color-border)] mb-4">
+                        <span className="text-[var(--color-primary)] font-bold font-[family-name:var(--font-display)] text-3xl">{pkg.price}</span>
+                        <span className="block text-[var(--color-text-muted)] text-[10px] mt-1">{pkg.priceNote}</span>
+                      </div>
+
+                      <p className="text-[var(--color-text-muted)] text-[length:var(--text-xs)] leading-relaxed mb-4">{pkg.description}</p>
+
+                      <div className="flex-1 flex flex-col gap-2 mb-6">
+                        {pkg.includes.map((item, i) => (
+                          <div key={i} className="flex items-start gap-2">
+                            <CheckIcon />
+                            <span className="text-[var(--color-text)] text-[length:var(--text-xs)]">{item}</span>
+                          </div>
+                        ))}
+                        {pkg.notIncluded.map((item, i) => (
+                          <div key={i} className="flex items-start gap-2">
+                            <CrossIcon />
+                            <span className="text-[var(--color-text-faint)] text-[length:var(--text-xs)] line-through">{item}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="flex items-center justify-between pt-4 border-t border-[var(--color-border)] mt-auto">
+                        <span className="text-[var(--color-text-muted)] text-[10px] uppercase tracking-widest">{pkg.timeline}</span>
+                        <a href={pkg.ctaHref} target="_blank" rel="noopener noreferrer"
+                          className="text-[var(--color-primary)] border border-[var(--color-primary-border)] rounded-full px-4 py-2 text-[length:var(--text-xs)] font-semibold hover:bg-[var(--color-primary)]/[0.08] transition-colors duration-200">
+                          {pkg.cta}
+                        </a>
+                      </div>
                     </div>
                   ))}
-                  {oneTimePackages[1].notIncluded.map((item, i) => (
-                    <div key={i} className="flex items-start gap-2">
-                      <span className="text-[#ef4444] mt-0.5 flex-shrink-0">✗</span>
-                      <span className="text-[#66667a] text-sm line-through">{item}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mt-8 pt-6 border-t border-white/[0.06] relative z-10">
-                  <span className="bg-[#111111] text-[#8888a0] text-xs rounded-full px-3 py-1.5">
-                    ⏱ {oneTimePackages[1].timeline}
-                  </span>
-                  <a href={oneTimePackages[1].ctaHref} target="_blank" rel="noopener noreferrer" className="bg-[#b5ff3e] text-[#000000] rounded-full px-8 py-3.5 font-semibold text-sm hover:bg-[#c4ff66] hover:shadow-[var(--glow-sm)] transition-all w-full sm:w-auto text-center">
-                    {oneTimePackages[1].cta}
-                  </a>
                 </div>
               </div>
 
-              {/* Row 2: Package 1, 3, 4 */}
-              {[oneTimePackages[0], oneTimePackages[2], oneTimePackages[3]].map((pkg) => (
-                <div key={pkg.id} className="bg-[#0a0a0a] border border-white/[0.08] rounded-2xl p-6 flex flex-col h-full hover:border-white/[0.16] transition-colors duration-300">
-                  <div>
-                    {pkg.badge ? (
-                      <span className={`inline-block px-2.5 py-1 rounded-md text-xs border ${
-                        pkg.badgeColor === 'cyan' ? 'text-[#00c8c8] border-[#00c8c8]/20 bg-[#00c8c8]/[0.08]' :
-                        pkg.badgeColor === 'purple' ? 'text-[#a86fdf] border-[#a86fdf]/20 bg-[#a86fdf]/[0.08]' :
-                        'text-[#8888a0] border-white/[0.08] bg-[#111111]'
-                      }`}>
-                        {pkg.badge}
-                      </span>
-                    ) : (
-                      <div className="h-6"></div> /* Spacer if no badge to keep alignment */
-                    )}
-                    <h3 className="heading-sub font-[family-name:var(--font-display)] text-[#e8e8f0] mt-2">{pkg.name}</h3>
-                    <p className="text-[#66667a] text-xs uppercase tracking-widest mt-1">{pkg.subtitle}</p>
-                  </div>
-
-                  <div className="mt-5 pb-5 border-b border-white/[0.06]">
-                    <div className="text-[#b5ff3e] font-bold font-[family-name:var(--font-display)] text-3xl">{pkg.price}</div>
-                    <div className="text-[#66667a] text-xs mt-1">{pkg.priceNote}</div>
-                  </div>
-
-                  <p className="text-[#8888a0] text-sm mt-4 leading-relaxed">{pkg.description}</p>
-
-                  <div className="mt-4 flex-1 flex flex-col gap-2">
-                    {pkg.includes.map((item, i) => (
-                      <div key={i} className="flex items-start gap-2">
-                        <span className="text-[#22c55e] mt-0.5 flex-shrink-0">✓</span>
-                        <span className="text-[#8888a0] text-sm">{item}</span>
+              {/* AI & Automation group label */}
+              <div>
+                <p className="text-[var(--color-primary)] text-[length:var(--text-xs)] uppercase tracking-widest mb-4">AI & Automation Add-ons</p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {aiPackages.map((pkg) => (
+                    <div key={pkg.id} className="bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-primary-border)] rounded-2xl p-6 flex flex-col transition-colors duration-200">
+                      <div className="mb-4">
+                        <span className={`inline-block px-2.5 py-1 rounded-full text-[length:var(--text-xs)] border ${
+                          pkg.badgeColor === 'cyan'
+                            ? 'text-[var(--color-blue)] border-[var(--color-blue-highlight)] bg-[var(--color-blue)]/[0.08]'
+                            : pkg.badgeColor === 'purple'
+                            ? 'text-[var(--color-purple)] border-[var(--color-purple-highlight)] bg-[var(--color-purple)]/[0.08]'
+                            : 'text-[var(--color-primary)] border-[var(--color-primary-border)] bg-[var(--color-primary)]/[0.08]'
+                        }`}>
+                          {pkg.badge}
+                        </span>
+                        <h3 className="text-[length:var(--text-base)] font-[family-name:var(--font-display)] font-bold text-[var(--color-text)] mt-3 mb-1">{pkg.name}</h3>
+                        <p className="text-[var(--color-text-muted)] text-[10px] uppercase tracking-widest">{pkg.subtitle}</p>
                       </div>
-                    ))}
-                    {pkg.notIncluded.map((item, i) => (
-                      <div key={i} className="flex items-start gap-2">
-                        <span className="text-[#ef4444] mt-0.5 flex-shrink-0">✗</span>
-                        <span className="text-[#66667a] text-sm line-through">{item}</span>
+
+                      <div className="py-4 border-y border-[var(--color-border)] mb-4">
+                        <span className="text-[var(--color-primary)] font-bold font-[family-name:var(--font-display)] text-3xl">{pkg.price}</span>
+                        <span className="block text-[var(--color-text-muted)] text-[10px] mt-1">{pkg.priceNote}</span>
                       </div>
-                    ))}
-                  </div>
 
-                  <div className="mt-6 pt-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-white/[0.06]">
-                    <span className="bg-[#111111] text-[#8888a0] text-xs rounded-full px-3 py-1.5">
-                      ⏱ {pkg.timeline}
-                    </span>
-                    <a href={pkg.ctaHref} target="_blank" rel="noopener noreferrer" className="border border-[#b5ff3e]/[0.18] text-[#b5ff3e] rounded-full px-5 py-2.5 text-sm font-semibold hover:bg-[#b5ff3e]/[0.08] transition-colors w-full sm:w-auto text-center">
-                      {pkg.cta}
-                    </a>
-                  </div>
-                </div>
-              ))}
+                      <p className="text-[var(--color-text-muted)] text-[length:var(--text-xs)] leading-relaxed mb-4">{pkg.description}</p>
 
-              {/* Row 3: Package 5 (Automation) */}
-              <div className="md:col-span-3 bg-[#0a0a0a] border border-white/[0.08] rounded-2xl p-8 lg:p-12 relative overflow-hidden hover:border-white/[0.16] transition-colors duration-300">
-                <div className="flex flex-col md:flex-row justify-between items-start gap-6 relative z-10">
-                  <div>
-                    <span className="inline-block px-2.5 py-1 rounded-md text-xs border text-[#a86fdf] border-[#a86fdf]/20 bg-[#a86fdf]/[0.08]">
-                      {oneTimePackages[4].badge}
-                    </span>
-                    <h3 className="heading-sub font-[family-name:var(--font-display)] text-[#e8e8f0] mt-3">
-                      {oneTimePackages[4].name}
-                    </h3>
-                    <p className="text-[#66667a] text-sm mt-1">{oneTimePackages[4].subtitle}</p>
-                  </div>
-                  <div className="text-left md:text-right">
-                    <div className="text-[#b5ff3e] font-bold font-[family-name:var(--font-display)] text-4xl">
-                      {oneTimePackages[4].price}
-                    </div>
-                    <div className="text-[#66667a] text-xs mt-1">{oneTimePackages[4].priceNote}</div>
-                  </div>
-                </div>
+                      <div className="flex-1 flex flex-col gap-2 mb-6">
+                        {pkg.includes.map((item, i) => (
+                          <div key={i} className="flex items-start gap-2">
+                            <CheckIcon />
+                            <span className="text-[var(--color-text)] text-[length:var(--text-xs)]">{item}</span>
+                          </div>
+                        ))}
+                        {pkg.notIncluded.map((item, i) => (
+                          <div key={i} className="flex items-start gap-2">
+                            <CrossIcon />
+                            <span className="text-[var(--color-text-faint)] text-[length:var(--text-xs)] line-through">{item}</span>
+                          </div>
+                        ))}
+                      </div>
 
-                <p className="text-[#8888a0] text-sm mt-4 max-w-lg relative z-10">
-                  {oneTimePackages[4].description}
-                </p>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-8 mt-8 relative z-10">
-                  {oneTimePackages[4].includes.map((item, i) => (
-                    <div key={i} className="flex items-start gap-2">
-                      <span className="text-[#22c55e] mt-0.5 flex-shrink-0">✓</span>
-                      <span className="text-[#8888a0] text-sm">{item}</span>
+                      <div className="flex items-center justify-between pt-4 border-t border-[var(--color-border)] mt-auto">
+                        <span className="text-[var(--color-text-muted)] text-[10px] uppercase tracking-widest">{pkg.timeline}</span>
+                        <a href={pkg.ctaHref} target="_blank" rel="noopener noreferrer"
+                          className="text-[var(--color-primary)] border border-[var(--color-primary-border)] rounded-full px-4 py-2 text-[length:var(--text-xs)] font-semibold hover:bg-[var(--color-primary)]/[0.08] transition-colors duration-200">
+                          {pkg.cta}
+                        </a>
+                      </div>
                     </div>
                   ))}
-                  {oneTimePackages[4].notIncluded.map((item, i) => (
-                    <div key={i} className="flex items-start gap-2">
-                      <span className="text-[#ef4444] mt-0.5 flex-shrink-0">✗</span>
-                      <span className="text-[#66667a] text-sm line-through">{item}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mt-8 pt-6 border-t border-white/[0.06] relative z-10">
-                  <span className="bg-[#111111] text-[#8888a0] text-xs rounded-full px-3 py-1.5">
-                    ⏱ {oneTimePackages[4].timeline}
-                  </span>
-                  <a href={oneTimePackages[4].ctaHref} target="_blank" rel="noopener noreferrer" className="border border-[#b5ff3e]/[0.18] text-[#b5ff3e] rounded-full px-8 py-3.5 font-semibold text-sm hover:bg-[#b5ff3e]/[0.08] transition-colors w-full sm:w-auto text-center">
-                    {oneTimePackages[4].cta}
-                  </a>
                 </div>
               </div>
+
             </div>
           ) : (
             <div className="anim-reveal is-visible">
-              <p className="text-[#8888a0] text-sm max-w-lg mx-auto text-center mb-10">
-                Retainers are for existing clients or new clients who want ongoing support. We don&apos;t lock you into long-term contracts — cancel anytime with 15 days notice.
+              <p className="text-[var(--color-text-muted)] text-sm max-w-lg mx-auto text-center mb-10">
+                Retainers are for existing clients or new clients who want ongoing support. No long-term lock-in — pause or cancel with 15 days notice.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 {retainers.map((plan, idx) => (
-                  <div key={idx} className="bg-[#0a0a0a] border border-white/[0.08] rounded-2xl p-8 flex flex-col h-full">
-                    <h3 className="heading-sub font-[family-name:var(--font-display)] text-[#e8e8f0]">{plan.name}</h3>
-                    <div className="text-[#b5ff3e] font-bold text-2xl mt-3">{plan.price}</div>
-                    <p className="text-[#8888a0] text-sm mt-3">{plan.description}</p>
-                    
+                  <div key={idx} className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-8 flex flex-col">
+                    <h3 className="text-[length:var(--text-lg)] font-[family-name:var(--font-display)] font-bold text-[var(--color-text)]">{plan.name}</h3>
+                    <div className="text-[var(--color-primary)] font-bold text-2xl font-[family-name:var(--font-display)] mt-3">{plan.price}</div>
+                    <p className="text-[var(--color-text-muted)] text-sm mt-3">{plan.description}</p>
                     <div className="mt-6 flex-1 flex flex-col gap-3">
                       {plan.includes.map((item, i) => (
                         <div key={i} className="flex items-start gap-2">
-                          <span className="text-[#22c55e] mt-0.5 flex-shrink-0">✓</span>
-                          <span className="text-[#8888a0] text-sm">{item}</span>
+                          <CheckIcon />
+                          <span className="text-[var(--color-text)] text-sm">{item}</span>
                         </div>
                       ))}
                     </div>
-
-                    <a href="https://wa.me/919599143235" target="_blank" rel="noopener noreferrer" className="mt-8 border border-[#b5ff3e]/[0.18] text-[#b5ff3e] rounded-full px-5 py-3 text-sm font-semibold hover:bg-[#b5ff3e]/[0.08] transition-colors w-full text-center">
+                    <a href="https://wa.me/919599143235" target="_blank" rel="noopener noreferrer"
+                      className="mt-8 border border-[var(--color-primary-border)] text-[var(--color-primary)] rounded-full px-5 py-3 text-sm font-semibold hover:bg-[var(--color-primary)]/[0.08] transition-colors w-full text-center">
                       {plan.cta} →
                     </a>
                   </div>
