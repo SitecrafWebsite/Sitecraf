@@ -504,52 +504,90 @@ export default function PricingClient() {
         </div>
       </section>
 
-      {/* SECTION 3 — "What's Always Included" Strip */}
-      <section aria-label="What's Included" className="w-full py-14 bg-[#0a0a0a] text-center">
-        <div className="max-w-[var(--content-wide)] mx-auto px-6 anim-reveal is-visible">
-          <span className="text-[#b5ff3e] text-xs uppercase tracking-widest block mb-2">Every Project, No Exceptions</span>
-          <h2 className="heading-section font-[family-name:var(--font-display)] text-[#e8e8f0] mb-10">
-            What you always get — regardless of package
-          </h2>
+      {/* SECTION 3 — What's Always Included */}
+      <section aria-label="What's Always Included" className="w-full py-16 px-6 bg-[var(--color-surface)]">
+        <div className="w-full md:w-[80%] max-w-none mx-auto">
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 w-full">
-            <div className="bg-[#111111] border border-white/[0.06] rounded-xl p-5 flex flex-col items-center">
-              <svg className="w-6 h-6 text-[#b5ff3e]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-              <span className="text-[#8888a0] text-xs text-center mt-2">₹0 Hidden Charges</span>
-            </div>
-            <div className="bg-[#111111] border border-white/[0.06] rounded-xl p-5 flex flex-col items-center">
-              <svg className="w-6 h-6 text-[#b5ff3e]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              <span className="text-[#8888a0] text-xs text-center mt-2">Fixed Quote Upfront</span>
-            </div>
-            <div className="bg-[#111111] border border-white/[0.06] rounded-xl p-5 flex flex-col items-center">
-              <svg className="w-6 h-6 text-[#b5ff3e]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-              </svg>
-              <span className="text-[#8888a0] text-xs text-center mt-2">100% IP Ownership</span>
-            </div>
-            <div className="bg-[#111111] border border-white/[0.06] rounded-xl p-5 flex flex-col items-center">
-              <svg className="w-6 h-6 text-[#b5ff3e]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span className="text-[#8888a0] text-xs text-center mt-2">2-Wk Post-Launch Support</span>
-            </div>
-            <div className="bg-[#111111] border border-white/[0.06] rounded-xl p-5 flex flex-col items-center">
-              <svg className="w-6 h-6 text-[#b5ff3e]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              <span className="text-[#8888a0] text-xs text-center mt-2">WhatsApp Communication</span>
-            </div>
-            <div className="bg-[#111111] border border-white/[0.06] rounded-xl p-5 flex flex-col items-center">
-              <svg className="w-6 h-6 text-[#b5ff3e]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-              </svg>
-              <span className="text-[#8888a0] text-xs text-center mt-2">No GST Charged</span>
-            </div>
+          {/* Header */}
+          <div className="mb-10 anim-reveal is-visible">
+            <span className="block text-[var(--color-primary)] text-[length:var(--text-xs)] uppercase tracking-widest mb-3">
+              Included in Every Project
+            </span>
+            <h2 className="heading-section font-[family-name:var(--font-display)] text-[var(--color-text)] mb-3">
+              No matter which service you choose
+            </h2>
+            <p className="font-[family-name:var(--font-body)] text-[var(--color-text-muted)] text-[length:var(--text-base)] max-w-2xl">
+              These are non-negotiables — baked into every project, at every price point.
+            </p>
           </div>
+
+          {/* Trust items — 2-col on mobile, 3-col on desktop */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 anim-reveal is-visible" style={{ animationDelay: '100ms' }}>
+
+            {/* High-priority items — larger visual weight */}
+            <div className="bg-[var(--color-surface-2)] border border-[var(--color-primary-border)] rounded-xl p-6 flex items-start gap-4">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-primary)] flex-shrink-0 mt-0.5">
+                <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              <div>
+                <p className="font-[family-name:var(--font-display)] font-semibold text-[var(--color-text)] text-[length:var(--text-base)] mb-1">₹0 Hidden Charges</p>
+                <p className="text-[var(--color-text-muted)] text-[length:var(--text-xs)] leading-relaxed">What you see in the quote is exactly what you pay. No surprises on the final invoice.</p>
+              </div>
+            </div>
+
+            <div className="bg-[var(--color-surface-2)] border border-[var(--color-primary-border)] rounded-xl p-6 flex items-start gap-4">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-primary)] flex-shrink-0 mt-0.5">
+                <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              <div>
+                <p className="font-[family-name:var(--font-display)] font-semibold text-[var(--color-text)] text-[length:var(--text-base)] mb-1">Fixed Quote Upfront</p>
+                <p className="text-[var(--color-text-muted)] text-[length:var(--text-xs)] leading-relaxed">You receive a written fixed-price quote before any work begins. No hourly billing, ever.</p>
+              </div>
+            </div>
+
+            <div className="bg-[var(--color-surface-2)] border border-[var(--color-primary-border)] rounded-xl p-6 flex items-start gap-4">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-primary)] flex-shrink-0 mt-0.5">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+              <div>
+                <p className="font-[family-name:var(--font-display)] font-semibold text-[var(--color-text)] text-[length:var(--text-base)] mb-1">50% Only After Approval</p>
+                <p className="text-[var(--color-text-muted)] text-[length:var(--text-xs)] leading-relaxed">Second payment only after you have seen and approved the finished work. Not before.</p>
+              </div>
+            </div>
+
+            {/* Standard items — normal visual weight */}
+            <div className="bg-[var(--color-surface-2)] border border-[var(--color-border)] rounded-xl p-6 flex items-start gap-4">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-primary)] flex-shrink-0 mt-0.5">
+                <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+              <div>
+                <p className="font-[family-name:var(--font-display)] font-semibold text-[var(--color-text)] text-[length:var(--text-base)] mb-1">100% IP Ownership</p>
+                <p className="text-[var(--color-text-muted)] text-[length:var(--text-xs)] leading-relaxed">Every file, every line of code — transferred to you on final payment. No lock-in.</p>
+              </div>
+            </div>
+
+            <div className="bg-[var(--color-surface-2)] border border-[var(--color-border)] rounded-xl p-6 flex items-start gap-4">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-primary)] flex-shrink-0 mt-0.5">
+                <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div>
+                <p className="font-[family-name:var(--font-display)] font-semibold text-[var(--color-text)] text-[length:var(--text-base)] mb-1">2 Weeks Post-Launch Support</p>
+                <p className="text-[var(--color-text-muted)] text-[length:var(--text-xs)] leading-relaxed">Free fixes and small tweaks for two weeks after your site goes live. No extra charge.</p>
+              </div>
+            </div>
+
+            <div className="bg-[var(--color-surface-2)] border border-[var(--color-border)] rounded-xl p-6 flex items-start gap-4">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-primary)] flex-shrink-0 mt-0.5">
+                <path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+              </svg>
+              <div>
+                <p className="font-[family-name:var(--font-display)] font-semibold text-[var(--color-text)] text-[length:var(--text-base)] mb-1">No GST Charged</p>
+                <p className="text-[var(--color-text-muted)] text-[length:var(--text-xs)] leading-relaxed">We are not GST-registered. Your invoice total is your final payment — nothing added on top.</p>
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </section>
 
