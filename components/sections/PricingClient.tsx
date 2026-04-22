@@ -222,8 +222,8 @@ export default function PricingClient() {
   return (
     <>
       {/* SECTION 2 — Billing Toggle + Pricing Cards */}
-      <section aria-label="Pricing Packages" className="w-full py-16 px-6 bg-[#000000]">
-        <div className="w-full md:w-[80%] max-w-none mx-auto">
+      <section aria-label="Pricing Packages" className="w-full py-16 bg-[#000000]">
+        <div className="max-w-[var(--content-wide)] mx-auto px-6">
           {/* TOGGLE */}
           <div className="flex justify-center mb-12 anim-reveal is-visible">
             <div className="inline-flex bg-[#0a0a0a] border border-white/[0.08] rounded-full p-1 gap-1">
@@ -433,14 +433,14 @@ export default function PricingClient() {
       </section>
 
       {/* SECTION 3 — "What's Always Included" Strip */}
-      <section aria-label="What's Included" className="w-full py-14 px-6 bg-[#0a0a0a] text-center">
-        <div className="w-full anim-reveal is-visible">
+      <section aria-label="What's Included" className="w-full py-14 bg-[#0a0a0a] text-center">
+        <div className="max-w-[var(--content-wide)] mx-auto px-6 anim-reveal is-visible">
           <span className="text-[#b5ff3e] text-xs uppercase tracking-widest block mb-2">Every Project, No Exceptions</span>
           <h2 className="heading-section font-[family-name:var(--font-display)] text-[#e8e8f0] mb-10">
             What you always get — regardless of package
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 w-full md:w-[80%] max-w-none mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 w-full">
             <div className="bg-[#111111] border border-white/[0.06] rounded-xl p-5 flex flex-col items-center">
               <svg className="w-6 h-6 text-[#b5ff3e]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -482,8 +482,8 @@ export default function PricingClient() {
       </section>
 
       {/* SECTION 4 — Comparison Table */}
-      <section aria-label="Comparison Table" className="w-full py-20 px-6 bg-[#000000]">
-        <div className="w-full md:w-[80%] max-w-none mx-auto anim-reveal is-visible">
+      <section aria-label="Comparison Table" className="w-full py-20 bg-[#000000]">
+        <div className="max-w-[var(--content-wide)] mx-auto px-6 anim-reveal is-visible">
           <span className="block text-[#b5ff3e] text-xs uppercase tracking-widest mb-2">How We Compare</span>
           <h2 className="heading-section font-[family-name:var(--font-display)] text-[#e8e8f0] mb-3">
             Why Sitecraf beats the alternatives
@@ -552,8 +552,8 @@ export default function PricingClient() {
       </section>
 
       {/* SECTION 5 — FAQ (Pricing-specific) */}
-      <section aria-label="Pricing FAQs" className="w-full py-20 px-6 bg-[#0a0a0a]">
-        <div className="w-full md:w-[80%] max-w-none mx-auto anim-reveal is-visible">
+      <section aria-label="Pricing FAQs" className="w-full py-20 bg-[#0a0a0a]">
+        <div className="max-w-[var(--content-wide)] mx-auto px-6 anim-reveal is-visible">
           <span className="block text-[#b5ff3e] text-xs uppercase tracking-widest mb-2">Pricing FAQs</span>
           <h2 className="heading-section font-[family-name:var(--font-display)] text-[#e8e8f0] mb-10">
             Every pricing question — answered
@@ -582,8 +582,8 @@ export default function PricingClient() {
       </section>
 
       {/* SECTION 6 — "Not Sure Which Plan?" CTA Banner */}
-      <section aria-label="Not Sure Which Plan" className="w-full py-16 px-6 bg-[#b5ff3e]">
-        <div className="w-full md:w-[80%] max-w-none mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8 anim-reveal is-visible">
+      <section aria-label="Not Sure Which Plan" className="w-full py-16 bg-[#b5ff3e]">
+        <div className="max-w-[var(--content-wide)] mx-auto px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 anim-reveal is-visible">
           <div className="flex-1">
             <h2 className="heading-section font-[family-name:var(--font-display)] text-[#000000]">
               Still not sure? Let&apos;s figure it out together.

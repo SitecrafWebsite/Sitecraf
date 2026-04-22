@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import PricingClient from '@/components/sections/PricingClient';
 
 export const metadata: Metadata = {
-  title: 'Pricing — Website, AI Chatbot & Automation Packages | Sitecraf Delhi',
-  description: 'Transparent, flat pricing for website development, AI chatbots, AI image generation, and automation. No hidden fees. No GST. Starting from ₹5,000. Based in New Delhi, India.',
+  title: 'Pricing — Website, AI Chatbot & Automation | Sitecraf Delhi',
+  description: 'Transparent, flat pricing for website development, AI chatbots, AI image generation, and automation. No hidden fees. No GST. Starting from ₹3,000. Based in New Delhi, India.',
   keywords: [
     'website development pricing India',
     'affordable website development Delhi',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'website cost for small business India'
   ],
   openGraph: {
-    title: 'Pricing — Flat, Transparent Web & AI Packages | Sitecraf',
+    title: 'Pricing — Flat, Transparent Web & AI Services | Sitecraf',
     description: 'No hidden fees. No GST. Flat pricing for websites, AI chatbots, image generation, and automation. New Delhi.',
     type: 'website',
     locale: 'en_IN',
@@ -25,44 +25,52 @@ export const metadata: Metadata = {
 
 export default function PricingPage() {
   return (
-    <main className="flex flex-col min-h-screen bg-[#000000]">
+    <main className="flex flex-col min-h-screen bg-[var(--color-bg)]">
+
       {/* SECTION 1 — Page Hero */}
-      <section aria-label="Pricing Hero" className="w-full pt-32 pb-16 px-6 bg-[#000000] text-center">
-        <div className="w-full md:w-[80%] max-w-none mx-auto">
-          <div className="inline-flex items-center gap-2 border border-[#b5ff3e]/[0.18] bg-[#b5ff3e]/[0.08] text-[#b5ff3e] text-[length:var(--text-xs)] uppercase tracking-[0.12em] px-4 py-1.5 rounded-full mb-8 anim-reveal is-visible">
-            Transparent Pricing
+      <section aria-label="Pricing Hero" className="w-full pt-32 pb-20 px-6 bg-[var(--color-bg)]">
+        <div className="w-full md:w-[80%] max-w-none mx-auto text-center">
+
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 border border-[var(--color-primary-border)] bg-[var(--color-primary)]/[0.08] text-[var(--color-primary)] text-[length:var(--text-xs)] uppercase tracking-[0.12em] px-4 py-1.5 rounded-full mb-8 anim-reveal is-visible">
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] animate-pulse" />
+            Transparent Pricing · No Hidden Fees · New Delhi
           </div>
-          
-          <h1 className="heading-section font-[family-name:var(--font-display)] text-[#e8e8f0] anim-reveal is-visible" style={{ animationDelay: '100ms' }}>
-            Flat Prices. <span className="text-[#b5ff3e]">No Surprises.</span> Ever.
+
+          {/* H1 */}
+          <h1 className="heading-section font-[family-name:var(--font-display)] text-[var(--color-text)] mb-6 anim-reveal is-visible" style={{ animationDelay: '100ms' }}>
+            Flat Prices. No Surprises.<br />
+            <span className="text-[var(--color-primary)]">From ₹3,000.</span>
           </h1>
-          
-          <p className="text-[#8888a0] text-[length:var(--text-base)] max-w-2xl mx-auto mt-4 anim-reveal is-visible" style={{ animationDelay: '200ms' }}>
-            Every project is quoted upfront at a fixed price.<br className="hidden sm:block" />
-            No GST. No hourly billing. No revision fees in the fine print.<br className="hidden sm:block" />
-            You know exactly what you&apos;re paying before we start.
+
+          {/* Subtext */}
+          <p className="font-[family-name:var(--font-body)] text-[var(--color-text-muted)] text-[length:var(--text-base)] max-w-2xl mx-auto mt-4 leading-relaxed anim-reveal is-visible" style={{ animationDelay: '200ms' }}>
+            Every project is quoted upfront at a fixed price before we start.
+            You know exactly what you&apos;re paying — no GST, no hourly billing, no revision fees buried in the fine print.
           </p>
 
-          <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-4 anim-reveal is-visible" style={{ animationDelay: '300ms' }}>
-            <div className="bg-[#0a0a0a] border border-white/[0.06] rounded-full px-5 py-2.5 flex items-center gap-2">
-              <svg className="w-5 h-5 text-[#b5ff3e]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-              <span className="text-[#8888a0] text-sm">₹0 Hidden Fees</span>
-            </div>
-            <div className="bg-[#0a0a0a] border border-white/[0.06] rounded-full px-5 py-2.5 flex items-center gap-2">
-              <svg className="w-5 h-5 text-[#b5ff3e]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-              </svg>
-              <span className="text-[#8888a0] text-sm">No GST Charged</span>
-            </div>
-            <div className="bg-[#0a0a0a] border border-white/[0.06] rounded-full px-5 py-2.5 flex items-center gap-2">
-              <svg className="w-5 h-5 text-[#b5ff3e]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-              </svg>
-              <span className="text-[#8888a0] text-sm">50% Upfront Only</span>
+          {/* Stats Bar */}
+          <div className="mt-12 border-t border-b border-[var(--color-border)] py-8 anim-reveal is-visible" style={{ animationDelay: '300ms' }}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="flex flex-col items-center">
+                <span className="text-[var(--color-primary)] font-bold text-2xl font-[family-name:var(--font-display)]">From ₹3,000</span>
+                <span className="text-[var(--color-text-muted)] text-xs uppercase tracking-widest mt-1">Starting Price</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-[var(--color-primary)] font-bold text-2xl font-[family-name:var(--font-display)]">₹0</span>
+                <span className="text-[var(--color-text-muted)] text-xs uppercase tracking-widest mt-1">Hidden Fees</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-[var(--color-primary)] font-bold text-2xl font-[family-name:var(--font-display)]">50% After</span>
+                <span className="text-[var(--color-text-muted)] text-xs uppercase tracking-widest mt-1">You Approve</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-[var(--color-primary)] font-bold text-2xl font-[family-name:var(--font-display)]">₹0 GST</span>
+                <span className="text-[var(--color-text-muted)] text-xs uppercase tracking-widest mt-1">Ever Charged</span>
+              </div>
             </div>
           </div>
+
         </div>
       </section>
 
