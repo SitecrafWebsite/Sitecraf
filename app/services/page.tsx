@@ -49,22 +49,22 @@ export default function ServicesPage() {
 
           {/* Stats Bar */}
           <div className="mt-12 border-t border-b border-[var(--color-border)] py-8 anim-reveal is-visible" style={{ animationDelay: '300ms' }}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-4 md:gap-8">
               <div className="flex flex-col items-center">
-                <span className="text-[var(--color-primary)] font-bold text-2xl font-[family-name:var(--font-display)]">6 Services</span>
-                <span className="text-[var(--color-text-muted)] text-xs uppercase tracking-widest mt-1">Available</span>
+                <span className="text-[var(--color-primary)] font-bold text-[length:var(--text-lg)] md:text-[length:var(--text-xl)] font-[family-name:var(--font-display)]">6 Services</span>
+                <span className="text-[var(--color-text-muted)] text-[10px] md:text-xs uppercase tracking-widest mt-1">Available</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="text-[var(--color-primary)] font-bold text-2xl font-[family-name:var(--font-display)]">From ₹6,000</span>
-                <span className="text-[var(--color-text-muted)] text-xs uppercase tracking-widest mt-1">Starting Price</span>
+                <span className="text-[var(--color-primary)] font-bold text-[length:var(--text-lg)] md:text-[length:var(--text-xl)] font-[family-name:var(--font-display)]">From ₹6,000</span>
+                <span className="text-[var(--color-text-muted)] text-[10px] md:text-xs uppercase tracking-widest mt-1">Starting Price</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="text-[var(--color-primary)] font-bold text-2xl font-[family-name:var(--font-display)]">2–3 Weeks</span>
-                <span className="text-[var(--color-text-muted)] text-xs uppercase tracking-widest mt-1">Avg. Delivery</span>
+                <span className="text-[var(--color-primary)] font-bold text-[length:var(--text-lg)] md:text-[length:var(--text-xl)] font-[family-name:var(--font-display)]">2–3 Weeks</span>
+                <span className="text-[var(--color-text-muted)] text-[10px] md:text-xs uppercase tracking-widest mt-1">Avg. Delivery</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="text-[var(--color-primary)] font-bold text-2xl font-[family-name:var(--font-display)]">₹0</span>
-                <span className="text-[var(--color-text-muted)] text-xs uppercase tracking-widest mt-1">Hidden Fees</span>
+                <span className="text-[var(--color-primary)] font-bold text-[length:var(--text-lg)] md:text-[length:var(--text-xl)] font-[family-name:var(--font-display)]">₹0</span>
+                <span className="text-[var(--color-text-muted)] text-[10px] md:text-xs uppercase tracking-widest mt-1">Hidden Fees</span>
               </div>
             </div>
           </div>
@@ -94,7 +94,7 @@ export default function ServicesPage() {
 
       {/* SECTION 2 — Service Finder / Intent Selector */}
       <section aria-label="Find Your Service" className="w-full py-16 px-6 bg-[var(--color-surface)]">
-        <div className="w-full md:w-[80%] max-w-none mx-auto">
+        <div className="w-full max-w-[var(--content-wide)] mx-auto">
 
           {/* Header */}
           <div className="mb-10 text-center anim-reveal is-visible">
@@ -215,7 +215,7 @@ export default function ServicesPage() {
 
       {/* SECTION 3 — Individual Service Cards */}
       <section aria-label="Our Services" className="w-full py-20 px-6 bg-[var(--color-bg)]">
-        <div className="w-full md:w-[80%] max-w-none mx-auto">
+        <div className="w-full max-w-[var(--content-wide)] mx-auto">
 
           {/* Section Header */}
           <div className="mb-12 anim-reveal is-visible">
@@ -585,7 +585,7 @@ export default function ServicesPage() {
 
       {/* SECTION 4 — How It Works */}
       <section aria-label="How It Works" className="w-full py-20 px-6 bg-[var(--color-bg)]">
-        <div className="w-full md:w-[80%] max-w-none mx-auto">
+        <div className="w-full max-w-[var(--content-wide)] mx-auto">
 
           {/* Header */}
           <div className="mb-16 anim-reveal is-visible">
@@ -626,7 +626,7 @@ export default function ServicesPage() {
               {/* Step 2 */}
               <div className="flex lg:flex-col items-start lg:items-center gap-5 lg:gap-4 lg:text-center">
                 <div className="relative flex-shrink-0">
-                  <div className="w-16 h-16 rounded-full bg-[var(--color-surface)] border border-[var(--color-border)] flex items-center justify-center z-10 relative">
+                  <div className="w-16 h-16 rounded-full bg-[var(--color-surface)] border border-[var(--color-primary-border)] flex items-center justify-center z-10 relative">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-primary)]">
                       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                       <polyline points="14 2 14 8 20 8"/>
@@ -634,7 +634,7 @@ export default function ServicesPage() {
                       <line x1="16" y1="17" x2="8" y2="17"/>
                     </svg>
                   </div>
-                  <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-[var(--color-surface-dynamic)] text-[var(--color-text-muted)] text-[10px] font-bold flex items-center justify-center">2</span>
+                  <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-[var(--color-primary)] text-[#000] text-[10px] font-bold flex items-center justify-center">2</span>
                 </div>
                 <div>
                   <div className="inline-flex items-center bg-[var(--color-surface-2)] text-[var(--color-text-muted)] rounded-full px-2.5 py-0.5 text-[10px] uppercase tracking-widest mb-2">48 hrs</div>
@@ -646,14 +646,14 @@ export default function ServicesPage() {
               {/* Step 3 */}
               <div className="flex lg:flex-col items-start lg:items-center gap-5 lg:gap-4 lg:text-center">
                 <div className="relative flex-shrink-0">
-                  <div className="w-16 h-16 rounded-full bg-[var(--color-surface)] border border-[var(--color-border)] flex items-center justify-center z-10 relative">
+                  <div className="w-16 h-16 rounded-full bg-[var(--color-surface)] border border-[var(--color-primary-border)] flex items-center justify-center z-10 relative">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-primary)]">
                       <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
                       <line x1="3" y1="9" x2="21" y2="9"/>
                       <line x1="9" y1="21" x2="9" y2="9"/>
                     </svg>
                   </div>
-                  <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-[var(--color-surface-dynamic)] text-[var(--color-text-muted)] text-[10px] font-bold flex items-center justify-center">3</span>
+                  <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-[var(--color-primary)] text-[#000] text-[10px] font-bold flex items-center justify-center">3</span>
                 </div>
                 <div>
                   <div className="inline-flex items-center bg-[var(--color-surface-2)] text-[var(--color-text-muted)] rounded-full px-2.5 py-0.5 text-[10px] uppercase tracking-widest mb-2">3–5 days</div>
@@ -665,13 +665,13 @@ export default function ServicesPage() {
               {/* Step 4 */}
               <div className="flex lg:flex-col items-start lg:items-center gap-5 lg:gap-4 lg:text-center">
                 <div className="relative flex-shrink-0">
-                  <div className="w-16 h-16 rounded-full bg-[var(--color-surface)] border border-[var(--color-border)] flex items-center justify-center z-10 relative">
+                  <div className="w-16 h-16 rounded-full bg-[var(--color-surface)] border border-[var(--color-primary-border)] flex items-center justify-center z-10 relative">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-primary)]">
                       <polyline points="16 18 22 12 16 6"/>
                       <polyline points="8 6 2 12 8 18"/>
                     </svg>
                   </div>
-                  <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-[var(--color-surface-dynamic)] text-[var(--color-text-muted)] text-[10px] font-bold flex items-center justify-center">4</span>
+                  <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-[var(--color-primary)] text-[#000] text-[10px] font-bold flex items-center justify-center">4</span>
                 </div>
                 <div>
                   <div className="inline-flex items-center bg-[var(--color-surface-2)] text-[var(--color-text-muted)] rounded-full px-2.5 py-0.5 text-[10px] uppercase tracking-widest mb-2">1–3 weeks</div>
@@ -683,18 +683,18 @@ export default function ServicesPage() {
               {/* Step 5 */}
               <div className="flex lg:flex-col items-start lg:items-center gap-5 lg:gap-4 lg:text-center">
                 <div className="relative flex-shrink-0">
-                  <div className="w-16 h-16 rounded-full bg-[var(--color-surface)] border border-[var(--color-border)] flex items-center justify-center z-10 relative">
+                  <div className="w-16 h-16 rounded-full bg-[var(--color-surface)] border border-[var(--color-primary-border)] flex items-center justify-center z-10 relative">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-primary)]">
-                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                      <polyline points="22 4 12 14.01 9 11.01"/>
+                      <path d="m22 2-7 20-4-9-9-4Z"/>
+                      <path d="M22 2 11 13"/>
                     </svg>
                   </div>
-                  <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-[var(--color-surface-dynamic)] text-[var(--color-text-muted)] text-[10px] font-bold flex items-center justify-center">5</span>
+                  <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-[var(--color-primary)] text-[#000] text-[10px] font-bold flex items-center justify-center">5</span>
                 </div>
                 <div>
-                  <div className="inline-flex items-center bg-[var(--color-surface-2)] text-[var(--color-text-muted)] rounded-full px-2.5 py-0.5 text-[10px] uppercase tracking-widest mb-2">1–2 days</div>
-                  <h3 className="font-[family-name:var(--font-display)] font-bold text-[var(--color-text)] text-[length:var(--text-base)] mb-1">Launch & Handover</h3>
-                  <p className="text-[var(--color-text-muted)] text-[length:var(--text-xs)] leading-relaxed">Live on your domain. All logins handed over. 2 weeks free support.</p>
+                  <div className="inline-flex items-center bg-[var(--color-surface-2)] text-[var(--color-text-muted)] rounded-full px-2.5 py-0.5 text-[10px] uppercase tracking-widest mb-2">24 hrs</div>
+                  <h3 className="font-[family-name:var(--font-display)] font-bold text-[var(--color-text)] text-[length:var(--text-base)] mb-1">Final Delivery & Setup</h3>
+                  <p className="text-[var(--color-text-muted)] text-[length:var(--text-xs)] leading-relaxed">Domain mapping. Security setup. Hands-on training. You pay the final 50%.</p>
                 </div>
               </div>
 
@@ -726,7 +726,7 @@ export default function ServicesPage() {
 
       {/* SECTION 5 — Pricing Anchor / Transparency Strip */}
       <section aria-label="Pricing Overview" className="w-full py-16 px-6 bg-[var(--color-surface)]">
-        <div className="w-full md:w-[80%] max-w-none mx-auto">
+        <div className="w-full max-w-[var(--content-wide)] mx-auto">
 
           {/* Header */}
           <div className="mb-10 anim-reveal is-visible">
@@ -791,7 +791,7 @@ export default function ServicesPage() {
 
       {/* SECTION 6 — FAQ */}
       <section aria-label="Services FAQ" className="w-full py-20 px-6 bg-[var(--color-bg)]">
-        <div className="w-full md:w-[80%] max-w-none mx-auto">
+        <div className="w-full max-w-[var(--content-wide)] mx-auto">
 
           <div className="mb-12 anim-reveal is-visible">
             <span className="block text-[var(--color-primary)] text-[length:var(--text-xs)] uppercase tracking-widest mb-3">Common Questions</span>
@@ -920,7 +920,7 @@ export default function ServicesPage() {
 
       {/* SECTION 7 — Final CTA */}
       <section aria-label="Get Started" className="w-full py-20 px-6 bg-[var(--color-surface)]">
-        <div className="w-full md:w-[80%] max-w-none mx-auto">
+        <div className="w-full max-w-[var(--content-wide)] mx-auto">
 
           <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-2xl px-8 md:px-14 py-14 flex flex-col items-start gap-8 anim-reveal is-visible">
 
