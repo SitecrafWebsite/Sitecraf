@@ -124,26 +124,26 @@ export default function BlogClient() {
   return (
     <main className="flex flex-col min-h-screen bg-[#000000]">
       {/* SECTION 1 — Hero */}
-      <section aria-label="Blog Hero" className="w-full pt-32 pb-16 px-6 bg-[#000000] text-center">
+      <section aria-label="Blog Hero" className="w-full pt-32 pb-16 px-6 bg-[color:var(--color-bg)] text-center">
         <div className="w-full md:w-[80%] max-w-none mx-auto flex flex-col items-center">
-          <div className="text-[#b5ff3e] text-[length:var(--text-xs)] uppercase tracking-widest mb-6 anim-reveal is-visible">
+          <div className="text-[color:var(--color-primary)] text-[length:var(--text-xs)] uppercase tracking-widest mb-6 anim-reveal is-visible">
             Insights & Guides
           </div>
-          <h1 className="heading-section font-[family-name:var(--font-display)] text-[#e8e8f0] tracking-tight leading-tight mb-6 anim-reveal is-visible" style={{ animationDelay: '100ms' }}>
-            Articles That Help You Build <span className="text-[#b5ff3e]">Smarter</span> Online
+          <h1 className="heading-section font-[family-name:var(--font-display)] text-[color:var(--color-text)] tracking-tight leading-tight mb-6 anim-reveal is-visible" style={{ animationDelay: '100ms' }}>
+            Articles That Help You Build <span className="text-[color:var(--color-primary)]">Smarter</span> Online
           </h1>
-          <p className="font-[family-name:var(--font-body)] text-[#8888a0] text-lg max-w-3xl leading-relaxed mb-8 anim-reveal is-visible" style={{ animationDelay: '200ms' }}>
-            Straightforward writing on websites, SEO, AEO, and GEO, AI chatbots, automation, and digital growth — created for Indian business owners who want clarity, not jargon.
+          <p className="font-[family-name:var(--font-body)] text-[color:var(--color-text-muted)] text-lg max-w-3xl leading-relaxed mb-8 anim-reveal is-visible" style={{ animationDelay: '200ms' }}>
+            Straightforward writing on websites, SEO, AEO, GEO, AI chatbots, automation, and digital growth — created for Indian business owners who want clarity, not jargon.
           </p>
           <div className="flex flex-wrap justify-center gap-3 anim-reveal is-visible" style={{ animationDelay: '300ms' }}>
-            <span className="bg-[#0a0a0a] border border-white/[0.06] rounded-full px-3 py-1.5 text-[#8888a0] text-xs">SEO-ready</span>
-            <span className="bg-[#0a0a0a] border border-white/[0.06] rounded-full px-3 py-1.5 text-[#8888a0] text-xs">AEO-friendly</span>
-            <span className="bg-[#0a0a0a] border border-white/[0.06] rounded-full px-3 py-1.5 text-[#8888a0] text-xs">Written for decision-makers</span>
+            <span className="bg-[color:var(--color-surface)] border border-white/[0.06] rounded-full px-3 py-1.5 text-[color:var(--color-text-muted)] text-xs">SEO-ready</span>
+            <span className="bg-[color:var(--color-surface)] border border-white/[0.06] rounded-full px-3 py-1.5 text-[color:var(--color-text-muted)] text-xs">AEO-friendly</span>
+            <span className="bg-[color:var(--color-surface)] border border-white/[0.06] rounded-full px-3 py-1.5 text-[color:var(--color-text-muted)] text-xs">Written for decision-makers</span>
           </div>
         </div>
       </section>
 
-      <div className="w-full md:w-[80%] max-w-none mx-auto border-t border-white/[0.08]"></div>
+      <div className="w-full md:w-[80%] max-w-none mx-auto border-t border-[color:var(--color-border)]"></div>
 
       {/* SECTION 2 — Featured Article */}
       {featuredPost && (

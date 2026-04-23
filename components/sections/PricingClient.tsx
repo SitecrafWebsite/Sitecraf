@@ -14,7 +14,7 @@ const oneTimePackages = [
     badge: "Most Popular",
     description: "For service businesses, agencies, blogs, and SEO-driven brands that need a professional website they can manage themselves.",
     includes: [
-      "Up to 8 pages",
+      "Up to 4 pages",
       "Mobile-first, SEO-ready build",
       "Easy CMS — your team can update it",
       "Contact form + WhatsApp button",
@@ -372,11 +372,10 @@ export default function PricingClient() {
                   {websitePackages.slice(1).map((pkg) => (
                     <div key={pkg.id} className="bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-primary-border)] rounded-2xl p-6 flex flex-col transition-colors duration-200">
                       <div className="mb-4">
-                        <span className={`inline-block px-2.5 py-1 rounded-full text-[length:var(--text-xs)] border ${
-                          pkg.badgeColor === 'cyan'
-                            ? 'text-[var(--color-blue)] border-[var(--color-blue-highlight)] bg-[var(--color-blue)]/[0.08]'
-                            : 'text-[var(--color-primary)] border-[var(--color-primary-border)] bg-[var(--color-primary)]/[0.08]'
-                        }`}>
+                        <span className={`inline-block px-2.5 py-1 rounded-full text-[length:var(--text-xs)] border ${pkg.badgeColor === 'cyan'
+                          ? 'text-[var(--color-blue)] border-[var(--color-blue-highlight)] bg-[var(--color-blue)]/[0.08]'
+                          : 'text-[var(--color-primary)] border-[var(--color-primary-border)] bg-[var(--color-primary)]/[0.08]'
+                          }`}>
                           {pkg.badge}
                         </span>
                         <h3 className="text-[length:var(--text-base)] font-[family-name:var(--font-display)] font-bold text-[var(--color-text)] mt-3 mb-1">{pkg.name}</h3>
@@ -424,13 +423,12 @@ export default function PricingClient() {
                   {aiPackages.map((pkg) => (
                     <div key={pkg.id} className="bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-primary-border)] rounded-2xl p-6 flex flex-col transition-colors duration-200">
                       <div className="mb-4">
-                        <span className={`inline-block px-2.5 py-1 rounded-full text-[length:var(--text-xs)] border ${
-                          pkg.badgeColor === 'cyan'
-                            ? 'text-[var(--color-blue)] border-[var(--color-blue-highlight)] bg-[var(--color-blue)]/[0.08]'
-                            : pkg.badgeColor === 'purple'
+                        <span className={`inline-block px-2.5 py-1 rounded-full text-[length:var(--text-xs)] border ${pkg.badgeColor === 'cyan'
+                          ? 'text-[var(--color-blue)] border-[var(--color-blue-highlight)] bg-[var(--color-blue)]/[0.08]'
+                          : pkg.badgeColor === 'purple'
                             ? 'text-[var(--color-purple)] border-[var(--color-purple-highlight)] bg-[var(--color-purple)]/[0.08]'
                             : 'text-[var(--color-primary)] border-[var(--color-primary-border)] bg-[var(--color-primary)]/[0.08]'
-                        }`}>
+                          }`}>
                           {pkg.badge}
                         </span>
                         <h3 className="text-[length:var(--text-base)] font-[family-name:var(--font-display)] font-bold text-[var(--color-text)] mt-3 mb-1">{pkg.name}</h3>
@@ -546,7 +544,7 @@ export default function PricingClient() {
 
             <div className="bg-[var(--color-surface-2)] border border-[var(--color-primary-border)] rounded-xl p-6 flex items-start gap-4">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-primary)] flex-shrink-0 mt-0.5">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" />
               </svg>
               <div>
                 <p className="font-[family-name:var(--font-display)] font-semibold text-[var(--color-text)] text-[length:var(--text-base)] mb-1">50% Only After Approval</p>
@@ -808,8 +806,8 @@ export default function PricingClient() {
                 className="inline-flex items-center gap-2 bg-[var(--color-primary)] text-[#000000] rounded-full px-7 py-3.5 font-semibold text-[length:var(--text-sm)] hover:bg-[var(--color-primary-hover)] transition-colors duration-200"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="flex-shrink-0">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                  <path d="M11.5 2C6.253 2 2 6.253 2 11.5c0 1.938.573 3.745 1.557 5.254L2 22l5.412-1.538A9.451 9.451 0 0011.5 21C16.747 21 21 16.747 21 11.5S16.747 2 11.5 2z"/>
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                  <path d="M11.5 2C6.253 2 2 6.253 2 11.5c0 1.938.573 3.745 1.557 5.254L2 22l5.412-1.538A9.451 9.451 0 0011.5 21C16.747 21 21 16.747 21 11.5S16.747 2 11.5 2z" />
                 </svg>
                 Chat on WhatsApp
               </a>
@@ -820,7 +818,7 @@ export default function PricingClient() {
                 className="inline-flex items-center gap-2 text-[var(--color-primary)] border border-[var(--color-primary-border)] rounded-full px-7 py-3.5 font-semibold text-[length:var(--text-sm)] hover:bg-[var(--color-primary)]/[0.08] transition-colors duration-200"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" />
                 </svg>
                 Email Us Instead
               </a>
