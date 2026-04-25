@@ -445,11 +445,11 @@ nav {
 }
 
 .testimonials-marquee-left {
-  animation: testimonials-marquee-left 40s linear infinite;
+  animation: testimonials-marquee-left 28s linear infinite;
 }
 
 .testimonials-marquee-right {
-  animation: testimonials-marquee-right 40s linear infinite;
+  animation: testimonials-marquee-right 28s linear infinite;
 }
 
 .testimonial-card {
@@ -511,10 +511,9 @@ nav {
 
 /* Mobile & Accessibility Overrides */
 @media (max-width: 1023px) {
-
   .testimonials-marquee-left,
   .testimonials-marquee-right {
-    animation-duration: 60s;
+    animation-duration: 40s;
     /* Slower on tablets */
   }
 }

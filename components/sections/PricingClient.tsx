@@ -321,7 +321,7 @@ export default function PricingClient() {
 
                 {/* Featured card — WordPress */}
                 <div className="bg-[var(--color-surface)] border border-[var(--color-primary-border)] rounded-2xl p-8 lg:p-10 relative overflow-hidden mb-4">
-                  <div className="absolute top-6 right-6 bg-[var(--color-primary)]/10 text-[var(--color-primary)] text-xs uppercase tracking-widest px-3 py-1 rounded-full border border-[var(--color-primary-border)]">
+                  <div className="inline-block mb-4 md:mb-0 md:absolute md:top-6 md:right-6 bg-[var(--color-primary)]/10 text-[var(--color-primary)] text-xs uppercase tracking-widest px-3 py-1 rounded-full border border-[var(--color-primary-border)]">
                     {oneTimePackages[0].badge}
                   </div>
 

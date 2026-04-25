@@ -405,8 +405,8 @@ export default function OurPortfolio() {
 
         {/* CTA Button */}
         <div className="flex justify-center mt-6">
-          <a title="contact link" href="#contact" className="inline-flex items-center gap-3 px-8 py-4 bg-[#b5ff3e] text-[#000000] rounded-full hover:bg-[#c4ff66] hover:shadow-[var(--glow-md)] active:scale-[0.98] transition-all duration-300 font-semibold">
-            <span>Like What You See? Let's Build Yours →</span>
+          <a title="contact link" href="#contact" className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#b5ff3e] text-[#000000] rounded-full hover:bg-[#c4ff66] hover:shadow-[var(--glow-md)] active:scale-[0.98] transition-all duration-300 font-semibold text-center">
+            <span>Like What You See? Let&apos;s Build Yours →</span>
           </a>
         </div>
 

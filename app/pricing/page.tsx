@@ -32,8 +32,8 @@ export default function PricingPage() {
         <div className="w-full md:w-[80%] max-w-none mx-auto text-center">
 
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 border border-[var(--color-primary-border)] bg-[var(--color-primary)]/[0.08] text-[var(--color-primary)] text-[length:var(--text-xs)] uppercase tracking-[0.12em] px-4 py-1.5 rounded-full mb-8 anim-reveal is-visible">
-            <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] animate-pulse" />
+          <div className="inline-flex items-center justify-center gap-2 border border-[var(--color-primary-border)] bg-[var(--color-primary)]/[0.08] text-[var(--color-primary)] text-[length:var(--text-xs)] uppercase tracking-[0.12em] px-4 py-2 rounded-full mb-8 anim-reveal is-visible text-center leading-tight">
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] animate-pulse flex-shrink-0" />
             Transparent Pricing · No Hidden Fees · New Delhi
           </div>
 
