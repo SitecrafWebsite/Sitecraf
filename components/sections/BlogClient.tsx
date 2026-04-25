@@ -103,8 +103,7 @@ const categories = [
 
 export default function BlogClient() {
   const [activeCategory, setActiveCategory] = useState('All');
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
+  const [status, setStatus] = useState('idle');
 
   const featuredPost = posts.find(post => post.featured);
   const regularPosts = posts.filter(post => !post.featured);
@@ -112,10 +111,22 @@ export default function BlogClient() {
     ? regularPosts
     : regularPosts.filter(post => post.category === activeCategory);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (email.trim()) {
-      setSubscribed(true);
+    setStatus('loading');
+    try {
+      const formData = new FormData(e.currentTarget);
+      const response = await fetch("https://formsubmit.co/ajax/info@sitecraf.com", {
+        method: "POST",
+        body: formData
+      });
+      if (response.ok) {
+        setStatus('success');
+      } else {
+        setStatus('error');
+      }
+    } catch (err) {
+      setStatus('error');
     }
   };
 
@@ -362,8 +373,11 @@ export default function BlogClient() {
             </div>
             
             <div className="bg-[color:var(--color-surface-offset)] border border-white/[0.06] rounded-2xl p-8">
-              {!subscribed ? (
+              {status !== 'success' ? (
                 <form onSubmit={handleSubscribe} className="flex flex-col gap-4">
+                  <input type="hidden" name="_subject" value="New Blog Subscriber! - Sitecraf" />
+                  <input type="hidden" name="_template" value="table" />
+                  
                   <p className="font-[family-name:var(--font-display)] text-[color:var(--color-text)] font-semibold text-base mb-2">
                     Join other Indian business owners
                   </p>
@@ -372,19 +386,22 @@ export default function BlogClient() {
                     <input
                       type="email"
                       id="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="your@email.com"
+                      name="email"
                       required
-                      className="w-full bg-[color:var(--color-surface)] border border-white/[0.08] rounded-full px-5 py-4 text-[color:var(--color-text)] focus:border-[color:var(--color-primary)]/40 focus:outline-none transition-colors font-[family-name:var(--font-body)]"
+                      placeholder="your@email.com"
+                      className={`w-full bg-[color:var(--color-surface)] border ${status === 'error' ? 'border-red-500' : 'border-white/[0.08]'} rounded-full px-5 py-4 text-[color:var(--color-text)] focus:border-[color:var(--color-primary)]/40 focus:outline-none transition-colors font-[family-name:var(--font-body)]`}
                     />
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-[color:var(--color-primary)] text-[color:var(--color-bg)] rounded-full px-6 py-4 font-semibold hover:bg-[color:var(--color-primary-hover)] transition-colors active:scale-[0.98]"
+                    disabled={status === 'loading'}
+                    className="w-full bg-[color:var(--color-primary)] text-[color:var(--color-bg)] rounded-full px-6 py-4 font-semibold hover:bg-[color:var(--color-primary-hover)] transition-colors active:scale-[0.98] disabled:opacity-70"
                   >
-                    Send Me the Next Issue →
+                    {status === 'loading' ? 'Subscribing...' : 'Send Me the Next Issue →'}
                   </button>
+                  {status === 'error' && (
+                    <p className="text-red-500 text-xs text-center mt-2">Error. Please try again later.</p>
+                  )}
                   <p className="text-center text-[color:var(--color-text-muted)] text-xs mt-2 font-[family-name:var(--font-body)]">
                     No spam. Plain text. Unsubscribe with one click.
                   </p>
