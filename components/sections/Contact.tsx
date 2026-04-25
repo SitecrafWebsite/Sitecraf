@@ -105,6 +105,31 @@ export default function Contact() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex flex-col gap-2">
+                <label className="text-[#8888a0] text-sm font-medium">Email</label>
+                <input 
+                  type="email" 
+                  name="email"
+                  required 
+                  suppressHydrationWarning
+                  className="bg-[#000000] border border-white/[0.08] rounded-lg px-4 py-3 text-[#e8e8f0] focus:border-[#b5ff3e]/40 focus:outline-none transition-colors" 
+                  placeholder="Your email address"
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-[#8888a0] text-sm font-medium">Phone</label>
+                <input 
+                  type="tel" 
+                  name="phone"
+                  required
+                  suppressHydrationWarning
+                  className="bg-[#000000] border border-white/[0.08] rounded-lg px-4 py-3 text-[#e8e8f0] focus:border-[#b5ff3e]/40 focus:outline-none transition-colors" 
+                  placeholder="Your phone number"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex flex-col gap-2">
                 <label className="text-[#8888a0] text-sm font-medium">Service</label>
                 <select 
                   name="service"
