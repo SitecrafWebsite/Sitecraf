@@ -19,13 +19,36 @@ Rules:
 - Never say you are an AI model. Never mention "context snippets" or internal tools.
 `.trim();
 
+const ALLOWED_ORIGINS = [
+  'https://sitecraf.com',
+  'https://www.sitecraf.com',
+];
+
+function getCorsHeaders(origin: string | null): Record<string, string> {
+  const allowedOrigin =
+    origin && ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+  return {
+    'Access-Control-Allow-Origin': allowedOrigin,
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+  };
+}
+
+export async function OPTIONS(req: NextRequest) {
+  const origin = req.headers.get('origin');
+  return new NextResponse(null, { status: 204, headers: getCorsHeaders(origin) });
+}
+
 export async function POST(req: NextRequest) {
+  const origin = req.headers.get('origin');
+  const cors = getCorsHeaders(origin);
+
   try {
     const body = await req.json();
     const message: string = body?.message ?? '';
 
     if (!message.trim()) {
-      return NextResponse.json({ error: 'Message is required' }, { status: 400 });
+      return NextResponse.json({ error: 'Message is required' }, { status: 400, headers: cors });
     }
 
     const intent = detectIntent(message);
@@ -33,7 +56,7 @@ export async function POST(req: NextRequest) {
     const result = getAnswer(intent, message, language);
 
     if (result.source !== 'llm-needed') {
-      return NextResponse.json({ answer: result.answer, source: result.source });
+      return NextResponse.json({ answer: result.answer, source: result.source }, { headers: cors });
     }
 
     const context =
@@ -44,7 +67,7 @@ export async function POST(req: NextRequest) {
     if (!process.env.NVIDIA_API_KEY) {
       return NextResponse.json(
         { answer: 'Service temporarily unavailable. Please reach us on WhatsApp at +91 9599143235.', source: 'error' },
-        { status: 500 }
+        { status: 500, headers: cors }
       );
     }
 
@@ -70,12 +93,12 @@ export async function POST(req: NextRequest) {
       completion.choices[0]?.message?.content?.toString().trim() ??
       'Sorry, something went wrong. Please reach us on WhatsApp at +91 9599143235.';
 
-    return NextResponse.json({ answer, source: 'llm' });
+    return NextResponse.json({ answer, source: 'llm' }, { headers: cors });
   } catch (err) {
     console.error('[chatbot]', err);
     return NextResponse.json(
       { answer: 'Something went wrong. Please reach us on WhatsApp at +91 9599143235.', source: 'error' },
-      { status: 500 }
+      { status: 500, headers: cors }
     );
   }
 }
