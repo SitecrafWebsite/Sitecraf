@@ -57,8 +57,8 @@ export default function Footer() {
             <li><Link href="/services" className="footer-link hover:text-[#b5ff3e]" style={{ fontSize: '16px', color: '#8888a0', textDecoration: 'none', transition: 'color 0.2s ease', fontFamily: 'var(--font-body)' }}>Services</Link></li>
             <li><Link href="/pricing" className="footer-link hover:text-[#b5ff3e]" style={{ fontSize: '16px', color: '#8888a0', textDecoration: 'none', transition: 'color 0.2s ease', fontFamily: 'var(--font-body)' }}>Pricing</Link></li>
             <li><Link href="/blog" className="footer-link hover:text-[#b5ff3e]" style={{ fontSize: '16px', color: '#8888a0', textDecoration: 'none', transition: 'color 0.2s ease', fontFamily: 'var(--font-body)' }}>Blog</Link></li>
-            <li><Link href="/#our-portfolio" className="footer-link hover:text-[#b5ff3e]" style={{ fontSize: '16px', color: '#8888a0', textDecoration: 'none', transition: 'color 0.2s ease', fontFamily: 'var(--font-body)' }}>Our Portfolio</Link></li>
-            <li><Link href="/#contact" className="footer-link hover:text-[#b5ff3e]" style={{ fontSize: '16px', color: '#8888a0', textDecoration: 'none', transition: 'color 0.2s ease', fontFamily: 'var(--font-body)' }}>Contact</Link></li>
+            <li><Link href="/privacy-policy" className="footer-link hover:text-[#b5ff3e]" style={{ fontSize: '16px', color: '#8888a0', textDecoration: 'none', transition: 'color 0.2s ease', fontFamily: 'var(--font-body)' }}>Privacy Policy</Link></li>
+            <li><Link href="/terms-of-service" className="footer-link hover:text-[#b5ff3e]" style={{ fontSize: '16px', color: '#8888a0', textDecoration: 'none', transition: 'color 0.2s ease', fontFamily: 'var(--font-body)' }}>Terms of Service</Link></li>
           </ul>
         </div>
 

@@ -1,5 +1,3 @@
-'use client'
-
 import { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -15,7 +13,6 @@ export const metadata: Metadata = {
     url: 'https://www.sitecraf.com/terms-of-service',
     type: 'website',
   },
-  canonical: 'https://www.sitecraf.com/terms-of-service',
 }
 
 export default function TermsOfService() {
