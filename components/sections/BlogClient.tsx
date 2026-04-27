@@ -124,6 +124,18 @@ const posts = [
     seoTag: "High Intent",
     author: "Sitecraf",
     image: "https://picsum.photos/seed/websitesigns/800/600"
+  },
+  {
+    slug: "seo-aeo-geo-guide-for-small-business",
+    title: "SEO, AEO, and GEO: A Plain-English Guide for Small Business Owners",
+    excerpt: "Getting found online used to mean one thing: showing up on Google. Now your customers also search via ChatGPT, Perplexity, and Gemini. Here's what SEO, AEO, and GEO each do — and how small businesses in Malaysia and India should approach all three.",
+    category: "AEO",
+    readTime: "8 min read",
+    date: "April 2026",
+    featured: false,
+    seoTag: "Pillar",
+    author: "Sitecraf",
+    image: "https://picsum.photos/seed/seoaeogeo/800/600"
   }
 ];
 
@@ -177,6 +189,7 @@ export default function BlogClient() {
     "website-vs-instagram-do-you-need-a-website":  "Read the Breakdown →",
     "why-your-website-isnt-getting-leads":          "Fix Your Website →",
     "5-signs-your-website-is-costing-you-customers": "Check Your Site →",
+    "seo-aeo-geo-guide-for-small-business":           "Understand All Three →",
   };
 
   return (
