@@ -136,6 +136,42 @@ const posts = [
     seoTag: "Pillar",
     author: "Sitecraf",
     image: "https://picsum.photos/seed/seoaeogeo/800/600"
+  },
+  {
+    slug: "seo-cost-small-business-malaysia-india",
+    title: "How Much Does SEO Cost for a Small Business in Malaysia or India?",
+    excerpt: "SEO for a small business ranges from RM 300 to RM 3,000 per month — but the difference isn't just quality. It's whether the work compounds into lasting rankings or disappears the moment you stop paying. Here's what each tier actually delivers.",
+    category: "SEO",
+    readTime: "7 min read",
+    date: "April 2026",
+    featured: false,
+    seoTag: "High Intent",
+    author: "Sitecraf",
+    image: "https://picsum.photos/seed/seocost/800/600"
+  },
+  {
+    slug: "landing-page-vs-full-website",
+    title: "Landing Page vs. Full Website: Which One Does Your Business Need First?",
+    excerpt: "Most small businesses build a full website before validating their offer. A landing page gets you live and converting in weeks. Here's how to decide which one is right for where your business is now — and the sequence that works for most.",
+    category: "SEO",
+    readTime: "6 min read",
+    date: "April 2026",
+    featured: false,
+    seoTag: "High Intent",
+    author: "Sitecraf",
+    image: "https://picsum.photos/seed/landingpagevsweb/800/600"
+  },
+  {
+    slug: "chatgpt-recommended-competitor-geo",
+    title: "ChatGPT Recommended My Competitor — Here's How to Make AI Recommend You Instead",
+    excerpt: "A growing number of clients are bypassing Google and asking AI assistants for recommendations. Here are 7 specific things that determine whether ChatGPT, Perplexity, or Gemini names your business — and how to build that presence deliberately.",
+    category: "GEO",
+    readTime: "8 min read",
+    date: "April 2026",
+    featured: false,
+    seoTag: "High Intent",
+    author: "Sitecraf",
+    image: "https://picsum.photos/seed/chatgptgeo/800/600"
   }
 ];
 
@@ -190,6 +226,9 @@ export default function BlogClient() {
     "why-your-website-isnt-getting-leads":          "Fix Your Website →",
     "5-signs-your-website-is-costing-you-customers": "Check Your Site →",
     "seo-aeo-geo-guide-for-small-business":           "Understand All Three →",
+    "seo-cost-small-business-malaysia-india":         "See What You're Paying For →",
+    "landing-page-vs-full-website":                   "Find the Right Starting Point →",
+    "chatgpt-recommended-competitor-geo":             "Get AI to Recommend You →",
   };
 
   return (
