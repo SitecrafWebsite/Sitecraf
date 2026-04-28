@@ -17,6 +17,15 @@ tags:
   - website conversion problems
 ogTitle: "5 Signs Your Website Is Costing You Customers Right Now"
 ogDescription: "Most businesses lose customers silently — no error page, no crash. Just visitors who quietly leave. Here are five signs your website is the problem, and what to do about it."
+faqs:
+  - q: "How do I know if my website is bad?"
+    a: "The clearest signal is behavioural: you avoid sharing it, customers ask questions it should answer, or you get traffic but no enquiries. Technically, check mobile usability and page speed in Google Search Console (free). Either type of signal is enough to warrant a review."
+  - q: "What makes a website lose customers?"
+    a: "Usually a combination of trust, clarity, and friction problems. Visitors leave when they can't tell what the business does, don't trust what they see, can't find how to contact you, or find the site slow or broken on their phone."
+  - q: "Can an old website actually hurt my business?"
+    a: "Yes — in two ways. Outdated content and design reduce trust with visitors. Unmaintained code creates security vulnerabilities and can get your site flagged or taken down. Both directly affect whether customers enquire and whether Google sends them to you."
+  - q: "Do I need to rebuild my website, or can I just update it?"
+    a: "It depends on the foundation. If the site is built on a modern, maintained platform and just needs content and design updates, a refresh may be enough. If it's built on an outdated platform, loads slowly on mobile, or has structural problems — a rebuild is usually faster and cheaper in the long run than patching."
 ---
 
 Most businesses don't lose customers dramatically. There's no error page, no obvious crash. Customers just quietly leave — and you never know they were there.
@@ -88,49 +97,3 @@ Run through these five questions right now:
 - Has someone reviewed and updated the site in the last six months?
 
 If you answered no to two or more, your website is likely costing you customers.
-
-<BlogFAQ items={[
-  { q: "How do I know if my website is bad?", a: "The clearest signal is behavioural: you avoid sharing it, customers ask questions it should answer, or you get traffic but no enquiries. Technically, check mobile usability and page speed in Google Search Console (free). Either type of signal is enough to warrant a review." },
-  { q: "What makes a website lose customers?", a: "Usually a combination of trust, clarity, and friction problems. Visitors leave when they can't tell what the business does, don't trust what they see, can't find how to contact you, or find the site slow or broken on their phone." },
-  { q: "Can an old website actually hurt my business?", a: "Yes — in two ways. Outdated content and design reduce trust with visitors. Unmaintained code creates security vulnerabilities and can get your site flagged or taken down. Both directly affect whether customers enquire and whether Google sends them to you." },
-  { q: "Do I need to rebuild my website, or can I just update it?", a: "It depends on the foundation. If the site is built on a modern, maintained platform and just needs content and design updates, a refresh may be enough. If it's built on an outdated platform, loads slowly on mobile, or has structural problems — a rebuild is usually faster and cheaper in the long run than patching." },
-]} />
-
-export const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How do I know if my website is bad?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The clearest signal is behavioural: you avoid sharing it, customers ask questions it should answer, or you get traffic but no enquiries. Technically, check mobile usability and page speed in Google Search Console (free). Either type of signal is enough to warrant a review."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What makes a website lose customers?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Usually a combination of trust, clarity, and friction problems. Visitors leave when they can't tell what the business does, don't trust what they see, can't find how to contact you, or find the site slow or broken on their phone."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can an old website actually hurt my business?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes — in two ways. Outdated content and design reduce trust with visitors. Unmaintained code creates security vulnerabilities and can get your site flagged or taken down. Both directly affect whether customers enquire and whether Google sends them to you."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need to rebuild my website, or can I just update it?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It depends on the foundation. If the site is built on a modern, maintained platform and just needs content and design updates, a refresh may be enough. If it's built on an outdated platform, loads slowly on mobile, or has structural problems — a rebuild is usually faster and cheaper in the long run than patching."
-      }
-    }
-  ]
-}

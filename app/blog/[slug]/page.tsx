@@ -4,7 +4,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { compileMDX } from 'next-mdx-remote/rsc'
 import { getAllPostSlugs, getPostBySlug } from '@/lib/blog'
-import BlogFAQ from '@/components/BlogFAQ'
 
 export async function generateStaticParams() {
   return getAllPostSlugs().map(slug => ({ slug }))
@@ -45,7 +44,6 @@ export default async function BlogPostPage(
   const { content } = await compileMDX({
     source: post.content,
     options: { parseFrontmatter: false },
-    components: { BlogFAQ },
   })
 
   const articleJsonLd = {

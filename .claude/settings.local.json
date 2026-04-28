@@ -37,7 +37,8 @@
       "Bash(curl -s -X POST https://sitecraf.onrender.com/api/chatbot -H 'Content-Type: application/json' -H 'Origin: https://sitecraf.com' -d '{\"message\":\"How much does a WordPress website cost?\"}')",
       "Bash(curl -s -X POST https://sitecraf.onrender.com/api/chatbot -H 'Content-Type: application/json' -H 'Origin: https://sitecraf.com' -d '{\"message\":\"I need a Shopify store for my clothing brand\"}')",
       "mcp__plugin_everything-claude-code_playwright__browser_navigate",
-      "Bash(npm list *)"
+      "Bash(npm list *)",
+      "Bash(rtk npx *)"
     ]
   }
 }
