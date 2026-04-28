@@ -6,21 +6,9 @@ import Image from 'next/image';
 
 const posts = [
   {
-    slug: "shopify-vs-wix-studio-for-indian-businesses",
-    title: "Shopify vs Wix Studio for Indian Businesses: Which One Actually Saves You Money?",
-    excerpt: "Most Indian service businesses are paying Shopify's e-commerce fees for a website that never sells a single product online. If you only need a professional catalogue site, you're likely overpaying by ₹20,000–₹40,000 a year. Here's how to know which platform you actually need.",
-    category: "Platforms",
-    readTime: "6 min read",
-    date: "April 2026",
-    featured: false,
-    seoTag: "High Intent",
-    author: "Sitecraf",
-    image: "https://picsum.photos/seed/shopifywix/800/600"
-  },
-  {
     slug: "why-most-small-business-websites-dont-rank",
-    title: "Why Most Small Business Websites Don't Rank — Even After Going Live",
-    excerpt: "Going live is not the same as being found. Most small business websites are technically invisible to Google the day they launch — not because the design is wrong, but because of 5 fixable gaps most developers skip. This covers all of them.",
+    title: "Why Most Small Business Websites Don't Rank â€” Even After Going Live",
+    excerpt: "Going live is not the same as being found. Most small business websites are technically invisible to Google the day they launch â€” not because the design is wrong, but because of 5 fixable gaps most developers skip. This covers all of them.",
     category: "SEO",
     readTime: "7 min read",
     date: "April 2026",
@@ -32,7 +20,7 @@ const posts = [
   {
     slug: "what-is-aeo-answer-engine-optimization",
     title: "What Is AEO? A Straightforward Guide for Business Owners",
-    excerpt: "Google is no longer the only place customers look for answers. ChatGPT, Perplexity, and Google AI Overviews are now answering questions your website should be answering. AEO is how you show up there — and it's simpler than most people think.",
+    excerpt: "Google is no longer the only place customers look for answers. ChatGPT, Perplexity, and Google AI Overviews are now answering questions your website should be answering. AEO is how you show up there â€” and it's simpler than most people think.",
     category: "AEO",
     readTime: "5 min read",
     date: "April 2026",
@@ -56,7 +44,7 @@ const posts = [
   {
     slug: "what-is-geo-generative-engine-optimization",
     title: "What Is GEO? How to Get ChatGPT and Gemini to Recommend Your Business",
-    excerpt: "SEO gets you on Google. GEO gets your business recommended inside ChatGPT and Gemini. For Indian SMEs, this is the biggest untapped visibility opportunity of 2026 — and most competitors haven't started yet.",
+    excerpt: "SEO gets you on Google. GEO gets your business recommended inside ChatGPT and Gemini. For Indian SMEs, this is the biggest untapped visibility opportunity of 2026 â€” and most competitors haven't started yet.",
     category: "GEO",
     readTime: "5 min read",
     date: "April 2026",
@@ -68,7 +56,7 @@ const posts = [
   {
     slug: "website-vs-instagram-do-you-need-a-website",
     title: "Website vs. Instagram: Do You Actually Need a Website If You Already Have Social Media?",
-    excerpt: "Most small businesses start with Instagram — it's free, fast, and your customers are already there. But Instagram can't rank on Google, doesn't own your data, and looks less credible to high-value buyers. Here's the honest breakdown.",
+    excerpt: "Most small businesses start with Instagram â€” it's free, fast, and your customers are already there. But Instagram can't rank on Google, doesn't own your data, and looks less credible to high-value buyers. Here's the honest breakdown.",
     category: "SEO",
     readTime: "6 min read",
     date: "April 2026",
@@ -80,7 +68,7 @@ const posts = [
   {
     slug: "why-your-website-isnt-getting-leads",
     title: "Why Your Small Business Website Isn't Getting You Leads (And What to Do About It)",
-    excerpt: "You have a website, you're paying for hosting, but the enquiries aren't coming. Here are the six fixable reasons your site isn't converting visitors into leads — and exactly what to do about each one.",
+    excerpt: "You have a website, you're paying for hosting, but the enquiries aren't coming. Here are the six fixable reasons your site isn't converting visitors into leads â€” and exactly what to do about each one.",
     category: "SEO",
     readTime: "7 min read",
     date: "April 2026",
@@ -92,7 +80,7 @@ const posts = [
   {
     slug: "5-signs-your-website-is-costing-you-customers",
     title: "5 Signs Your Website Is Costing You Customers Right Now",
-    excerpt: "Most businesses don't lose customers dramatically — they just quietly leave. Here are five signs your website is actively costing you customers, and what to do about each one.",
+    excerpt: "Most businesses don't lose customers dramatically â€” they just quietly leave. Here are five signs your website is actively costing you customers, and what to do about each one.",
     category: "SEO",
     readTime: "6 min read",
     date: "April 2026",
@@ -104,7 +92,7 @@ const posts = [
   {
     slug: "seo-aeo-geo-guide-for-small-business",
     title: "SEO, AEO, and GEO: A Plain-English Guide for Small Business Owners",
-    excerpt: "Getting found online used to mean one thing: showing up on Google. Now your customers also search via ChatGPT, Perplexity, and Gemini. Here's what SEO, AEO, and GEO each do — and how small businesses in Malaysia and India should approach all three.",
+    excerpt: "Getting found online used to mean one thing: showing up on Google. Now your customers also search via ChatGPT, Perplexity, and Gemini. Here's what SEO, AEO, and GEO each do â€” and how small businesses in Malaysia and India should approach all three.",
     category: "AEO",
     readTime: "8 min read",
     date: "April 2026",
@@ -116,7 +104,7 @@ const posts = [
   {
     slug: "seo-cost-small-business-malaysia-india",
     title: "How Much Does SEO Cost for a Small Business in Malaysia or India?",
-    excerpt: "SEO for a small business ranges from RM 300 to RM 3,000 per month — but the difference isn't just quality. It's whether the work compounds into lasting rankings or disappears the moment you stop paying. Here's what each tier actually delivers.",
+    excerpt: "SEO for a small business ranges from RM 300 to RM 3,000 per month â€” but the difference isn't just quality. It's whether the work compounds into lasting rankings or disappears the moment you stop paying. Here's what each tier actually delivers.",
     category: "SEO",
     readTime: "7 min read",
     date: "April 2026",
@@ -128,7 +116,7 @@ const posts = [
   {
     slug: "landing-page-vs-full-website",
     title: "Landing Page vs. Full Website: Which One Does Your Business Need First?",
-    excerpt: "Most small businesses build a full website before validating their offer. A landing page gets you live and converting in weeks. Here's how to decide which one is right for where your business is now — and the sequence that works for most.",
+    excerpt: "Most small businesses build a full website before validating their offer. A landing page gets you live and converting in weeks. Here's how to decide which one is right for where your business is now â€” and the sequence that works for most.",
     category: "SEO",
     readTime: "6 min read",
     date: "April 2026",
@@ -139,8 +127,8 @@ const posts = [
   },
   {
     slug: "chatgpt-recommended-competitor-geo",
-    title: "ChatGPT Recommended My Competitor — Here's How to Make AI Recommend You Instead",
-    excerpt: "A growing number of clients are bypassing Google and asking AI assistants for recommendations. Here are 7 specific things that determine whether ChatGPT, Perplexity, or Gemini names your business — and how to build that presence deliberately.",
+    title: "ChatGPT Recommended My Competitor â€” Here's How to Make AI Recommend You Instead",
+    excerpt: "A growing number of clients are bypassing Google and asking AI assistants for recommendations. Here are 7 specific things that determine whether ChatGPT, Perplexity, or Gemini names your business â€” and how to build that presence deliberately.",
     category: "GEO",
     readTime: "8 min read",
     date: "April 2026",
@@ -189,23 +177,22 @@ export default function BlogClient() {
   };
 
   const cardCTAs: Record<string, string> = {
-    "shopify-vs-wix-studio-for-indian-businesses": "See the Cost Breakdown →",
-    "why-most-small-business-websites-dont-rank":  "Find Your SEO Gaps →",
-    "what-is-aeo-answer-engine-optimization":      "Understand AEO in 5 mins →",
-    "wordpress-vs-nextjs-for-seo":                 "Find the Right Stack →",
-    "what-is-geo-generative-engine-optimization":  "Get Found by AI →",
-    "website-vs-instagram-do-you-need-a-website":  "Read the Breakdown →",
-    "why-your-website-isnt-getting-leads":          "Fix Your Website →",
-    "5-signs-your-website-is-costing-you-customers": "Check Your Site →",
-    "seo-aeo-geo-guide-for-small-business":           "Understand All Three →",
-    "seo-cost-small-business-malaysia-india":         "See What You're Paying For →",
-    "landing-page-vs-full-website":                   "Find the Right Starting Point →",
-    "chatgpt-recommended-competitor-geo":             "Get AI to Recommend You →",
+    "why-most-small-business-websites-dont-rank":  "Find Your SEO Gaps â†’",
+    "what-is-aeo-answer-engine-optimization":      "Understand AEO in 5 mins â†’",
+    "wordpress-vs-nextjs-for-seo":                 "Find the Right Stack â†’",
+    "what-is-geo-generative-engine-optimization":  "Get Found by AI â†’",
+    "website-vs-instagram-do-you-need-a-website":  "Read the Breakdown â†’",
+    "why-your-website-isnt-getting-leads":          "Fix Your Website â†’",
+    "5-signs-your-website-is-costing-you-customers": "Check Your Site â†’",
+    "seo-aeo-geo-guide-for-small-business":           "Understand All Three â†’",
+    "seo-cost-small-business-malaysia-india":         "See What You're Paying For â†’",
+    "landing-page-vs-full-website":                   "Find the Right Starting Point â†’",
+    "chatgpt-recommended-competitor-geo":             "Get AI to Recommend You â†’",
   };
 
   return (
     <main className="flex flex-col min-h-screen bg-[#000000]">
-      {/* SECTION 1 — Hero */}
+      {/* SECTION 1 â€” Hero */}
       <section aria-label="Blog Hero" className="w-full pt-32 pb-16 px-6 bg-[color:var(--color-bg)] text-center">
         <div className="w-full md:w-[80%] max-w-none mx-auto flex flex-col items-center">
           <div className="text-[color:var(--color-primary)] text-[length:var(--text-xs)] uppercase tracking-widest mb-6 anim-reveal is-visible">
@@ -215,7 +202,7 @@ export default function BlogClient() {
             The Website & Growth Blog Indian Businesses <span className="text-[color:var(--color-primary)]">Actually Bookmark</span>
           </h1>
           <p className="font-[family-name:var(--font-body)] text-[color:var(--color-text-muted)] text-lg max-w-3xl leading-relaxed mb-8 anim-reveal is-visible" style={{ animationDelay: '200ms' }}>
-            No fluff. No recycled advice. Just practical guides on websites, SEO, AEO, GEO, AI chatbots, and automation — written from real projects for Indian founders and SMEs who want results, not theory.
+            No fluff. No recycled advice. Just practical guides on websites, SEO, AEO, GEO, AI chatbots, and automation â€” written from real projects for Indian founders and SMEs who want results, not theory.
           </p>
           <div className="flex flex-wrap justify-center gap-3 anim-reveal is-visible" style={{ animationDelay: '300ms' }}>
             <span className="bg-[color:var(--color-surface)] border border-white/[0.06] rounded-full px-3 py-1.5 text-[color:var(--color-text-muted)] text-xs">Jargon-free</span>
@@ -227,7 +214,7 @@ export default function BlogClient() {
 
       <div className="w-full md:w-[80%] max-w-none mx-auto border-t border-[color:var(--color-border)]"></div>
 
-      {/* SECTION 2 — Featured Article */}
+      {/* SECTION 2 â€” Featured Article */}
       {featuredPost && (
         <section aria-label="Featured Article" className="w-full py-16 px-6 bg-[color:var(--color-bg)]">
           <div className="w-full max-w-[var(--content-wide)] mx-auto">
@@ -256,15 +243,15 @@ export default function BlogClient() {
                 </p>
                 <ul className="space-y-3 mb-8 font-[family-name:var(--font-body)] text-sm text-[color:var(--color-text-muted)]">
                   <li className="flex items-start gap-2">
-                    <span className="text-[color:var(--color-primary)] mt-0.5">•</span>
+                    <span className="text-[color:var(--color-primary)] mt-0.5">â€¢</span>
                     <span><strong className="text-[color:var(--color-text)] font-medium">Who this is for:</strong> Small business owners wondering if they even need a website when they already have Instagram followers</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[color:var(--color-primary)] mt-0.5">•</span>
-                    <span><strong className="text-[color:var(--color-text)] font-medium">What you&apos;ll walk away knowing:</strong> Exactly when Instagram alone is enough — and the 4 specific moments when not having a website is silently costing you customers</span>
+                    <span className="text-[color:var(--color-primary)] mt-0.5">â€¢</span>
+                    <span><strong className="text-[color:var(--color-text)] font-medium">What you&apos;ll walk away knowing:</strong> Exactly when Instagram alone is enough â€” and the 4 specific moments when not having a website is silently costing you customers</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[color:var(--color-primary)] mt-0.5">•</span>
+                    <span className="text-[color:var(--color-primary)] mt-0.5">â€¢</span>
                     <span><strong className="text-[color:var(--color-text)] font-medium">Why read this now:</strong> Instagram reach is declining. The businesses ranking on Google right now will own the leads their competitors can&apos;t capture.</span>
                   </li>
                 </ul>
@@ -279,7 +266,7 @@ export default function BlogClient() {
                     </div>
                   </div>
                   <Link href={`/blog/${featuredPost.slug}`} className="inline-flex items-center justify-center bg-[color:var(--color-primary)] text-[color:var(--color-bg)] font-semibold px-6 py-3 rounded-full hover:bg-[color:var(--color-primary-hover)] transition-colors text-sm">
-                    Read the Full Guide →
+                    Read the Full Guide â†’
                   </Link>
                 </div>
               </div>
@@ -288,7 +275,7 @@ export default function BlogClient() {
         </section>
       )}
 
-      {/* SECTION 3 — Category Filter Bar */}
+      {/* SECTION 3 â€” Category Filter Bar */}
       <section aria-label="Category Filters" className="w-full py-6 px-6 bg-[color:var(--color-bg)] border-b border-[color:var(--color-border)]/[0.08]">
         <div className="w-full max-w-[var(--content-wide)] mx-auto">
           <div className="flex overflow-x-auto pb-2 md:pb-0 md:flex-wrap gap-3 scrollbar-hide anim-reveal is-visible">
@@ -307,12 +294,12 @@ export default function BlogClient() {
             ))}
           </div>
           <div className="mt-4 text-[color:var(--color-text-muted)] text-xs font-[family-name:var(--font-body)] anim-reveal is-visible">
-            {filteredPosts.length} article{filteredPosts.length !== 1 ? 's' : ''} — pick a topic or read them all.
+            {filteredPosts.length} article{filteredPosts.length !== 1 ? 's' : ''} â€” pick a topic or read them all.
           </div>
         </div>
       </section>
 
-      {/* SECTION 4 — Article Grid */}
+      {/* SECTION 4 â€” Article Grid */}
       <section aria-label="Articles" className="w-full py-8 px-6 bg-[color:var(--color-bg)]">
         <div className="w-full max-w-[var(--content-wide)] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -340,7 +327,7 @@ export default function BlogClient() {
                   </p>
                   <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/[0.08]">
                     <span className="text-[color:var(--color-text-muted)] text-xs">{post.date}</span>
-                    <span className="text-[color:var(--color-primary)] text-sm font-medium group-hover:translate-x-1 transition-transform">{cardCTAs[post.slug] ?? "Read More →"}</span>
+                    <span className="text-[color:var(--color-primary)] text-sm font-medium group-hover:translate-x-1 transition-transform">{cardCTAs[post.slug] ?? "Read More â†’"}</span>
                   </div>
                 </div>
               </Link>
@@ -352,7 +339,7 @@ export default function BlogClient() {
                 No articles in this category yet.
               </p>
               <p className="text-[color:var(--color-text-muted)] text-sm mb-6">
-                We&apos;re publishing new guides every month — or browse all articles.
+                We&apos;re publishing new guides every month â€” or browse all articles.
               </p>
               <button
                 onClick={() => setActiveCategory('All')}
@@ -365,17 +352,17 @@ export default function BlogClient() {
         </div>
       </section>
 
-      {/* SECTION 5 — AEO / SEO Value Strip */}
+      {/* SECTION 5 â€” AEO / SEO Value Strip */}
       <section aria-label="Why This Blog Exists" className="w-full py-16 px-6 bg-[color:var(--color-surface)]">
         <div className="w-full max-w-[var(--content-wide)] mx-auto text-center md:text-left">
           <div className="text-[color:var(--color-primary)] text-[length:var(--text-xs)] uppercase tracking-widest mb-4 anim-reveal is-visible">
             WHY THESE GUIDES WORK
           </div>
           <h2 className="heading-section font-[family-name:var(--font-display)] text-[color:var(--color-text)] mb-6 anim-reveal is-visible">
-            Every Article Is Written to Help You Decide — Not Just Understand
+            Every Article Is Written to Help You Decide â€” Not Just Understand
           </h2>
           <p className="font-[family-name:var(--font-body)] text-[color:var(--color-text-muted)] text-lg max-w-3xl mb-12 anim-reveal is-visible">
-            There&apos;s no shortage of content about websites and SEO. Most of it is written to rank on Google, not to help a business owner make a faster, smarter decision. We write differently — and here&apos;s what that means in practice.
+            There&apos;s no shortage of content about websites and SEO. Most of it is written to rank on Google, not to help a business owner make a faster, smarter decision. We write differently â€” and here&apos;s what that means in practice.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 anim-reveal is-visible">
@@ -388,7 +375,7 @@ export default function BlogClient() {
             <div className="bg-[color:var(--color-surface-offset)] border border-white/[0.06] rounded-2xl p-6 text-left hover:border-white/[0.12] transition-colors">
               <h3 className="heading-sub font-[family-name:var(--font-display)] text-[color:var(--color-text)] mb-3">Written from actual projects, not research tabs</h3>
               <p className="font-[family-name:var(--font-body)] text-[color:var(--color-text-muted)] text-sm leading-relaxed">
-                Our guides come from work we&apos;ve done for Indian businesses across Delhi, Mumbai, and Bangalore — not recycled advice from US SaaS blogs repackaged for Indian audiences.
+                Our guides come from work we&apos;ve done for Indian businesses across Delhi, Mumbai, and Bangalore â€” not recycled advice from US SaaS blogs repackaged for Indian audiences.
               </p>
             </div>
             <div className="bg-[color:var(--color-surface-offset)] border border-white/[0.06] rounded-2xl p-6 text-left hover:border-white/[0.12] transition-colors">
@@ -401,19 +388,19 @@ export default function BlogClient() {
         </div>
       </section>
 
-      {/* SECTION 6 — Newsletter / Lead Capture CTA */}
+      {/* SECTION 6 â€” Newsletter / Lead Capture CTA */}
       <section aria-label="Newsletter" className="w-full py-20 px-6 bg-[color:var(--color-bg)]">
         <div className="w-full max-w-[var(--content-wide)] mx-auto">
           <div className="bg-[color:var(--color-surface)] border border-[color:var(--color-primary)]/[0.18] rounded-3xl p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center anim-reveal is-visible">
             <div>
               <div className="text-[color:var(--color-primary)] text-[length:var(--text-xs)] uppercase tracking-widest mb-4">
-                FREE — STRAIGHT TO YOUR INBOX
+                FREE â€” STRAIGHT TO YOUR INBOX
               </div>
               <h2 className="heading-section font-[family-name:var(--font-display)] text-[color:var(--color-text)] mb-6">
                 The Shortcut Indian Business Owners Use to Stay Ahead Online
               </h2>
               <p className="font-[family-name:var(--font-body)] text-[color:var(--color-text-muted)] text-base leading-relaxed mb-8">
-                A short, practical email — sent 1–2 times a month — with one genuinely useful idea for your website, SEO, or digital growth. No padding. No sponsored content. Just the kind of insight that usually costs a consulting call.
+                A short, practical email â€” sent 1â€“2 times a month â€” with one genuinely useful idea for your website, SEO, or digital growth. No padding. No sponsored content. Just the kind of insight that usually costs a consulting call.
               </p>
               <ul className="space-y-3 font-[family-name:var(--font-body)] text-[color:var(--color-text)] text-sm">
                 <li className="flex items-center gap-2">
@@ -422,7 +409,7 @@ export default function BlogClient() {
                 </li>
                 <li className="flex items-center gap-2">
                   <svg className="w-4 h-4 text-[color:var(--color-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-                  India-specific — platforms, pricing, and context that actually applies here
+                  India-specific â€” platforms, pricing, and context that actually applies here
                 </li>
                 <li className="flex items-center gap-2">
                   <svg className="w-4 h-4 text-[color:var(--color-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
@@ -460,7 +447,7 @@ export default function BlogClient() {
                     disabled={status === 'loading'}
                     className="w-full bg-[color:var(--color-primary)] text-[color:var(--color-bg)] rounded-full px-6 py-4 font-semibold hover:bg-[color:var(--color-primary-hover)] transition-colors active:scale-[0.98] disabled:opacity-70"
                   >
-                    {status === 'loading' ? 'Subscribing...' : 'Send Me the Next Issue →'}
+                    {status === 'loading' ? 'Subscribing...' : 'Send Me the Next Issue â†’'}
                   </button>
                   {status === 'error' && (
                     <p className="text-red-500 text-xs text-center mt-2">Error. Please try again later.</p>
@@ -474,7 +461,7 @@ export default function BlogClient() {
                   <div className="w-12 h-12 bg-[color:var(--color-primary)]/[0.1] rounded-full flex items-center justify-center mx-auto mb-4 text-[color:var(--color-primary)]">
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
                   </div>
-                  <h3 className="heading-sub font-[family-name:var(--font-display)] text-[color:var(--color-text)] mb-2">Thanks — you&apos;re on the list.</h3>
+                  <h3 className="heading-sub font-[family-name:var(--font-display)] text-[color:var(--color-text)] mb-2">Thanks â€” you&apos;re on the list.</h3>
                   <p className="font-[family-name:var(--font-body)] text-[color:var(--color-text-muted)] text-sm">You&apos;ll hear from us when something genuinely useful is published.</p>
                 </div>
               )}
@@ -484,14 +471,14 @@ export default function BlogClient() {
         </div>
       </section>
 
-      {/* SECTION 7 — Bottom CTA Banner */}
+      {/* SECTION 7 â€” Bottom CTA Banner */}
       <section
         aria-label="Start a Project"
         className="w-full py-20 px-6 bg-[color:var(--color-primary)]"
       >
         <div className="w-full max-w-[var(--content-wide)] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10 anim-reveal is-visible">
 
-          {/* Left — Heading + Body */}
+          {/* Left â€” Heading + Body */}
           <div className="flex-1 max-w-2xl">
             <div className="inline-block text-[color:var(--color-bg)] text-[length:var(--text-xs)] uppercase tracking-[0.14em] opacity-70 mb-5">
               Let&apos;s Put This Into Practice
@@ -500,13 +487,13 @@ export default function BlogClient() {
               Reading gets you clarity.<br />Working with us gets you results.
             </h2>
             <p className="font-[family-name:var(--font-body)] text-[color:var(--color-bg)]/70 text-[length:var(--text-base)] leading-relaxed max-w-xl">
-              If something you read here resonated — a platform decision, an SEO gap,
-              a chatbot idea — bring it to us. We&apos;ll give you a clear recommendation
+              If something you read here resonated â€” a platform decision, an SEO gap,
+              a chatbot idea â€” bring it to us. We&apos;ll give you a clear recommendation
               and a rough price range. No sales script. No pressure.
             </p>
           </div>
 
-          {/* Right — CTAs stacked */}
+          {/* Right â€” CTAs stacked */}
           <div className="flex flex-col gap-4 min-w-fit">
             <a
               href="https://wa.me/919599143235"
@@ -514,7 +501,7 @@ export default function BlogClient() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-[color:var(--color-bg)] text-[color:var(--color-primary)] font-semibold rounded-full px-8 py-4 hover:opacity-90 transition-all active:scale-95 whitespace-nowrap"
             >
-              Chat on WhatsApp →
+              Chat on WhatsApp â†’
             </a>
             <a
               href="https://wa.me/919599143235"
