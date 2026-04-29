@@ -27,7 +27,7 @@ const posts = [
     featured: false,
     seoTag: "AEO",
     author: "Sitecraf",
-    image: "https://picsum.photos/seed/aeoguide/800/600"
+    image: "/whatisaeo/seo-vs-aeo-google-results-vs-ai-answer-engine.webp"
   },
   {
     slug: "wordpress-vs-nextjs-for-seo",
@@ -39,7 +39,7 @@ const posts = [
     featured: false,
     seoTag: "SEO",
     author: "Sitecraf",
-    image: "https://picsum.photos/seed/wpvsnextjs/800/600"
+    image: "/wordpressvsnextjs/wordpress-vs-nextjs-seo-comparison-hero-indian-business.webp"
   },
   {
     slug: "what-is-geo-generative-engine-optimization",
@@ -51,7 +51,7 @@ const posts = [
     featured: false,
     seoTag: "GEO",
     author: "Sitecraf",
-    image: "https://picsum.photos/seed/geochatgpt/800/600"
+    image: "/whatisgeo/geo-chatgpt-gemini-recommend-business-india-hero.webp"
   },
   {
     slug: "website-vs-instagram-do-you-need-a-website",
