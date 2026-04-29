@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { NavItem } from '@/types';
+import BrandLogo from '@/components/layout/BrandLogo';
 
 const navItems: NavItem[] = [
   { label: 'Services', href: '/services' },
@@ -78,16 +79,10 @@ export default function Navbar() {
             className="flex items-center gap-3 group" 
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            <svg 
-              viewBox="0 0 32 32" 
-              className="w-8 h-8 transition-all duration-300 group-hover:drop-shadow-[var(--glow-sm)]"
-            >
-              <rect x="16" y="2" width="14" height="14" transform="rotate(45 16 2)" stroke="#00c8c8" strokeWidth="1.5" fill="none" />
-              <rect x="16" y="12" width="14" height="14" transform="rotate(45 16 12)" stroke="#00c8c8" strokeWidth="1.5" fill="none" />
-            </svg>
-            <span className="font-[family-name:var(--font-display)] font-semibold text-[#e8e8f0] text-xl tracking-tight">
-              Sitecraf
-            </span>
+            <BrandLogo
+              iconClassName="h-9 w-9 transition-all duration-300 group-hover:drop-shadow-[var(--glow-sm)]"
+              textClassName="text-[1.3rem] md:text-xl"
+            />
           </Link>
 
           {/* CENTER — Nav Links (Desktop) */}

@@ -989,6 +989,76 @@ nav {
   display: block;
 }
 
+.brand-wordmark {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--color-text);
+}
+
+.brand-wordmark__text {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.brand-wordmark__site {
+  color: #b5ff3e;
+}
+
+.brand-wordmark__craf {
+  color: #ffffff;
+}
+
+.brand-wordmark--animated {
+  position: relative;
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-right: 0.14em;
+  border-right: 2px solid #b5ff3e;
+  filter: drop-shadow(0 0 12px rgba(181, 255, 62, 0.14));
+  animation: brand-wordmark-type 60s steps(9, end) infinite,
+    brand-wordmark-caret 1s step-end infinite;
+}
+
+@keyframes brand-wordmark-type {
+  0% {
+    width: 0;
+    border-right-color: rgba(181, 255, 62, 0.95);
+  }
+
+  5% {
+    width: 9ch;
+    border-right-color: rgba(181, 255, 62, 0.95);
+  }
+
+  96% {
+    width: 9ch;
+    border-right-color: transparent;
+  }
+
+  100% {
+    width: 0;
+    border-right-color: transparent;
+  }
+}
+
+@keyframes brand-wordmark-caret {
+  0%,
+  49% {
+    border-right-color: rgba(181, 255, 62, 0.95);
+  }
+
+  50%,
+  100% {
+    border-right-color: transparent;
+  }
+}
+
 /* lg breakpoint (1024px+) — desktop layout */
 @media (min-width: 1024px) {
   .hero-inner {

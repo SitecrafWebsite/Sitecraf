@@ -4,7 +4,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Chatbot from '@/components/ui/Chatbot';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Sitecraf — Website Development, AI Chatbot & Image Generation for B2B Brands',
   description: 'Sitecraf builds custom websites, Shopify-to-Wix migrations, AI chatbots in Hindi/English, and AI image generation for Indian B2B businesses. Based in New Delhi. Transparent pricing. No GST. 100% ownership.',
   keywords: [
@@ -26,6 +26,11 @@ export const metadata = {
     type: 'website',
     locale: 'en_IN',
     siteName: 'Sitecraf',
+  },
+  icons: {
+    icon: '/sitecraf_favicon.ico',
+    shortcut: '/sitecraf_favicon.ico',
+    apple: '/sitecraf_favicon.ico',
   }
 };
 
@@ -72,7 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body suppressHydrationWarning className="bg-[#000000] text-[#e8e8f0] font-[family-name:var(--font-body)] antialiased">
         <Navbar />
-        <main className="min-h-screen">
+        <main id="main-content" className="min-h-screen">
           {children}
         </main>
         <Footer />
