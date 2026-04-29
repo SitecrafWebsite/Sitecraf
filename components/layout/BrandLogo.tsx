@@ -17,6 +17,8 @@ export default function BrandLogo({
   animated = true,
 }: BrandLogoProps) {
   const fullText = 'Sitecraf';
+  const typingSpeedMs = 52;
+  const typingRestartDelayMs = 60000;
   const [displayedText, setDisplayedText] = useState(() => (animated ? '' : fullText));
 
   useEffect(() => {
@@ -25,16 +27,42 @@ export default function BrandLogo({
     }
 
     let currentIndex = 0;
-    const interval = setInterval(() => {
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
+    let isCancelled = false;
+
+    const typeNextCharacter = () => {
+      if (isCancelled) {
+        return;
+      }
+
       currentIndex += 1;
       setDisplayedText(fullText.slice(0, currentIndex));
 
-      if (currentIndex >= fullText.length) {
-        clearInterval(interval);
+      if (currentIndex < fullText.length) {
+        timeoutId = setTimeout(typeNextCharacter, typingSpeedMs);
+        return;
       }
-    }, 40);
 
-    return () => clearInterval(interval);
+      timeoutId = setTimeout(() => {
+        if (isCancelled) {
+          return;
+        }
+
+        currentIndex = 0;
+        setDisplayedText('');
+        timeoutId = setTimeout(typeNextCharacter, typingSpeedMs);
+      }, typingRestartDelayMs);
+    };
+
+    timeoutId = setTimeout(typeNextCharacter, typingSpeedMs);
+
+    return () => {
+      isCancelled = true;
+
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
   }, [animated]);
 
   const siteText = displayedText.slice(0, Math.min(displayedText.length, 4));
@@ -51,7 +79,7 @@ export default function BrandLogo({
         className={`${iconClassName} flex-shrink-0 object-contain`.trim()}
       />
       <span
-        className={`brand-wordmark ${textClassName} m-0 p-0 leading-none whitespace-nowrap`.trim()}
+        className={`brand-wordmark ${textClassName} m-0 p-0 leading-none whitespace-nowrap font-[family-name:var(--font-display)]`.trim()}
         aria-label="Sitecraf"
       >
         <span className="brand-wordmark__placeholder" aria-hidden="true">
