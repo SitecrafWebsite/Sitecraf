@@ -75,7 +75,7 @@ const posts = [
     featured: false,
     seoTag: "High Intent",
     author: "Sitecraf",
-    image: "https://picsum.photos/seed/websiteleads/800/600"
+    image: "/whyyourwebsiteisntgettingleads/small-business-website-not-getting-leads-hero.webp"
   },
   {
     slug: "5-signs-your-website-is-costing-you-customers",
