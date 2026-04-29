@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     siteName: 'Sitecraf',
   },
   icons: {
-    icon: '/sitecraf_favicon.ico',
-    shortcut: '/sitecraf_favicon.ico',
-    apple: '/sitecraf_favicon.ico',
+    icon: '/sitecraf_favicon.png',
+    shortcut: '/sitecraf_favicon.png',
+    apple: '/sitecraf_favicon.png',
   }
 };
 

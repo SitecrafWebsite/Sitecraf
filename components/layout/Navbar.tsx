@@ -76,12 +76,12 @@ export default function Navbar() {
           {/* LEFT — SVG Logo + Brand Name */}
           <Link 
             href="/" 
-            className="flex items-center gap-3 group" 
+            className="group inline-flex items-center m-0 p-0" 
             onClick={() => setIsMobileMenuOpen(false)}
           >
             <BrandLogo
-              iconClassName="h-9 w-9 transition-all duration-300 group-hover:drop-shadow-[var(--glow-sm)]"
-              textClassName="text-[1.3rem] md:text-xl"
+              iconClassName="h-[81px] w-[81px] transition-all duration-300 group-hover:drop-shadow-[var(--glow-sm)]"
+              textClassName="text-[2.925rem] md:text-[2.8125rem]"
             />
           </Link>
 
