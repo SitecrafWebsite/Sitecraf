@@ -5,6 +5,25 @@ import Image from 'next/image'
 import { compileMDX } from 'next-mdx-remote/rsc'
 import { getAllPostSlugs, getPostBySlug } from '@/lib/blog'
 
+const mdxComponents = {
+  img: ({ src, alt }: { src?: string; alt?: string }) => {
+    if (!src) return null
+
+    return (
+      <figure className="my-8 overflow-hidden rounded-[10px] border border-white/10 bg-[color:var(--color-surface)]">
+        {/* MDX content uses mixed local/remote assets, so a native img keeps sizing flexible here. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={src}
+          alt={alt ?? ''}
+          className="block h-auto w-full object-contain"
+          loading="lazy"
+        />
+      </figure>
+    )
+  },
+}
+
 export async function generateStaticParams() {
   return getAllPostSlugs().map(slug => ({ slug }))
 }
@@ -44,6 +63,7 @@ export default async function BlogPostPage(
   const { content } = await compileMDX({
     source: post.content,
     options: { parseFrontmatter: false },
+    components: mdxComponents,
   })
 
   const articleJsonLd = {
@@ -102,12 +122,12 @@ export default async function BlogPostPage(
             </div>
 
             {post.image && (
-              <div className="relative w-full h-64 md:h-96 rounded-[10px] overflow-hidden mb-12">
+              <div className="relative mb-12 h-64 w-full overflow-hidden rounded-[10px] border border-white/10 bg-[color:var(--color-surface)] md:h-96">
                 <Image
                   src={post.image}
                   alt={post.imageAlt ?? post.title}
                   fill
-                  className="object-cover"
+                  className="object-contain md:object-cover"
                   sizes="(max-width: 768px) 100vw, 80vw"
                   priority
                 />
@@ -132,7 +152,7 @@ export default async function BlogPostPage(
               prose-td:border prose-td:border-white/10 prose-td:px-4 prose-td:py-2 prose-td:text-[color:var(--color-text-muted)]
               prose-hr:border-white/10
               prose-code:text-[color:var(--color-primary)] prose-code:bg-[color:var(--color-surface)] prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
-              prose-img:rounded-[10px]
+              prose-img:my-0 prose-img:w-full prose-img:h-auto prose-img:max-w-full prose-img:rounded-[10px]
             ">
               {content}
             </article>
