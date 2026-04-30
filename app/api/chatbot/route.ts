@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { detectIntent, detectLanguage } from '@/lib/chatbot/detector';
 import { getAnswer } from '@/lib/chatbot/answerer';
+import { checkRateLimit } from '@/lib/rateLimit';
 
 const SYSTEM_PROMPT = `
 You are Sitecraf Assistant, a professional, friendly support bot for Sitecraf, a web design agency in India.
@@ -44,8 +45,37 @@ export async function POST(req: NextRequest) {
   const cors = getCorsHeaders(origin);
 
   try {
-    const body = await req.json();
+    const ip =
+      req.headers.get('x-forwarded-for')?.split(',')[0].trim() ??
+      req.headers.get('x-real-ip') ??
+      '127.0.0.1';
+
+    const { allowed, retryAfter } = checkRateLimit(ip);
+
+    if (!allowed) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please wait before sending another message.' },
+        {
+          status: 429,
+          headers: {
+            ...cors,
+            'Retry-After': String(retryAfter),
+          },
+        }
+      );
+    }
+
+    let body: { message?: string };
+    try {
+      body = await req.json();
+    } catch {
+      return NextResponse.json({ error: 'Invalid request body' }, { status: 400, headers: cors });
+    }
     const message: string = body?.message ?? '';
+
+    if (message.length > 500) {
+      return NextResponse.json({ error: 'Message too long. Maximum 500 characters.' }, { status: 400, headers: cors });
+    }
 
     if (!message.trim()) {
       return NextResponse.json({ error: 'Message is required' }, { status: 400, headers: cors });
