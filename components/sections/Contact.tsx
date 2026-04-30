@@ -88,15 +88,16 @@ export default function Contact() {
                 return;
               }
 
+              // Build JSON payload for internal API route
               const payload = {
-                name: formData.get('name') as string,
-                email,
+                name: formData.get('name'),
+                email: formData.get('email'),
                 phone: `+91 ${phone}`,
-                business: formData.get('business') as string,
-                service: formData.get('service') as string,
-                budget: formData.get('budget') as string,
-                message: formData.get('message') as string,
-                website: formData.get('website') as string,
+                business: formData.get('business'),
+                service: formData.get('service'),
+                budget: formData.get('budget'),
+                message: formData.get('message'),
+                website: '', // honeypot — always empty for real users
               };
 
               try {
@@ -110,14 +111,23 @@ export default function Contact() {
                 } else {
                   setStatus('error');
                 }
-              } catch {
+              } catch (err) {
                 setStatus('error');
               }
             }}
             className="flex flex-col gap-6 bg-[#111111] p-8 rounded-2xl border border-white/[0.08] relative overflow-hidden"
           >
             {/* Honeypot — hidden from humans, bots fill it */}
-            <input type="text" name="website" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+            <input
+              type="text"
+              name="website"
+              value=""
+              onChange={() => {}}
+              style={{ display: 'none' }}
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+            />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex flex-col gap-2">
