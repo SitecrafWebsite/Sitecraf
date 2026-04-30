@@ -88,28 +88,36 @@ export default function Contact() {
                 return;
               }
 
-              // Append country code for the email
-              formData.set('phone', `+91 ${phone}`);
+              const payload = {
+                name: formData.get('name') as string,
+                email,
+                phone: `+91 ${phone}`,
+                business: formData.get('business') as string,
+                service: formData.get('service') as string,
+                budget: formData.get('budget') as string,
+                message: formData.get('message') as string,
+                website: formData.get('website') as string,
+              };
 
               try {
-                const response = await fetch("https://formsubmit.co/ajax/info@sitecraf.com", {
-                  method: "POST",
-                  body: formData
+                const response = await fetch('/api/contact', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(payload),
                 });
                 if (response.ok) {
                   setStatus('success');
                 } else {
                   setStatus('error');
                 }
-              } catch (err) {
+              } catch {
                 setStatus('error');
               }
             }}
             className="flex flex-col gap-6 bg-[#111111] p-8 rounded-2xl border border-white/[0.08] relative overflow-hidden"
           >
-            {/* Hidden Config Fields for FormSubmit */}
-            <input type="hidden" name="_subject" value="New Project Inquiry - Sitecraf" />
-            <input type="hidden" name="_template" value="table" />
+            {/* Honeypot — hidden from humans, bots fill it */}
+            <input type="text" name="website" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex flex-col gap-2">

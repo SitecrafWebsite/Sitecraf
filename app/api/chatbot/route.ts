@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import OpenAI from 'openai';
 import { detectIntent, detectLanguage } from '@/lib/chatbot/detector';
 import { getAnswer } from '@/lib/chatbot/answerer';
 import { checkRateLimit } from '@/lib/rateLimit';
@@ -112,34 +111,28 @@ export async function POST(req: NextRequest) {
         ? result.snippets.join('\n\n---\n\n')
         : 'No specific info found in the knowledge base.';
 
-    if (!process.env.NVIDIA_API_KEY) {
+    if (!process.env.RENDER_BACKEND_URL) {
       return NextResponse.json(
         { answer: 'Service temporarily unavailable. Please reach us on WhatsApp at +91 9599143235.', source: 'error' },
         { status: 500, headers: cors }
       );
     }
 
-    const nvidia = new OpenAI({
-      apiKey: process.env.NVIDIA_API_KEY,
-      baseURL: 'https://integrate.api.nvidia.com/v1',
+    const renderResponse = await fetch(`${process.env.RENDER_BACKEND_URL}/api/llm`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        systemPrompt: SYSTEM_PROMPT,
+        context,
+        message: sanitizeMessage(cleanMessage),
+      }),
     });
 
-    const completion = await nvidia.chat.completions.create({
-      model: 'meta/llama-3.1-8b-instruct',
-      messages: [
-        { role: 'system', content: SYSTEM_PROMPT },
-        {
-          role: 'user',
-          content: `Context:\n${context}\n\n[USER_MESSAGE]\n${sanitizeMessage(message)}\n[/USER_MESSAGE]`,
-        },
-      ],
-      max_tokens: 200,
-      temperature: 0.4,
-    });
+    if (!renderResponse.ok) {
+      throw new Error(`Render backend error: ${renderResponse.status}`);
+    }
 
-    const answer =
-      completion.choices[0]?.message?.content?.toString().trim() ??
-      'Sorry, something went wrong. Please reach us on WhatsApp at +91 9599143235.';
+    const { answer } = await renderResponse.json();
 
     return NextResponse.json({ answer, source: 'llm' }, { headers: cors });
   } catch (err) {
