@@ -4,9 +4,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import type { ChatMessage, ChatStatus } from '@/types';
 
-const CHATBOT_API_BASE_URL =
-  process.env.NEXT_PUBLIC_CHATBOT_API_BASE_URL ?? '';
-
 const INITIAL_MESSAGE: ChatMessage = {
   id: 'init',
   role: 'assistant',
@@ -44,9 +41,7 @@ export default function Chatbot() {
     setStatus('loading');
 
     try {
-      const url = CHATBOT_API_BASE_URL
-        ? `${CHATBOT_API_BASE_URL}/api/chatbot`
-        : '/api/chatbot';
+      const url = '/api/chatbot';
 
       const res = await fetch(url, {
         method: 'POST',

@@ -29,7 +29,7 @@ const securityHeaders = [
       "style-src 'self' 'unsafe-inline' https://api.fontshare.com https://fonts.googleapis.com",
       "font-src 'self' https://api.fontshare.com https://fonts.gstatic.com",
       "img-src 'self' data: blob: https://picsum.photos https://images.unsplash.com https://api.dicebear.com https://cdn.simpleicons.org",
-      "connect-src 'self' https://integrate.api.nvidia.com https://formsubmit.co",
+      "connect-src 'self' https://sitecraf.onrender.com https://formsubmit.co",
       "frame-ancestors 'none'",
       "base-uri 'self'",
       "form-action 'self' https://formsubmit.co",
