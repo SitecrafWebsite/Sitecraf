@@ -108,6 +108,8 @@ export default function Contact() {
                 });
                 if (response.ok) {
                   setStatus('success');
+                } else if (response.status === 429) {
+                  setStatus('rate-limited');
                 } else {
                   setStatus('error');
                 }
@@ -245,8 +247,14 @@ export default function Contact() {
                 suppressHydrationWarning
                 className="w-full bg-[#b5ff3e] text-[#000000] font-semibold px-8 py-4 rounded-lg hover:bg-[#c4ff66] hover:shadow-[var(--glow-sm)] active:scale-[0.98] transition-all duration-300 disabled:opacity-70"
               >
-                {status === 'loading' ? 'Sending...' : status === 'success' ? 'Sent! We\'ll reply within 4 hours ✓' : status === 'error' ? 'Error. Please try again.' : 'Send Message →'}
+                {status === 'loading' ? 'Sending...' : status === 'success' ? 'Sent! We\'ll reply within 4 hours ✓' : status === 'rate-limited' ? 'Too many submissions — wait a minute' : status === 'error' ? 'Error. Please try again.' : 'Send Message →'}
               </button>
+
+              {status === 'rate-limited' && (
+                <p className="text-amber-400 text-xs text-center -mt-2">
+                  Too many submissions. Please wait a minute and try again.
+                </p>
+              )}
 
               <p className="text-[#66667a] text-[length:var(--text-xs)] text-center font-medium">
                 No GST. Transparent pricing. 100% ownership guarantee.
