@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { checkRateLimit } from '@/lib/rateLimit';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 function sanitizeField(value: unknown, maxLength = 500): string {
   if (typeof value !== 'string') return '';
@@ -80,39 +83,36 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Please select a service.' }, { status: 400 });
     }
 
-    // Forward to FormSubmit via server-side fetch
-    // Email address is hidden from client bundle via env var
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('email', email);
-    formData.append('phone', phone);
-    formData.append('business', business);
-    formData.append('service', service);
-    formData.append('budget', budget);
-    formData.append('message', message);
-    formData.append('_subject', 'New Project Inquiry - Sitecraf');
-    formData.append('_template', 'table');
-    formData.append('_captcha', 'false');
+    const { error } = await resend.emails.send({
+      from: 'Contact Form <onboarding@resend.dev>',
+      to: ['info@sitecraf.com'],
+      subject: `New Enquiry from ${name} - ${service}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <table cellpadding="8" style="border-collapse:collapse">
+          <tr><td><strong>Name</strong></td><td>${name}</td></tr>
+          <tr><td><strong>Business</strong></td><td>${business}</td></tr>
+          <tr><td><strong>Email</strong></td><td>${email}</td></tr>
+          <tr><td><strong>Phone</strong></td><td>${phone}</td></tr>
+          <tr><td><strong>Service</strong></td><td>${service}</td></tr>
+          <tr><td><strong>Budget</strong></td><td>${budget}</td></tr>
+          <tr><td><strong>Message</strong></td><td>${message}</td></tr>
+        </table>
+      `,
+    });
 
-    const response = await fetch(
-      `https://formsubmit.co/ajax/${process.env.CONTACT_FORM_EMAIL}`,
-      {
-        method: 'POST',
-        body: formData,
-      }
-    );
-
-    if (!response.ok) {
-      // Log FormSubmit's response body so we can debug delivery issues
-      const fsBody = await response.text().catch(() => '(unreadable)');
-      console.error('[contact] FormSubmit error', response.status, fsBody);
+    if (error) {
+      console.error('Resend error:', error);
       return NextResponse.json(
-        { error: 'Message delivery failed. Please email us directly at info@sitecraf.com or WhatsApp +91 9599143235.' },
+        { error: 'Failed to send email. Please try again.' },
         { status: 502 }
       );
     }
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json(
+      { success: true },
+      { status: 200 }
+    );
 
   } catch (err) {
     console.error('[contact]', err instanceof Error ? err.message : 'unknown error');
