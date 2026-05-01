@@ -17,9 +17,17 @@ export async function POST(req: NextRequest) {
       req.headers.get('x-real-ip') ??
       '127.0.0.1';
 
-    // Rate limit — 3 submissions per minute per IP, isolated bucket
-    const { allowed, retryAfter } = checkRateLimit(ip, {
-      max: 3,
+    // Use a composite key: IP + partial user-agent.
+    // On Vercel, x-forwarded-for can return the same load-balancer IP for
+    // multiple real users, so keying on IP alone causes false 429s for
+    // legitimate visitors who share an edge node.
+    const ua = req.headers.get('user-agent') ?? '';
+    const uaSlice = ua.slice(0, 40); // enough to differentiate browsers
+    const rateLimitKey = `${ip}::${uaSlice}`;
+
+    // 5 submissions per minute per browser fingerprint
+    const { allowed, retryAfter } = checkRateLimit(rateLimitKey, {
+      max: 5,
       windowMs: 60 * 1000,
       bucket: 'contact',
     });
