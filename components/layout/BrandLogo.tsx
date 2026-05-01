@@ -14,7 +14,7 @@ export default function BrandLogo({
         alt="Sitecraf Logo"
         width={300}
         height={80}
-        className="h-16 md:h-20 w-auto object-contain drop-shadow-[var(--glow-sm)] transition-all duration-300"
+        className="h-14 md:h-18 w-auto object-contain drop-shadow-[var(--glow-sm)] transition-all duration-300"
         priority
       />
     </div>
