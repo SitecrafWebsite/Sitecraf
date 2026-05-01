@@ -71,7 +71,7 @@ export default function Navbar() {
             : 'translate-y-0'
         }`}
       >
-        <div className="w-full md:w-[80%] max-w-none mx-auto px-6 py-4 md:py-[18.4px] flex items-center justify-between">
+        <div className="w-full md:w-[80%] max-w-none mx-auto px-6 py-5 md:py-[22px] flex items-center justify-between">
           
           {/* LEFT — SVG Logo + Brand Name */}
           <Link 
@@ -139,7 +139,7 @@ export default function Navbar() {
 
         {/* MOBILE — Drawer */}
         <div 
-          className={`md:hidden absolute top-[72px] left-0 right-0 overflow-hidden transition-all duration-300 ease-[var(--t-base)] ${
+          className={`md:hidden absolute top-[104px] left-0 right-0 overflow-hidden transition-all duration-300 ease-[var(--t-base)] ${
             isMobileMenuOpen ? 'max-h-[100dvh] opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
