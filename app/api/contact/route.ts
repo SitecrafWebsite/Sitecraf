@@ -103,7 +103,13 @@ export async function POST(req: NextRequest) {
     );
 
     if (!response.ok) {
-      throw new Error('FormSubmit delivery failed');
+      // Log FormSubmit's response body so we can debug delivery issues
+      const fsBody = await response.text().catch(() => '(unreadable)');
+      console.error('[contact] FormSubmit error', response.status, fsBody);
+      return NextResponse.json(
+        { error: 'Message delivery failed. Please email us directly at info@sitecraf.com or WhatsApp +91 9599143235.' },
+        { status: 502 }
+      );
     }
 
     return NextResponse.json({ success: true });
