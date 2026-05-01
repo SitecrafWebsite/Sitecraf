@@ -2,17 +2,18 @@ import { NextRequest, NextResponse } from 'next/server';
 import { detectIntent, detectLanguage } from '@/lib/chatbot/detector';
 import { getAnswer } from '@/lib/chatbot/answerer';
 import { checkRateLimit } from '@/lib/rateLimit';
+import OpenAI from 'openai';
 
 function sanitizeMessage(input: string): string {
   return input
-    .replace(/<[^>]*>/g, '')           // strip HTML tags
-    .replace(/[`'"\\]/g, '')           // strip quotes and backticks
-    .replace(/\{\{.*?\}\}/g, '')       // strip template injection patterns
-    .replace(/ignore\s+.{0,30}instructions/gi, '') // strip prompt override attempts
-    .replace(/system\s*:/gi, '')       // strip system: override attempts
-    .replace(/\[INST\]|\[\/INST\]/gi, '') // strip LLM instruction tokens
+    .replace(/<[^>]*>/g, '')
+    .replace(/[`'"\\]/g, '')
+    .replace(/\{\{.*?\}\}/g, '')
+    .replace(/ignore\s+.{0,30}instructions/gi, '')
+    .replace(/system\s*:/gi, '')
+    .replace(/\[INST\]|\[\/INST\]/gi, '')
     .trim()
-    .substring(0, 500);                // hard cap at 500 chars
+    .substring(0, 500);
 }
 
 const SYSTEM_PROMPT = `
@@ -85,16 +86,26 @@ export async function POST(req: NextRequest) {
     try {
       body = await req.json();
     } catch {
-      return NextResponse.json({ error: 'Invalid request body' }, { status: 400, headers: cors });
+      return NextResponse.json(
+        { error: 'Invalid request body' },
+        { status: 400, headers: cors }
+      );
     }
+
     const message: string = body?.message ?? '';
 
     if (message.length > 500) {
-      return NextResponse.json({ error: 'Message too long. Maximum 500 characters.' }, { status: 400, headers: cors });
+      return NextResponse.json(
+        { error: 'Message too long. Maximum 500 characters.' },
+        { status: 400, headers: cors }
+      );
     }
 
     if (!message.trim()) {
-      return NextResponse.json({ error: 'Message is required' }, { status: 400, headers: cors });
+      return NextResponse.json(
+        { error: 'Message is required' },
+        { status: 400, headers: cors }
+      );
     }
 
     const cleanMessage = sanitizeMessage(message);
@@ -102,43 +113,62 @@ export async function POST(req: NextRequest) {
     const language = detectLanguage(cleanMessage);
     const result = getAnswer(intent, cleanMessage, language);
 
+    // If canned answer is available — return immediately, no LLM cost
     if (result.source !== 'llm-needed') {
-      return NextResponse.json({ answer: result.answer, source: result.source }, { headers: cors });
+      return NextResponse.json(
+        { answer: result.answer, source: result.source },
+        { headers: cors }
+      );
     }
 
+    // Build context from KB snippets
     const context =
       result.snippets && result.snippets.length > 0
         ? result.snippets.join('\n\n---\n\n')
         : 'No specific info found in the knowledge base.';
 
-    if (!process.env.RENDER_BACKEND_URL) {
+    // OpenAI call — server-side only, key never reaches browser
+    if (!process.env.OPENAI_API_KEY) {
+      console.error('[chatbot] OPENAI_API_KEY is not set');
       return NextResponse.json(
-        { answer: 'Service temporarily unavailable. Please reach us on WhatsApp at +91 9599143235.', source: 'error' },
+        {
+          answer: 'Service temporarily unavailable. Please reach us on WhatsApp at +91 9599143235.',
+          source: 'error',
+        },
         { status: 500, headers: cors }
       );
     }
 
-    const renderResponse = await fetch(`${process.env.RENDER_BACKEND_URL}/api/llm`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        systemPrompt: SYSTEM_PROMPT,
-        context,
-        message: sanitizeMessage(cleanMessage),
-      }),
+    const openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
     });
 
-    if (!renderResponse.ok) {
-      throw new Error(`Render backend error: ${renderResponse.status}`);
-    }
+    const completion = await openai.chat.completions.create({
+      model: 'gpt-4.1-mini',
+      messages: [
+        { role: 'system', content: SYSTEM_PROMPT },
+        {
+          role: 'user',
+          content: `Context:\n${context}\n\n[USER_MESSAGE]\n${cleanMessage}\n[/USER_MESSAGE]`,
+        },
+      ],
+      max_tokens: 200,
+      temperature: 0.4,
+    });
 
-    const { answer } = await renderResponse.json();
+    const answer =
+      completion.choices[0]?.message?.content?.trim() ??
+      'Sorry, something went wrong. Please reach us on WhatsApp at +91 9599143235.';
 
     return NextResponse.json({ answer, source: 'llm' }, { headers: cors });
+
   } catch (err) {
-    console.error('[chatbot]', err);
+    console.error('[chatbot]', err instanceof Error ? err.message : 'unknown error');
     return NextResponse.json(
-      { answer: 'Something went wrong. Please reach us on WhatsApp at +91 9599143235.', source: 'error' },
+      {
+        answer: 'Something went wrong. Please reach us on WhatsApp at +91 9599143235.',
+        source: 'error',
+      },
       { status: 500, headers: cors }
     );
   }
