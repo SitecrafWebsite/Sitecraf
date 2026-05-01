@@ -87,6 +87,7 @@ export default function Chatbot() {
             src="/chatbot-avatar.webp" 
             alt="Chatbot Avatar" 
             fill 
+            sizes="48px"
             className="object-cover"
           />
         </div>
@@ -110,6 +111,7 @@ export default function Chatbot() {
                   src="/chatbot-avatar.webp" 
                   alt="Chatbot Avatar" 
                   fill 
+                  sizes="48px"
                   className="object-cover"
                 />
               </div>

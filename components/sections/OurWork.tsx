@@ -142,6 +142,7 @@ export default function OurWork() {
                       src={activeProject.image}
                       alt={activeProject.name}
                       fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover"
                       referrerPolicy="no-referrer"
                     />

@@ -320,6 +320,7 @@ export default function OurPortfolio() {
                           src={project.desktopImage}
                           alt={`${project.title} Desktop`}
                           fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                           className="object-cover object-top"
                         />
                       ) : (
@@ -359,6 +360,7 @@ export default function OurPortfolio() {
                           src={project.mobileImage}
                           alt={`${project.title} Mobile`}
                           fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                           className="object-cover object-top"
                         />
                       ) : (
