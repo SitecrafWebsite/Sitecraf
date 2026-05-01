@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
@@ -512,6 +511,7 @@ nav {
 
 /* Mobile & Accessibility Overrides */
 @media (max-width: 1023px) {
+
   .testimonials-marquee-left,
   .testimonials-marquee-right {
     animation-duration: 40s;
@@ -1036,6 +1036,7 @@ nav {
 }
 
 @keyframes brand-wordmark-caret {
+
   0%,
   49% {
     opacity: 1;
