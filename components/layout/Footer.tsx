@@ -24,10 +24,7 @@ export default function Footer() {
         <div className="md:w-[80%] mx-auto w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* 1) BRAND COLUMN */}
         <div className="footer-column footer-brand" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-          <BrandLogo
-            iconClassName="h-[60px] w-[60px]"
-            textClassName="text-[1.875rem]"
-          />
+          <BrandLogo />
           <p className="footer-description" style={{ fontSize: '16px', color: '#8888a0', lineHeight: 1.6, maxWidth: '280px', fontFamily: 'var(--font-body)' }}>
             Fast websites for growing Indian businesses. WordPress, Shopify, Wix Studio, and custom Next.js — built to convert, not just impress.
           </p>

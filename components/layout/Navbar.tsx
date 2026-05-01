@@ -79,10 +79,7 @@ export default function Navbar() {
             className="group inline-flex items-center m-0 p-0" 
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            <BrandLogo
-              iconClassName="h-[60px] w-[60px] transition-all duration-300 group-hover:drop-shadow-[var(--glow-sm)]"
-              textClassName="h-[60px] text-[2.125rem] leading-[60px] md:text-[2.125rem] md:leading-[60px]"
-            />
+            <BrandLogo />
           </Link>
 
           {/* CENTER — Nav Links (Desktop) */}

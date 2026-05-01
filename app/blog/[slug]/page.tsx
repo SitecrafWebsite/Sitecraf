@@ -127,7 +127,7 @@ export default async function BlogPostPage(
                   src={post.image}
                   alt={post.imageAlt ?? post.title}
                   fill
-                  className="object-contain md:object-cover"
+                  className="object-cover"
                   sizes="(max-width: 768px) 100vw, 80vw"
                   priority
                 />
