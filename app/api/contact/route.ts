@@ -84,7 +84,7 @@ export async function POST(req: NextRequest) {
     }
 
     const { error } = await resend.emails.send({
-      from: 'Contact Form <onboarding@resend.dev>',
+      from: 'Contact Form <no-reply@sitecraf.com>',
       to: ['info@sitecraf.com'],
       subject: `New Enquiry from ${name} - ${service}`,
       html: `
