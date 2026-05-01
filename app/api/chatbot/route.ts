@@ -163,7 +163,16 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ answer, source: 'llm' }, { headers: cors });
 
   } catch (err) {
-    console.error('[chatbot]', err instanceof Error ? err.message : 'unknown error');
+    const e = err as { status?: number; code?: string; type?: string; message?: string };
+    console.error(
+      '[chatbot] LLM call failed',
+      JSON.stringify({
+        status: e?.status,
+        code: e?.code,
+        type: e?.type,
+        message: e?.message ?? 'unknown error',
+      })
+    );
     return NextResponse.json(
       {
         answer: 'Something went wrong. Please reach us on WhatsApp at +91 9599143235.',
