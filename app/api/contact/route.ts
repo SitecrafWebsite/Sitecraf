@@ -1,22 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-
-const RATE_LIMIT_MAP = new Map<string, { count: number; resetAt: number }>();
-const WINDOW_MS = 60 * 1000; // 1 minute
-const MAX_SUBMISSIONS = 3;   // max 3 form submissions per minute per IP
-
-function checkContactRateLimit(ip: string): boolean {
-  const now = Date.now();
-  const record = RATE_LIMIT_MAP.get(ip);
-
-  if (!record || now > record.resetAt) {
-    RATE_LIMIT_MAP.set(ip, { count: 1, resetAt: now + WINDOW_MS });
-    return true;
-  }
-
-  if (record.count >= MAX_SUBMISSIONS) return false;
-  record.count++;
-  return true;
-}
+import { checkRateLimit } from '@/lib/rateLimit';
 
 function sanitizeField(value: unknown, maxLength = 500): string {
   if (typeof value !== 'string') return '';
@@ -34,11 +17,17 @@ export async function POST(req: NextRequest) {
       req.headers.get('x-real-ip') ??
       '127.0.0.1';
 
-    // Rate limit check
-    if (!checkContactRateLimit(ip)) {
+    // Rate limit — 3 submissions per minute per IP, isolated bucket
+    const { allowed, retryAfter } = checkRateLimit(ip, {
+      max: 3,
+      windowMs: 60 * 1000,
+      bucket: 'contact',
+    });
+
+    if (!allowed) {
       return NextResponse.json(
         { error: 'Too many submissions. Please wait a minute before trying again.' },
-        { status: 429 }
+        { status: 429, headers: { 'Retry-After': String(retryAfter) } }
       );
     }
 
@@ -84,7 +73,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Forward to FormSubmit via server-side fetch
-    // Email address is now hidden from client bundle
+    // Email address is hidden from client bundle via env var
     const formData = new FormData();
     formData.append('name', name);
     formData.append('email', email);
@@ -110,6 +99,7 @@ export async function POST(req: NextRequest) {
     }
 
     return NextResponse.json({ success: true });
+
   } catch (err) {
     console.error('[contact]', err instanceof Error ? err.message : 'unknown error');
     return NextResponse.json(

@@ -67,7 +67,11 @@ export async function POST(req: NextRequest) {
       req.headers.get('x-real-ip') ??
       '127.0.0.1';
 
-    const { allowed, retryAfter } = checkRateLimit(ip);
+    const { allowed, retryAfter } = checkRateLimit(ip, {
+        max: 10,
+        windowMs: 60 * 1000,
+        bucket: 'chatbot',
+      });
 
     if (!allowed) {
       return NextResponse.json(
