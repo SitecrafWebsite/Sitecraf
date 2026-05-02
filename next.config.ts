@@ -109,6 +109,36 @@ const nextConfig: NextConfig = {
         destination: '/terms',
         permanent: true,
       },
+      {
+        source: '/about-us',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/lander',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/webpage_14',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/shopify',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/portfolio',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/contact',
+        destination: '/#contact',
+        permanent: false,
+      },
     ];
   },
   images: {
