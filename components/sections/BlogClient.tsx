@@ -87,7 +87,7 @@ const posts = [
     featured: false,
     seoTag: "High Intent",
     author: "Sitecraf",
-    image: "https://picsum.photos/seed/websitesigns/800/600"
+    image: "/5signsyourwebsite/website-costing-you-customers-hero.webp"
   },
   {
     slug: "seo-aeo-geo-guide-for-small-business",
