@@ -63,7 +63,7 @@ const posts = [
     featured: true,
     seoTag: "High Intent",
     author: "Sitecraf",
-    image: "/instavswebsite/website-vs-instagram-small-business-hero.webp"
+    image: "/instavswebsite/website-vs-instagram-small-business-thumbnail.webp"
   },
   {
     slug: "why-your-website-isnt-getting-leads",
