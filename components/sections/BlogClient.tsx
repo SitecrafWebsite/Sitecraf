@@ -123,7 +123,7 @@ const posts = [
     featured: false,
     seoTag: "High Intent",
     author: "Sitecraf",
-    image: "https://picsum.photos/seed/landingpagevsweb/800/600"
+    image: "/landingpagevsfullwebsite/landing-page-vs-full-website-small-business-hero.webp"
   },
   {
     slug: "chatgpt-recommended-competitor-geo",
