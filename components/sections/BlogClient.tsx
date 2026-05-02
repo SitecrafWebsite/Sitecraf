@@ -135,7 +135,7 @@ const posts = [
     featured: false,
     seoTag: "High Intent",
     author: "Sitecraf",
-    image: "https://picsum.photos/seed/chatgptgeo/800/600"
+    image: "/chatgptrecommendmycompetitor/chatgpt-recommended-competitor-not-me-hero.webp"
   }
 ];
 
