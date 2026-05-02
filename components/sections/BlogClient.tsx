@@ -111,7 +111,7 @@ const posts = [
     featured: false,
     seoTag: "High Intent",
     author: "Sitecraf",
-    image: "https://picsum.photos/seed/seocost/800/600"
+    image: "/howmuchdoesseocost/seo-cost-small-business-malaysia-india-hero.webp"
   },
   {
     slug: "landing-page-vs-full-website",
