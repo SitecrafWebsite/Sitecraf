@@ -3,7 +3,65 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { compileMDX } from 'next-mdx-remote/rsc'
-import { getAllPostSlugs, getPostBySlug } from '@/lib/blog'
+import { getAllPostSlugs, getPostBySlug, BlogPost } from '@/lib/blog'
+
+const RELATED_POSTS: Record<string, string[]> = {
+  '5-signs-your-website-is-costing-you-customers': [
+    'why-your-website-isnt-getting-leads',
+    'landing-page-vs-full-website',
+    'why-most-small-business-websites-dont-rank'
+  ],
+  'chatgpt-recommended-competitor-geo': [
+    'what-is-geo-generative-engine-optimization',
+    'what-is-aeo-answer-engine-optimization',
+    'seo-aeo-geo-guide-for-small-business'
+  ],
+  'landing-page-vs-full-website': [
+    '5-signs-your-website-is-costing-you-customers',
+    'why-your-website-isnt-getting-leads',
+    'website-vs-instagram-do-you-need-a-website'
+  ],
+  'seo-aeo-geo-guide-for-small-business': [
+    'what-is-aeo-answer-engine-optimization',
+    'what-is-geo-generative-engine-optimization',
+    'why-most-small-business-websites-dont-rank'
+  ],
+  'seo-cost-small-business-malaysia-india': [
+    'seo-aeo-geo-guide-for-small-business',
+    'why-most-small-business-websites-dont-rank',
+    'wordpress-vs-nextjs-for-seo'
+  ],
+  'website-vs-instagram-do-you-need-a-website': [
+    'landing-page-vs-full-website',
+    '5-signs-your-website-is-costing-you-customers',
+    'why-your-website-isnt-getting-leads'
+  ],
+  'what-is-aeo-answer-engine-optimization': [
+    'what-is-geo-generative-engine-optimization',
+    'chatgpt-recommended-competitor-geo',
+    'seo-aeo-geo-guide-for-small-business'
+  ],
+  'what-is-geo-generative-engine-optimization': [
+    'what-is-aeo-answer-engine-optimization',
+    'chatgpt-recommended-competitor-geo',
+    'seo-aeo-geo-guide-for-small-business'
+  ],
+  'why-most-small-business-websites-dont-rank': [
+    'why-your-website-isnt-getting-leads',
+    '5-signs-your-website-is-costing-you-customers',
+    'wordpress-vs-nextjs-for-seo'
+  ],
+  'why-your-website-isnt-getting-leads': [
+    '5-signs-your-website-is-costing-you-customers',
+    'landing-page-vs-full-website',
+    'why-most-small-business-websites-dont-rank'
+  ],
+  'wordpress-vs-nextjs-for-seo': [
+    'why-most-small-business-websites-dont-rank',
+    'seo-cost-small-business-malaysia-india',
+    'seo-aeo-geo-guide-for-small-business'
+  ],
+}
 
 const mdxComponents = {
   img: ({ src, alt }: { src?: string; alt?: string }) => {
@@ -59,6 +117,11 @@ export default async function BlogPostPage(
   const { slug } = await params
   const post = getPostBySlug(slug)
   if (!post) notFound()
+
+  const relatedSlugs = RELATED_POSTS[slug] ?? []
+  const relatedPosts = relatedSlugs
+    .map((s) => getPostBySlug(s))
+    .filter((p): p is BlogPost => p !== null)
 
   const { content } = await compileMDX({
     source: post.content,
@@ -167,6 +230,43 @@ export default async function BlogPostPage(
             </div>
           </div>
         </section>
+
+        {relatedPosts.length > 0 && (
+          <section aria-label="Related Posts" className="w-full py-16 px-6 bg-[color:var(--color-surface)]">
+            <div className="w-full md:w-[80%] max-w-4xl mx-auto">
+              <div className="mb-10">
+                <span className="block text-[color:var(--color-primary)] text-xs uppercase tracking-widest mb-3">
+                  Related Posts
+                </span>
+                <h2 className="font-[family-name:var(--font-display)] text-[color:var(--color-text)] text-2xl md:text-3xl font-bold">
+                  Continue Reading
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {relatedPosts.map((related) => (
+                  <Link
+                    key={related.slug}
+                    href={`/blog/${related.slug}`}
+                    className="group flex flex-col bg-[color:var(--color-surface)] border border-[color:var(--color-border)] hover:border-[color:var(--color-primary)]/40 rounded-2xl p-6 transition-colors duration-200"
+                  >
+                    <span className="text-[color:var(--color-primary)] text-[10px] uppercase tracking-widest font-medium mb-3">
+                      {related.category}
+                    </span>
+                    <h3 className="font-[family-name:var(--font-display)] text-[color:var(--color-text)] font-bold text-base leading-snug mb-3 group-hover:text-[color:var(--color-primary)] transition-colors duration-200">
+                      {related.title}
+                    </h3>
+                    <p className="text-[color:var(--color-text-muted)] text-sm leading-relaxed line-clamp-2 flex-grow mb-4">
+                      {related.description}
+                    </p>
+                    <span className="text-[color:var(--color-text-faint)] text-xs mt-auto">
+                      {related.readTime}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {post.faqs && post.faqs.length > 0 && (
           <section aria-label="FAQ" className="w-full py-16 px-6 bg-[color:var(--color-surface)]">
