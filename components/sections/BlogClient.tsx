@@ -99,7 +99,7 @@ const posts = [
     featured: false,
     seoTag: "Pillar",
     author: "Sitecraf",
-    image: "https://picsum.photos/seed/seoaeogeo/800/600"
+    image: "/seoaeogeo/seo-aeo-geo-guide-small-business-hero.webp"
   },
   {
     slug: "seo-cost-small-business-malaysia-india",
