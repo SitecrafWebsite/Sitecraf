@@ -35,6 +35,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: '/',
       },
     ],
-    sitemap: 'https://www.sitecraf.com/sitemap.xml',
+    sitemap: 'https://sitecraf.com/sitemap.xml',
   }
 }

@@ -10,9 +10,10 @@ export const metadata: Metadata = {
     title: 'Privacy Policy | Sitecraf',
     description:
       'Learn how Sitecraf collects, uses, and protects your personal information. Our commitment to privacy and data security.',
-    url: 'https://www.sitecraf.com/privacy',
+    url: 'https://sitecraf.com/privacy',
     type: 'website',
   },
+  alternates: { canonical: 'https://sitecraf.com/privacy' }
 }
 
 export default function Privacy() {
@@ -313,7 +314,7 @@ export default function Privacy() {
                 <strong>Sitecraf</strong>
               </p>
               <p>Email: info@sitecraf.com</p>
-              <p>Website: www.sitecraf.com</p>
+              <p>Website: sitecraf.com</p>
               <p>Location: India</p>
             </div>
           </div>

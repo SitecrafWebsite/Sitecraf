@@ -6,7 +6,7 @@ import Footer from '@/components/layout/Footer';
 import Chatbot from '@/components/ui/Chatbot';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.sitecraf.com'),
+  metadataBase: new URL('https://sitecraf.com'),
   title: 'Sitecraf — Website Development, AI Chatbot & Image Generation for B2B Brands',
   description: 'Sitecraf builds custom websites, Shopify-to-Wix migrations, AI chatbots in Hindi/English, and AI image generation for Indian B2B businesses. Based in New Delhi. Transparent pricing. No GST. 100% ownership.',
   keywords: [

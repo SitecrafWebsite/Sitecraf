@@ -1,4 +1,4 @@
-﻿import { Metadata } from 'next'
+import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -10,9 +10,10 @@ export const metadata: Metadata = {
     title: 'Terms of Service | Sitecraf',
     description:
       'Read our Terms of Service to understand the rights and responsibilities of using Sitecraf, our AI-powered website builder platform.',
-    url: 'https://www.sitecraf.com/terms',
+    url: 'https://sitecraf.com/terms',
     type: 'website',
   },
+  alternates: { canonical: 'https://sitecraf.com/terms' }
 }
 
 export default function Terms() {
@@ -358,7 +359,7 @@ export default function Terms() {
                 <strong>Sitecraf</strong>
               </p>
               <p>Email: info@sitecraf.com</p>
-              <p>Website: www.sitecraf.com</p>
+              <p>Website: sitecraf.com</p>
               <p>Location: India</p>
             </div>
           </div>

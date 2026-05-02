@@ -1,49 +1,48 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://www.sitecraf.com'
-  const now = new Date()
+  const base = 'https://sitecraf.com'
 
   return [
     {
       url: `${base}/`,
-      lastModified: now,
+      lastModified: new Date('2025-01-01'),
       changeFrequency: 'weekly',
       priority: 1.0,
     },
     {
       url: `${base}/services`,
-      lastModified: now,
+      lastModified: new Date('2025-01-01'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${base}/pricing`,
-      lastModified: now,
+      lastModified: new Date('2025-01-01'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${base}/about`,
-      lastModified: now,
+      lastModified: new Date('2025-01-01'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${base}/blog`,
-      lastModified: now,
+      lastModified: new Date('2025-01-01'),
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
       url: `${base}/privacy`,
-      lastModified: now,
+      lastModified: new Date('2025-01-01'),
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
       url: `${base}/terms`,
-      lastModified: now,
+      lastModified: new Date('2025-01-01'),
       changeFrequency: 'yearly',
       priority: 0.3,
     },
