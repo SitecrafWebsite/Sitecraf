@@ -37,3 +37,13 @@ export function getAllPostSlugs(): string[] {
     .filter(f => f.endsWith('.mdx'))
     .map(f => f.replace('.mdx', ''))
 }
+
+export function getAllPosts(): BlogPost[] {
+  const slugs = getAllPostSlugs()
+  const posts = slugs
+    .map((slug) => getPostBySlug(slug))
+    .filter((post): post is BlogPost => post !== null)
+  
+  // Sort posts by date in descending order
+  return posts.sort((a, b) => (a.date > b.date ? -1 : 1))
+}
