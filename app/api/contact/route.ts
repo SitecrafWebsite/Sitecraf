@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import { checkRateLimit } from '@/lib/rateLimit';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 function sanitizeField(value: unknown, maxLength = 500): string {
   if (typeof value !== 'string') return '';
   return value
@@ -14,6 +12,8 @@ function sanitizeField(value: unknown, maxLength = 500): string {
 }
 
 export async function POST(req: NextRequest) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
   try {
     const ip =
       req.headers.get('x-forwarded-for')?.split(',')[0].trim() ??
