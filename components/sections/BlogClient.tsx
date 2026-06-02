@@ -172,6 +172,18 @@ const posts = [
     seoTag: "Google Business Profile",
     author: "Sitecraf Team",
     image: "/optimize-google-business-profile-india/optimize-google-business-profile-india-hero.webp"
+  },
+  {
+    slug: "how-to-get-more-whatsapp-leads-from-your-website",
+    title: "How to Get More WhatsApp Leads from Your Website",
+    excerpt: "Turn your website visitors into instant conversations. Discover exactly how to optimize your small business website to get 3x more direct WhatsApp messages from your visitors in India and Malaysia.",
+    category: "High Intent",
+    readTime: "9 min read",
+    date: "June 2026",
+    featured: false,
+    seoTag: "Lead Generation",
+    author: "Sitecraf Team",
+    image: "/how-to-get-more-whatsapp-leads-from-your-website/how-to-get-more-whatsapp-leads-from-your-website-hero.webp"
   }
 ];
 
@@ -228,6 +240,7 @@ export default function BlogClient() {
     "how-much-does-a-website-cost-small-business-india": "See the Full Breakdown →",
     "aeo-vs-seo": "Compare SEO vs AEO →",
     "optimize-google-business-profile-india": "Optimize Your Profile →",
+    "how-to-get-more-whatsapp-leads-from-your-website": "Get More Leads →",
   };
 
   return (
