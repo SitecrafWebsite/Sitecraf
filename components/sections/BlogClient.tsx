@@ -184,6 +184,18 @@ const posts = [
     seoTag: "Lead Generation",
     author: "Sitecraf Team",
     image: "/how-to-get-more-whatsapp-leads-from-your-website/how-to-get-more-whatsapp-leads-from-your-website-hero.webp"
+  },
+  {
+    slug: "local-seo-for-restaurants-india",
+    title: "Local SEO for Restaurants in India: How to Rank on Google Maps",
+    excerpt: "Is your restaurant practically invisible on Google Maps? Learn the exact Local SEO steps to get your Indian restaurant ranking higher and driving foot traffic.",
+    category: "Local SEO",
+    readTime: "9 min read",
+    date: "June 2026",
+    featured: false,
+    seoTag: "Restaurant SEO",
+    author: "Sitecraf Team",
+    image: "/local-seo-for-restaurants-india/local-seo-for-restaurants-india-hero.webp"
   }
 ];
 
@@ -241,6 +253,7 @@ export default function BlogClient() {
     "aeo-vs-seo": "Compare SEO vs AEO →",
     "optimize-google-business-profile-india": "Optimize Your Profile →",
     "how-to-get-more-whatsapp-leads-from-your-website": "Get More Leads →",
+    "local-seo-for-restaurants-india": "Rank on Google Maps →",
   };
 
   return (
