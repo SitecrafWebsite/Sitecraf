@@ -196,6 +196,18 @@ const posts = [
     seoTag: "Restaurant SEO",
     author: "Sitecraf Team",
     image: "/local-seo-for-restaurants-india/local-seo-for-restaurants-india-hero.webp"
+  },
+  {
+    slug: "website-maintenance-cost-india",
+    title: "Website Maintenance Cost in India: A Transparent Pricing Guide",
+    excerpt: "How much should you really pay to maintain a website in India? Discover the hidden costs, typical monthly retainers, and what you actually need.",
+    category: "Budgeting",
+    readTime: "9 min read",
+    date: "June 2026",
+    featured: false,
+    seoTag: "Website Costs",
+    author: "Sitecraf Team",
+    image: "/website-maintenance-cost-india/website-maintenance-cost-india-hero.webp"
   }
 ];
 
@@ -254,6 +266,7 @@ export default function BlogClient() {
     "optimize-google-business-profile-india": "Optimize Your Profile →",
     "how-to-get-more-whatsapp-leads-from-your-website": "Get More Leads →",
     "local-seo-for-restaurants-india": "Rank on Google Maps →",
+    "website-maintenance-cost-india": "See the Real Costs →",
   };
 
   return (
