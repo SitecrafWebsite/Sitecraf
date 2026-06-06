@@ -3,7 +3,7 @@
 # Updated automatically after each blog publish
 # Agent MUST check this file before selecting any keyword
 
-Last updated: 2026-06-04
+Last updated: 2026-06-06
 
 ## Published Blog Topics (DO NOT reuse):
 - AEO vs SEO
@@ -22,12 +22,12 @@ Last updated: 2026-06-04
 - How to optimize Google Business Profile for small business India
 - How to get more WhatsApp leads from your website
 - Local SEO for restaurants India
+- Website maintenance cost India
 ## Topics in PR / Under Review:
 (agent adds here when blog is committed, removes after merge)
 
 ## Topic Ideas Queue — Not Yet Used:
 - What is Core Web Vitals and why it matters
-- Website maintenance cost India
 - How long does it take to rank on Google
 - Mobile-first website design for Indian SMEs
 ---
