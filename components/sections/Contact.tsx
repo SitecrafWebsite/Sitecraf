@@ -64,6 +64,8 @@ export default function Contact() {
           {/* Note: Do not use non-deterministic attributes here. Hydration mismatches can occur if browser extensions inject attributes like fdprocessedid. */}
           {/* Form */}
           <form
+            action="https://api.web3forms.com/submit"
+            method="POST"
             onSubmit={async (e) => {
               e.preventDefault();
               setErrors({});
@@ -88,26 +90,20 @@ export default function Contact() {
                 return;
               }
 
-              // Build JSON payload for internal API route
-              const payload = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                phone: `+91 ${phone}`,
-                business: formData.get('business'),
-                service: formData.get('service'),
-                budget: formData.get('budget'),
-                message: formData.get('message'),
-                website: '', // honeypot — always empty for real users
-              };
+              // Format phone with country code for delivery
+              formData.set('phone', `+91 ${phone}`);
 
               try {
-                const response = await fetch('/api/contact', {
+                const response = await fetch('https://api.web3forms.com/submit', {
                   method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify(payload),
+                  body: formData,
                 });
-                if (response.ok) {
+
+                const data = await response.json();
+
+                if (response.ok && data.success) {
                   setStatus('success');
+                  form.reset();
                 } else if (response.status === 429) {
                   setStatus('rate-limited');
                 } else {
@@ -119,16 +115,19 @@ export default function Contact() {
             }}
             className="flex flex-col gap-6 bg-[#111111] p-8 rounded-2xl border border-white/[0.08] relative overflow-hidden"
           >
-            {/* Honeypot — hidden from humans, bots fill it */}
+            {/* Web3Forms Configuration */}
+            <input type="hidden" name="access_key" value="51233d9b-b294-4fc4-bb89-b9ef22a54188" />
+            <input type="hidden" name="subject" value="New Project Enquiry - Sitecraf" />
+            <input type="hidden" name="from_name" value="Sitecraf Contact Form" />
+
+            {/* Web3Forms Honeypot — hidden from humans, bots fill/check it */}
             <input
-              type="text"
-              name="website"
-              value=""
-              onChange={() => {}}
+              type="checkbox"
+              name="botcheck"
+              className="hidden"
               style={{ display: 'none' }}
               tabIndex={-1}
               autoComplete="off"
-              aria-hidden="true"
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

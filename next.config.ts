@@ -51,7 +51,7 @@ const securityHeaders = [
       "default-src 'self'",
 
       // Scripts — self + Next.js inline runtime (nonce not available in static headers)
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://scripts.clarity.ms",
 
       // Styles — self + inline (Tailwind requires this)
       "style-src 'self' 'unsafe-inline' https://api.fontshare.com https://fonts.googleapis.com",
@@ -60,10 +60,10 @@ const securityHeaders = [
       "font-src 'self' https://api.fontshare.com https://fonts.gstatic.com",
 
       // Images — self + data URIs + external image sources used on site
-      "img-src 'self' data: blob: https://res.cloudinary.com https://images.unsplash.com https://www.google-analytics.com",
+      "img-src 'self' data: blob: https://res.cloudinary.com https://images.unsplash.com https://www.google-analytics.com https://c.clarity.ms",
 
-      // API connections — self only (OpenAI and FormSubmit called server-side)
-      "connect-src 'self' https://formsubmit.co https://www.google-analytics.com",
+      // API connections — self, Web3Forms, and analytics
+      "connect-src 'self' https://api.web3forms.com https://www.google-analytics.com https://*.clarity.ms",
 
       // Frames — deny all
       "frame-src 'none'",
@@ -74,8 +74,8 @@ const securityHeaders = [
       // Base URI — prevent base tag hijacking
       "base-uri 'self'",
 
-      // Form submissions — self only
-      "form-action 'self'",
+      // Form submissions — self and Web3Forms
+      "form-action 'self' https://api.web3forms.com",
 
       // Upgrade insecure requests
       "upgrade-insecure-requests",

@@ -234,12 +234,14 @@ export default function BlogClient() {
     e.preventDefault();
     setStatus('loading');
     try {
-      const formData = new FormData(e.currentTarget);
-      const response = await fetch("https://formsubmit.co/ajax/info@sitecraf.com", {
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData
       });
-      if (response.ok) {
+      const data = await response.json();
+      if (response.ok && data.success) {
         setStatus('success');
       } else {
         setStatus('error');
@@ -497,9 +499,23 @@ export default function BlogClient() {
 
             <div className="bg-[color:var(--color-surface-offset)] border border-white/[0.06] rounded-2xl p-8">
               {status !== 'success' ? (
-                <form onSubmit={handleSubscribe} className="flex flex-col gap-4">
-                  <input type="hidden" name="_subject" value="New Blog Subscriber! - Sitecraf" />
-                  <input type="hidden" name="_template" value="table" />
+                <form
+                  action="https://api.web3forms.com/submit"
+                  method="POST"
+                  onSubmit={handleSubscribe}
+                  className="flex flex-col gap-4"
+                >
+                  <input type="hidden" name="access_key" value="51233d9b-b294-4fc4-bb89-b9ef22a54188" />
+                  <input type="hidden" name="subject" value="New Blog Subscriber! - Sitecraf" />
+                  <input type="hidden" name="from_name" value="Sitecraf Blog Newsletter" />
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    className="hidden"
+                    style={{ display: 'none' }}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
 
                   <p className="font-[family-name:var(--font-display)] text-[color:var(--color-text)] font-semibold text-base mb-2">
                     Join other Indian business owners
