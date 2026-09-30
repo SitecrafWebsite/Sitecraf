@@ -93,6 +93,14 @@ export default function Contact() {
               // Format phone with country code for delivery
               formData.set('phone', `+91 ${phone}`);
 
+              // Set dynamic sender name, subject, and reply-to for clean inbox display
+              const name = (formData.get('name') as string)?.trim();
+              if (name) {
+                formData.set('from_name', `${name} via Sitecraf`);
+                formData.set('subject', `New Project Enquiry from ${name} - Sitecraf`);
+              }
+              formData.set('replyto', email);
+
               try {
                 const response = await fetch('https://api.web3forms.com/submit', {
                   method: 'POST',
@@ -118,7 +126,7 @@ export default function Contact() {
             {/* Web3Forms Configuration */}
             <input type="hidden" name="access_key" value="51233d9b-b294-4fc4-bb89-b9ef22a54188" />
             <input type="hidden" name="subject" value="New Project Enquiry - Sitecraf" />
-            <input type="hidden" name="from_name" value="Sitecraf Contact Form" />
+            <input type="hidden" name="from_name" value="Sitecraf Lead" />
 
             {/* Web3Forms Honeypot — hidden from humans, bots fill/check it */}
             <input
